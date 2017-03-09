@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sv"
+   xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+<ui:insert name="metadata" />
+<h:head>
+   <meta charset="utf-8" />
+   <title>Adminsidor</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <link rel="shortcut icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico?v=7"/>
+   
+   <h:outputStylesheet name="css/jqeasypanel.css" />
+   <h:outputScript library="primefaces" name="jquery/jquery.js" />
+   <h:outputScript library="js" name="jquery.jqEasyPanel.min.js" />
+   <h:outputScript library="js" name="akademi.js" />
+   <script>
+   		(function($) {
+   			$(document).ready(function() {
+   				$('#jqeasypanel').jqEasyPanel({
+					position: 'bottom'
+				});
+   			});
+   	    })(jQuery);
+   </script>
+   <ui:insert name="head" />
+</h:head>
+<h:body>
+	<f:facet name="last">
+		<h:outputStylesheet name="css/screen.css" />
+	</f:facet>
+	<!-- Start - Administrationspanelen -->
+		<ul class="panelbuttons">
+	        <li><h:link outcome="/inloggad/personer">
+	        	<h:graphicImage value="/resources/gfx/icons/person_48.png"></h:graphicImage>
+	        	Personer
+	        </h:link></li>
+	        <li><h:link outcome="/inloggad/event">
+	        	<h:graphicImage value="/resources/gfx/icons/calendar_48.png" />
+	        	Event
+	        </h:link></li>
+	        <li><h:link outcome="/inloggad/fakulteter">
+	        	<h:graphicImage value="/resources/gfx/icons/fakultet_48.png"></h:graphicImage>
+	        	Fakulteter
+	        </h:link></li>
+	        <li style="display: #{request.isUserInRole('admin') ? 'list-item' : 'none'};">
+                <h:link rendered="#{request.isUserInRole('admin')}" outcome="/inloggad/admin/epost">
+                    <h:graphicImage value="/resources/gfx/icons/epost_48.png" />
+                    E-post
+                </h:link>
+            </li>
+	        <li style="display: #{request.isUserInRole('admin') ? 'list-item' : 'none'};"><h:link rendered="#{request.isUserInRole('admin')}" outcome="/inloggad/admin/administreraAnvandare">
+	        	<h:graphicImage value="/resources/gfx/icons/gear_48.png"></h:graphicImage>
+	        	Admin
+	        </h:link></li>
+	    </ul>
+
+	<div id="jqeasytrigger">
+	    <a href="#" class="open">Öppna</a>
+	    <a href="#" class="close">Stäng</a>
+	</div>
+	<!-- Slut - Administrationspanelen -->
+	
+    <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
+	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
+    </p:dialog>
+	
+    <div id="container">
+        <h:panelGroup layout="block" id="topPanel">
+	            <span id="left">Inloggad som: <span><h:outputText value="#{request.remoteUser}" /></span></span>
+	            <span id="right">
+	                <h:form>
+			            <p:commandLink value="Logga ut" action="#{casLogout.logout()}" ajax="false" />
+			        </h:form>
+	            </span>
+            
+        </h:panelGroup>
+        <div class="clear"></div>
+        <div id="wrapper">
+            <div id="header">
+            	<h:link style="float: left; margin-top: -26px; margin-left: 23px" outcome="/inloggad/hem">
+                    <h:graphicImage value="/resources/gfx/xxxx.png" width="80" height="80" />
+                </h:link>
+                <h1>
+                    <h:outputText style="margin-left: 0;" value="xxxxx" />
+                    <h:outputText styleClass="version" value="Version: #{initParam['version']}" />
+                </h1>
+            </div>
+
+		    <div id="content">
+		         <ui:insert name="content">
+		             [Template content will be inserted here]
+		         </ui:insert>
+		    </div>
+		    <div id="footer">
+		    </div>
+	    </div>
+    </div>
+</h:body>
+</html>

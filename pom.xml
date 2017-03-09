@@ -8,7 +8,6 @@
 	<name>UI text</name>
 	<description>Texter för ui</description>
 
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -21,6 +20,37 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.jboss.spec.javax.faces</groupId>
+            <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+            <version>2.2.13</version>
+            <scope>provided</scope>
+        </dependency>
+		
+		<!-- JSF dependencies -->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>primefaces-extensions</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.themes</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        
+        <!-- Loggning -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -91,4 +121,18 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<repositories>
+        <repository>
+            <id>LDC-REP</id>
+            <name>LDC Repository</name>
+            <url>http://repository.utveckling.ldc.lu.se:8081/nexus/content/groups/LDC/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+     </repositories>
 </project>

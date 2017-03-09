@@ -1,0 +1,378 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFFFFF;
+	font-family: Verdana, sans-serif;
+	font-size: 70%;
+}
+
+#container {
+	margin-top: 10px;
+}
+
+#wrapper {
+	margin: 0 30px;
+}
+
+#header {
+	background: #CDD5DF;
+	margin: 0 -5px;
+	border: 1px solid black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#header h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 5px 17px;
+	color: #90959C;
+	letter-spacing: 3px;
+}
+
+#header .version {
+    float: right;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 15px 17px;
+	color: #90959C;
+	letter-spacing: 0px;
+	font-size: 10px;
+}
+
+#content {
+	margin: 30px 20px 20px 20px;
+}
+
+#content h1 {
+	border-bottom: 2px solid black;
+	font-size: 1.4em;
+	color: black;
+	font-weight: bold;
+}
+
+#sidebar {
+	font-size: 0.9em;
+	width: 225px;
+	float: right;
+	border: 1px solid #666666;
+	background: #EAECEE;
+	padding: 0 15px 5px 15px;
+}
+
+#sidebar ul {
+	padding-left: 30px;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	color: #666666;
+	font-size: 0.85em;
+	padding: 1em 0 0 0;
+	font-style: italic;
+}
+
+code {
+	font-size: 1.1em;
+}
+
+span.invalid {
+	padding-left: 3px;
+	color: red;
+}
+
+/* Generella */
+.clear {
+	clear: both;
+}
+
+/*
+textarea {
+	font-size: 1.3em;
+	overflow-y: scroll;
+	resize: none;
+}
+*/
+
+#adminPanel {
+	margin-top: 20px;
+}
+
+div.adminText {
+	background-color: #eaecee;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #666666;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+#topPanel {
+	margin: 0 30px 3px 0;
+	float: right;
+}
+
+#topPanel #left {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#topPanel #left span {
+    font-weight: bold;
+}
+
+#topPanel #right {
+    display: inline-block;
+}
+
+/* Felruta */
+#errorBox {
+    margin: 100px auto;
+    width: 300px; /* subtract 40px from banner width for padding */
+    border: 1px solid black;
+}
+
+#errorBoxHeader {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+#errorBoxContent {
+    background-color: white;
+    color: black;
+    text-align: left;
+    padding: 5px;
+}
+
+/* Datatables allmänt */
+
+.ui-datatable-header.ui-widget-header {
+	background: none;
+	background-color: #000;
+	color: white;
+	text-align: left;
+}
+
+.ui-datatable-header.ui-widget-header .ui-outputpanel {
+	text-align: left;
+	margin-left: 2px;
+}
+
+.ui-datatable-header.ui-widget-header .ui-outputpanel input {
+	margin-left: 10px;
+	width: 200px;
+}
+
+.ui-datatable .ui-column-filter.ui-inputfield.ui-inputtext {
+	width: 90%;
+}
+
+/* Knappar allmänt */
+
+.skapaBtn {
+	margin-bottom: 10px;
+}
+
+.buttonPanel {
+	margin: 10px 0 0;
+}
+
+.buttonPanel button {
+	margin-right: 10px;
+}
+
+.tableButton {
+	margin-left: 15px;
+}
+
+/* Paneler allmänt */
+
+.ui-panel .ui-panel-titlebar.ui-widget-header {
+	margin: -0.2em;
+	padding: 0.5em 1em 0.5em;
+	background: none;
+	background-color: #000;
+	color: white;
+}
+
+/* Event - biljetter */
+
+.biljettBox {
+	width: 230px;
+	float: right;
+	margin-top: 3px;
+}
+
+.biljetter div, .biljetter span {
+	position: relative;
+}
+
+.biljetter span {
+	display: inline-block;
+}
+
+.biljetter .colorBox {
+	width: 30px;
+	height: 20px;
+	border: 1px solid black;
+	margin-left: 5px;
+}
+
+.biljetter .text {
+	top: -5px;
+	left: 5px;
+	font-weight: bold;
+}
+
+.biljetter .text.w50 {
+	width: 50px;
+	font-weight: normal;
+}
+
+/* Personer */
+
+#personForm .ui-datatable.ui-widget thead {
+	display: none;
+}
+
+#personForm input.ui-inputfield.ui-inputtext.ui-widget {
+	width: 200px;
+}
+
+@media all and (min-width: 1500px) {
+  #redigeraPersonLeftCol {
+  	width: 100%;
+  	float: left;
+  	margin-right: -660px;
+  }
+  
+  .redigeraPersonPanel {
+  	margin-right: 660px;
+  }
+  
+  .kopplaPersonTillEvent {
+    width: 650px;
+    float: right;
+  }
+}
+
+/* PersonEvent */
+
+#personEventForm\3AidBiljetterPanelGroup input.ui-inputfield.ui-inputtext.ui-widget {
+	width: 30px;
+}
+
+#personEventForm\3AidBiljetterPanelGroup tr td:first-child {
+	width: 30px;
+	border: 1px solid black;
+	background: red;
+}
+
+#personEventForm\3AidBiljetterPanelGroup tr + tr td:first-child {
+	background: yellow;
+}
+
+#personEventForm\3AidBiljetterPanelGroup tr + tr + tr td:first-child {
+	background: white;
+}
+
+#personEventForm\3AidBiljetterPanelGroup tr + tr + tr + tr td:first-child {
+	background: green;
+}
+
+#personEventForm\3AidBiljetterPanelGroup tr + tr + tr + tr + tr td:first-child {
+	background: purple;
+}
+
+.checkboxField {
+	margin-top: 10px;
+}
+
+.checkboxField label {
+	margin-left: 10px;
+}
+
+@media all and (min-width: 1100px) {
+	.personEventPanelPageFormat {
+		width: 1000px;
+	}
+}
+
+/* Fakulteter */
+.fakultetDiv {
+	background-color: #eaecee;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding: 10px;
+	border: 1px solid #666666;
+	margin-bottom: 20px;
+	display: inline-block;
+	margin: 10px;
+	width: 400px;
+}
+
+.fakultetHeader {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.fakultetCtrlButton {
+	float: right;
+}
+
+#contentGroup .bildBox div {
+	border: 1px solid black;
+	height: 100px;
+	width: 100px;
+	position: relative;
+}
+
+#contentGroup .bildBox div img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#contentGroup .bildBox p {
+	font-size: 0.7em;
+	margin: 2px 0 0 0;
+}
+
+.fakultetTable {
+	margin-top: 10px;
+}
+
+.fakultetTable td {
+	vertical-align: top;
+}
+
+.fakultetTable h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.1em;
+}
+
+.fakultetTable .imgColumn {
+	width: 100px;
+}
+
+#fakulteterFormId .ui-fileupload-content .ui-progressbar {
+	width: 0;
+	margin: 0;
+  display: none;
+}
+
+#fakulteterFormId .ui-fileupload-content tbody {
+	display: none;
+}

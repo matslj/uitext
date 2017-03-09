@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   template="/WEB-INF/templates/noStyle.xhtml">
+   
+    <ui:define name="head">
+   		<title>dgfdgfdgfdf</title>
+   		<style>
+   			html,body {
+				padding: 0;
+				margin: 0;
+				font-family: Verdana, sans-serif;
+				font-size: 80%;
+			}
+			
+			h1 {
+				font-size: 4em;
+			}
+			
+			body {
+				background-color: #fff;
+				color: #000;
+			}
+			
+			#wrapper {
+				width: 800px;
+				margin: 20px auto;
+			}
+			
+			#header {
+				padding: 40px 20px;
+				background-color: #000;
+				color: #fff;
+			}
+			
+			#mid {
+				padding: 30px 20px;
+			}
+			
+			#footer {
+				text-align: center;
+				font-size: 0.9em;
+				font-style: italic;
+			}
+			h2 {
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-top: 10px;
+			}
+   		</style>
+    </ui:define>
+    
+    <ui:define name="content">
+        <div id="wrapper">
+            <div id="header">
+                <h1>ccccc</h1>
+            </div>
+            <div id="mid">
+            	<h2>Vill du:</h2>
+            	<h:outputText value="dfgdgfdgfgfd" />
+            	<ul>
+            		<li><h:link value="gå till administrationssidorna?" outcome="/hem" /></li>
+            	</ul>
+            </div>
+            <div id="footer">
+                 <!-- <h:graphicImage height="50" width="50" value="/resources/gfx/083.png" alt="LU logo" />  -->
+                 <hr style="width: 95%; color: #EFEFEF; background-color: #EFEFEF; border-color: #EFEFEF;" />
+                 <p>
+                    Av tfrtfrt, 2015 för <a href="http://www.lu.se/lucat/group/018011060">ytyutyutu</a>
+                 </p>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

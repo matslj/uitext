@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<!-- ************************************************************************** -->
+	<!-- Att 'enabla' innan produktionssättning (och glöm inte PROJECT_STAGE 
+		ovan): -->
+	<!-- Om man sätter denna till -1 så kommer inte Facelet compilern att kolla 
+		efter ändringar på facelet-sidor när väl en facelet har blivit kompilerad 
+		en gång. Detta är alltså en prestandaförbättringsåtgärd. Lämpar sig dock 
+		inte i en utvecklingsfas, då vi vill att sidan ska kompileras om när vi gjort 
+		ändringar. -->
+	<!-- <context-param> -->
+	<!-- <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name> -->
+	<!-- <param-value>-1</param-value> -->
+	<!-- </context-param> -->
+
+	<!-- Skippar alla kommentarer på facelet-sidor så att de inte visas i webbläsaren. 
+		Bra dels ur ett prestandaperspektiv - mindre data skickas till klienten och 
+		ur ett säkerhetsperspektiv; kommentarer är bra och ska vara vägledande för 
+		framtida utvecklare, men inte för framtida hackers :-). -->
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<!-- Slut på det som ska 'enablas' innan produktionssättning -->
+	<!-- ************************************************************************** -->
+	<session-config>
+		<!-- Ser till att sessionens id (jsessionid) inte inkluderas i URL:en. -->
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>omega</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.FONT_AWESOME</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
+		<param-value>/*.xhtml</param-value>
+	</context-param>
+	<mime-mapping>
+		<extension>eot</extension>
+		<mime-type>application/vnd.ms-fontobject</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>otf</extension>
+		<mime-type>font/opentype</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ttf</extension>
+		<mime-type>application/x-font-ttf</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/x-font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff2</extension>
+		<mime-type>application/x-font-woff2</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
