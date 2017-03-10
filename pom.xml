@@ -19,6 +19,12 @@
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.glassfish</groupId>
+					<artifactId>javax.faces</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
@@ -77,6 +83,15 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
+	
+    <!-- For the all themes dependency -->
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
