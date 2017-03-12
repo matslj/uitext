@@ -2,9 +2,9 @@ package se.mlj.uitext.text.control;
 
 import java.util.Locale;
 
-public class DBResourceBundleEN extends DBResourceBundle {
+public class DBResourceBundle_en extends DBResourceBundle {
 
-	public DBResourceBundleEN() {
+	public DBResourceBundle_en() {
 	    super(new Locale("en"));
 	}
 }

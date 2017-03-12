@@ -1,8 +1,15 @@
 package se.mlj.uitext.text.boundary;
 
+import java.util.List;
 import java.util.Locale;
 
-import se.mlj.uitext.text.entity.ResourceBundle;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+
+import org.slf4j.Logger;
+
+import se.mlj.uitext.text.entity.UIText;
 
 public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 	
@@ -12,86 +19,26 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
     @Inject
     Logger logger;
 
-    /**
-     * Hämtar alla användare från databasen.
-     * 
-     * @return alla användare i databasen
-     */
-    public List<Anvandare> getAllUsers() {
+    public List<UIText> getAllTexts(Locale locale) {
         try {
-            return em.createNamedQuery("anvandare.listAll", Anvandare.class).getResultList();
+            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).setParameter("locale", locale.getLanguage()).
+            		getResultList();
         } catch (NoResultException nre) {
             return null;
         }
     }
 
-    /**
-     * Hämtar användaren mha primary-key (id). Obs det är inte userId utan en syntetisk nyckel-id.
-     * 
-     * @param id
-     *            primary-key för användaren i databasen
-     * @return användaren om den hittas, annars kastas ett unchecked exception
-     */
-    public Anvandare findById(Long id) {
-        return em.find(Anvandare.class, id);
+    public UIText findById(Long id) {
+        return em.find(UIText.class, id);
     }
 
-    /**
-     * Hämtar användaren mha userId.
-     * 
-     * @param userId
-     *            användarens userId
-     * @return null om användaren inte hittades i databasen, annars användaren med angivet userId
-     */
-    public Anvandare findUserByUserId(String userId) {
-        try {
-            return em.createNamedQuery("anvandare.findByUserId", Anvandare.class).setParameter("userId", userId).getSingleResult();
-        } catch (NoResultException nre) {
-            return null;
-        }
+    public UIText createUpdateText(UIText text) {
+        return em.merge(text);
     }
 
-    /**
-     * Skapar eller uppdaterar en användare i databasen.
-     * 
-     * @param user
-     *            användar-instansen som ska skapas/uppdateras
-     * @return det skapade användarobjektet
-     */
-    @LoggStartStop
-    public Anvandare createUpdateUser(Anvandare user) {
-        return em.merge(user);
+    public void deleteUser(UIText text) {
+        text = findById(text.getId());
+        em.remove(text);
     }
 
-    /**
-     * Radera användare från databasen.
-     * 
-     * @param user
-     *            användarinstansen som ska raderas
-     */
-    @LoggStartStop
-    public void deleteUser(Anvandare user) {
-        user = findById(user.getId());
-        em.remove(user);
-    }
-
-    /**
-     * @param facesContext
-     *            Behövs för att ta reda på användarnamnet.
-     * 
-     * @return användarinstansen för sessionen.
-     */
-    public Anvandare getCurrentUser(FacesContext facesContext) {
-        String userId = facesContext.getExternalContext().getUserPrincipal().getName();
-        return this.findUserByUserId(userId);
-    }
-
-
-	@Override
-	public ResourceBundle findResourceBundle(Locale locale) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
 }

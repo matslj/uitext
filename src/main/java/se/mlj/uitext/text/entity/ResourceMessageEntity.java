@@ -14,16 +14,16 @@ import se.mlj.uitext.common.entity.AbstractEntity;
 @Entity
 @Table(name = "resource_message")
 @XmlRootElement
-@NamedQueries({ @NamedQuery(name = ResourceMessage.QUERYNAME_FIND_ALL, query = ResourceMessage.QUERY_FIND_ALL),
-		@NamedQuery(name = ResourceMessage.QUERYNAME_COUNT_ALL, query = ResourceMessage.QUERY_COUNT_ALL) })
-public class ResourceMessage extends AbstractEntity {
+@NamedQueries({ @NamedQuery(name = ResourceMessageEntity.QUERYNAME_FIND_ALL, query = ResourceMessageEntity.QUERY_FIND_ALL),
+		@NamedQuery(name = ResourceMessageEntity.QUERYNAME_COUNT_ALL, query = ResourceMessageEntity.QUERY_COUNT_ALL) })
+public class ResourceMessageEntity extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
-	public static final String QUERYNAME_FIND_ALL = "ResourceMessage.findAll";
-	public static final String QUERY_FIND_ALL = "Select r from ResourceMessage r";
+	public static final String QUERYNAME_FIND_ALL = "ResourceMessageEntity.findAll";
+	public static final String QUERY_FIND_ALL = "Select r from ResourceMessageEntity r";
 
-	public static final String QUERYNAME_COUNT_ALL = "ResourceMessage.countAll";
-	public static final String QUERY_COUNT_ALL = "select count(r) from ResourceMessage r";
+	public static final String QUERYNAME_COUNT_ALL = "ResourceMessageEntity.countAll";
+	public static final String QUERY_COUNT_ALL = "select count(r) from ResourceMessageEntity r";
 
 	@Column(name = "message_key")
 	private String key;
@@ -33,7 +33,7 @@ public class ResourceMessage extends AbstractEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "key_bundle")
-	private ResourceBundle bundle;
+	private ResourceBundleEntity bundle;
 
 	/**
 	 * @return the key
@@ -68,7 +68,7 @@ public class ResourceMessage extends AbstractEntity {
 	/**
 	 * @return the bundle
 	 */
-	public ResourceBundle getBundle() {
+	public ResourceBundleEntity getBundle() {
 		return bundle;
 	}
 
@@ -76,7 +76,7 @@ public class ResourceMessage extends AbstractEntity {
 	 * @param bundle
 	 *            the bundle to set
 	 */
-	public void setBundle(ResourceBundle bundle) {
+	public void setBundle(ResourceBundleEntity bundle) {
 		this.bundle = bundle;
 	}
 }

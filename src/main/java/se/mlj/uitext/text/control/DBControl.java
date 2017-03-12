@@ -14,13 +14,14 @@ import org.slf4j.LoggerFactory;
 
 import se.mlj.uitext.common.utils.LookupUtils;
 import se.mlj.uitext.text.boundary.ResourceBundleServiceLocal;
-import se.mlj.uitext.text.entity.ResourceMessage;
+import se.mlj.uitext.text.entity.ResourceMessageEntity;
+import se.mlj.uitext.text.entity.UIText;
 
 public class DBControl extends Control {
 	private Logger logger = LoggerFactory.getLogger(DBControl.class);
 
 	@Override
-	public List getFormats(String baseName) {
+	public List<String> getFormats(String baseName) {
 		if (baseName == null) {
 			throw new NullPointerException();
 		}
@@ -35,7 +36,7 @@ public class DBControl extends Control {
 		}
 		ResourceBundle bundle = null;
 		if (format.equals("db")) {
-			bundle = new EfragmentResourceBundle(locale);
+			bundle = new ListDBResourceBundle(locale);
 		}
 		return bundle;
 	}
@@ -46,7 +47,7 @@ public class DBControl extends Control {
 	 * does not result in a MissingResourceException being thrown but, instead,
 	 * returning the passed in key.
 	 */
-	protected class EfragmentResourceBundle extends ListResourceBundle {
+	protected class ListDBResourceBundle extends ListResourceBundle {
 
 		private Locale locale;
 
@@ -55,7 +56,7 @@ public class DBControl extends Control {
 		 * 
 		 * @param locale
 		 */
-		public EfragmentResourceBundle(final Locale locale) {
+		public ListDBResourceBundle(final Locale locale) {
 			this.locale = locale;
 		}
 
@@ -68,25 +69,19 @@ public class DBControl extends Control {
 		 * @return an array of an Object array representing a key-value pair.
 		 */
 		protected Object[][] getContents() {
-			try {
-				final ResourceBundleServiceLocal resourceBundleService = LookupUtils.lookupWithinApp(
-						ResourceBundleServiceLocal.BEAN_NAME, ResourceBundleServiceLocal.class.getName());
-				final se.mlj.uitext.text.entity.ResourceBundle bundle = resourceBundleService
-						.findResourceBundle(locale);
-				if (bundle != null) {
-					final List<ResourceMessage> resources = bundle.getMessages();
-					Object[][] all = new Object[resources.size()][2];
-					int i = 0;
-					for (Iterator<ResourceMessage> it = resources.iterator(); it.hasNext();) {
-						ResourceMessage resource = it.next();
-						all[i] = new Object[] { resource.getKey(), resource.getValue() };
-						i++;
-					}
-					return all;
+			final ResourceBundleServiceLocal resourceBundleService = LookupUtils
+					.lookupWithinApp(ResourceBundleServiceLocal.BEAN_NAME, ResourceBundleServiceLocal.class.getName());
+			final List<UIText> texts = resourceBundleService.getAllTexts(locale);
+			if (texts != null && !texts.isEmpty()) {
+				Object[][] all = new Object[texts.size()][2];
+				int i = 0;
+				for (UIText text : texts) {
+					all[i] = new Object[] { text.getKey(), text.getValue() };
+					i++;
 				}
-			} catch (final Exception e) {
-				logger.error("Problemsializing the db control for {}", locale, e);
+				return all;
 			}
+
 			return new Object[][] {};
 		}
 	}
