@@ -11,6 +11,8 @@ import se.mlj.uitext.text.entity.UIText;
 
 /**
  * https://zenidas.wordpress.com/recipes/database-resource-bundle-in-a-jsf-application/
+ * 
+ * http://blog.eisele.net/2012/08/resource-bundle-tricks-and-best.html
  */
 @Local
 public interface ResourceBundleServiceLocal {

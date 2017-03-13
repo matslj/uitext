@@ -7,11 +7,14 @@ import javax.persistence.NamedQuery;
 import se.mlj.uitext.common.entity.AbstractEntity;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = UIText.QUERYNAME_FIND_ALL, query = UIText.QUERY_FIND_ALL)})
+@NamedQueries({ @NamedQuery(name = UIText.QUERYNAME_FIND_ALL, query = UIText.QUERY_FIND_ALL),
+		@NamedQuery(name = UIText.QUERYNAME_FIND_ALL_BY_LOCALE, query = UIText.QUERY_FIND_ALL_BY_LOCALE)})
 public class UIText extends AbstractEntity {
 
 	public static final String QUERYNAME_FIND_ALL = "UIText.findAll";
-	public static final String QUERY_FIND_ALL = "Select r from UIText r WHERE r.locale=:locale";
+	public static final String QUERY_FIND_ALL = "Select r from UIText r";
+	public static final String QUERYNAME_FIND_ALL_BY_LOCALE = "UIText.findAllByLocale";
+	public static final String QUERY_FIND_ALL_BY_LOCALE = "Select r from UIText r WHERE r.locale=:locale";
 
 	private String key;
 
