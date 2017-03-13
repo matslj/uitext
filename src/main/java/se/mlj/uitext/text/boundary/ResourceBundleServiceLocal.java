@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.ejb.Local;
-import javax.persistence.NoResultException;
 
 import se.mlj.uitext.text.entity.UIText;
 
@@ -19,6 +18,8 @@ public interface ResourceBundleServiceLocal {
   public static final String BEAN_NAME = "ResourceBundleServiceImpl";
   
   public List<UIText> getAllTexts(Locale locale);
+  
+  public List<UIText> getAllTexts();
 
   public UIText findById(Long id);
 

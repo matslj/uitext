@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   template="/WEB-INF/templates/noStyle.xhtml">
+   
+    <ui:define name="head">
+   		<title>dgfdgfdgfdf</title>
+   		<style>
+   			html,body {
+				padding: 0;
+				margin: 0;
+				font-family: Verdana, sans-serif;
+				font-size: 80%;
+			}
+			
+			h1 {
+				font-size: 4em;
+			}
+			
+			body {
+				background-color: #fff;
+				color: #000;
+			}
+			
+			#wrapper {
+				width: 800px;
+				margin: 20px auto;
+			}
+			
+			#header {
+				padding: 40px 20px;
+				background-color: #000;
+				color: #fff;
+			}
+			
+			#mid {
+				padding: 30px 20px;
+			}
+			
+			#footer {
+				text-align: center;
+				font-size: 0.9em;
+				font-style: italic;
+			}
+			h2 {
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				margin-top: 10px;
+			}
+   		</style>
+    </ui:define>
+    
+    <ui:define name="content">
+        <div id="wrapper">
+            <div id="header">
+                <h1>ccccc</h1>
+            </div>
+            <div id="mid">
+            	<h:form id="tableForm">
+                <p:growl id="msg" />
+	            <h:panelGroup rendered="#{not empty textAdmin.textList}">
+		            <p:dataTable id="userTable" var="_text" value="#{textAdmin.textList}" widgetVar="textTableW" >
+					    <p:column>
+		                    <f:facet name="header">
+		                        <h:outputText value="Nyckel" />
+		                    </f:facet>
+		                    <h:outputText value="#{_text.key}" />
+		                </p:column>
+		                <p:column>
+		                    <f:facet name="header">
+		                        <h:outputText value="Text" />
+		                    </f:facet>
+		                    <p:commandLink style="text-decoration: none;" process="@this" immediate="true" action="#{textAdmin.setSelectedText(_text)}" update="@widgetVar(editUitextDialog)" oncomplete="PF('editUitextDialog').show()">
+			                    <h:outputText value="#{_text.value}" />
+			                </p:commandLink>
+		                </p:column>
+		                <p:column>
+		                    <f:facet name="header">
+		                        <h:outputText value="Landsbeteckning" />
+		                    </f:facet>
+		                    <h:outputText value="#{_text.locale}" />
+		                </p:column>
+					</p:dataTable>
+			    </h:panelGroup>
+		    </h:form>
+            </div>
+            <div id="footer">
+                 <!-- <h:graphicImage height="50" width="50" value="/resources/gfx/083.png" alt="LU logo" />  -->
+                 <hr style="width: 95%; color: #EFEFEF; background-color: #EFEFEF; border-color: #EFEFEF;" />
+                 <p>
+                    Av tfrtfrt, 2015 för <a href="http://www.lu.se/lucat/group/018011060">ytyutyutu</a>
+                 </p>
+            </div>
+        </div>
+    </ui:define>
+    
+    <p:dialog
+			header="Ändra uitext"
+			widgetVar="editUitextDialog"
+			resizable="false">
+		<h:form>
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputText value="Nyckel" />
+	            <h:outputText value="#{textAdmin.selectedText.key}" />
+	 
+	            <h:outputLabel for="text" value="Text:" />
+	            <p:inputText id="text" value="#{textAdmin.selectedText.value}" required="true" label="text" />
+	 
+	            <f:facet name="footer">
+	                <p:commandButton id="idTextButtonUpdateCancel" 
+			    		value="Avbryt" 
+			    		type="button"
+			    		onclick="PF('editUitextDialog').hide();">
+			    	</p:commandButton>
+	            </f:facet>  
+	        </h:panelGrid>
+        </h:form>
+	</p:dialog>
+</ui:composition>

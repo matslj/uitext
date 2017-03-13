@@ -20,6 +20,9 @@ import se.mlj.uitext.text.entity.UIText;
 public class DBControl extends Control {
 	private Logger logger = LoggerFactory.getLogger(DBControl.class);
 
+	/**
+	 * With this control, only one format is acceptable: the db format.
+	 */
 	@Override
 	public List<String> getFormats(String baseName) {
 		if (baseName == null) {
@@ -28,6 +31,9 @@ public class DBControl extends Control {
 		return Arrays.asList("db");
 	}
 
+	/**
+	 * Serves a database bound resource bundle to the resource bundle system.
+	 */
 	@Override
 	public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
 			throws IllegalAccessException, InstantiationException, IOException {
@@ -35,17 +41,14 @@ public class DBControl extends Control {
 			throw new NullPointerException();
 		}
 		ResourceBundle bundle = null;
-		if (format.equals("db")) {
+		if ("db".equals(format)) {
 			bundle = new ListDBResourceBundle(locale);
 		}
 		return bundle;
 	}
 
 	/**
-	 * Our own implementation of a resource bundle inspired on the
-	 * ListResourceBundle class with a change so that getting a non existing key
-	 * does not result in a MissingResourceException being thrown but, instead,
-	 * returning the passed in key.
+	 * A database bound resource bundle.
 	 */
 	protected class ListDBResourceBundle extends ListResourceBundle {
 
@@ -61,20 +64,19 @@ public class DBControl extends Control {
 		}
 
 		/**
-		 * Returns an array in which each item is a pair of objects in an Object
-		 * array. The first element of each pair is the key, which must be a
-		 * String, and the second element is the value associated with that key.
-		 * See the class description for details.
+		 * Returns the locale dependent content of a resource bundle from the database as a [n][2] matrix of key value pairs where the
+		 * key is the uitext key and value is the value of that key.
 		 * 
-		 * @return an array of an Object array representing a key-value pair.
+		 * @return an array of an Object array representing a key-value pair or an empty matrix if no matching key is found.
+		 *         This will be rendered as ???key??? by the bundle framework.
 		 */
+		@Override
 		protected Object[][] getContents() {
 			ResourceBundleServiceLocal service = null;
 			try {
 				service = InitialContext.doLookup("java:module/" + ResourceBundleServiceLocal.BEAN_NAME + "!" + ResourceBundleServiceLocal.class.getName());
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new IllegalStateException("Kunde inte hämta instans av " + ResourceBundleServiceLocal.BEAN_NAME + " från jndi.", e);
 			}
 			if (service != null) {
 				final List<UIText> texts = service.getAllTexts(locale);

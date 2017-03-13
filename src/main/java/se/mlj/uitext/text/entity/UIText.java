@@ -12,9 +12,9 @@ import se.mlj.uitext.common.entity.AbstractEntity;
 public class UIText extends AbstractEntity {
 
 	public static final String QUERYNAME_FIND_ALL = "UIText.findAll";
-	public static final String QUERY_FIND_ALL = "Select r from UIText r";
+	public static final String QUERY_FIND_ALL = "Select u from UIText u ORDER BY u.key ASC, u.locale DESC";
 	public static final String QUERYNAME_FIND_ALL_BY_LOCALE = "UIText.findAllByLocale";
-	public static final String QUERY_FIND_ALL_BY_LOCALE = "Select r from UIText r WHERE r.locale=:locale";
+	public static final String QUERY_FIND_ALL_BY_LOCALE = "Select u from UIText u WHERE u.locale=:locale";
 
 	private String key;
 

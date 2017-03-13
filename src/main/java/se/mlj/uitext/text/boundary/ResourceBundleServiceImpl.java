@@ -23,8 +23,16 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 
     public List<UIText> getAllTexts(Locale locale) {
         try {
-            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).setParameter("locale", locale.getLanguage()).
+            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL_BY_LOCALE, UIText.class).setParameter("locale", locale.getLanguage()).
             		getResultList();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+    
+    public List<UIText> getAllTexts() {
+        try {
+            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).getResultList();
         } catch (NoResultException nre) {
             return null;
         }
