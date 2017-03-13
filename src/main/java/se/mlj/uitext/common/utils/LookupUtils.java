@@ -89,7 +89,7 @@ public final class LookupUtils {
 	  @SuppressWarnings("unchecked")
 	  private static <T> T genericLookup(final String jndiName) {
 	    try {
-	    	System.out.println(jndiName);
+	    	System.out.println("######: " + jndiName);
 	      final InitialContext context = new InitialContext();
 	      return (T) context.lookup(jndiName);
 	    } catch (NamingException e) {

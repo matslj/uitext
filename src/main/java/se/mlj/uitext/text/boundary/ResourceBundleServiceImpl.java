@@ -3,6 +3,7 @@ package se.mlj.uitext.text.boundary;
 import java.util.List;
 import java.util.Locale;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -11,6 +12,7 @@ import org.slf4j.Logger;
 
 import se.mlj.uitext.text.entity.UIText;
 
+@Stateless
 public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 	
 	@Inject

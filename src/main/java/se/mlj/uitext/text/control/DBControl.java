@@ -2,19 +2,19 @@ package se.mlj.uitext.text.control;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListResourceBundle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.ResourceBundle.Control;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import se.mlj.uitext.common.utils.LookupUtils;
 import se.mlj.uitext.text.boundary.ResourceBundleServiceLocal;
-import se.mlj.uitext.text.entity.ResourceMessageEntity;
 import se.mlj.uitext.text.entity.UIText;
 
 public class DBControl extends Control {
@@ -69,17 +69,24 @@ public class DBControl extends Control {
 		 * @return an array of an Object array representing a key-value pair.
 		 */
 		protected Object[][] getContents() {
-			final ResourceBundleServiceLocal resourceBundleService = LookupUtils
-					.lookupWithinApp(ResourceBundleServiceLocal.BEAN_NAME, ResourceBundleServiceLocal.class.getName());
-			final List<UIText> texts = resourceBundleService.getAllTexts(locale);
-			if (texts != null && !texts.isEmpty()) {
-				Object[][] all = new Object[texts.size()][2];
-				int i = 0;
-				for (UIText text : texts) {
-					all[i] = new Object[] { text.getKey(), text.getValue() };
-					i++;
+			ResourceBundleServiceLocal service = null;
+			try {
+				service = InitialContext.doLookup("java:module/" + ResourceBundleServiceLocal.BEAN_NAME + "!" + ResourceBundleServiceLocal.class.getName());
+			} catch (NamingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (service != null) {
+				final List<UIText> texts = service.getAllTexts(locale);
+				if (texts != null && !texts.isEmpty()) {
+					Object[][] all = new Object[texts.size()][2];
+					int i = 0;
+					for (UIText text : texts) {
+						all[i] = new Object[] { text.getKey(), text.getValue() };
+						i++;
+					}
+					return all;
 				}
-				return all;
 			}
 
 			return new Object[][] {};
