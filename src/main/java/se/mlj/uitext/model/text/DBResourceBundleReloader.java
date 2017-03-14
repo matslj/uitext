@@ -15,15 +15,18 @@ import com.sun.faces.application.ApplicationResourceBundle;
 import se.mlj.uitext.text.control.DBResourceBundle;
 
 /**
- * Lyssnar efter ett {@link DBResourceBundleReloadEvent} och när ett sådant inkommer så rensas
- * ResourceBundle cachen. Denna lösning gör det möjligt för en användare att uppdatera uitexter,
- * och få genomslag på ändringen, utan att man behöver starta om servern.
+ * Lyssnar efter ett {@link DBResourceBundleReloadEvent} och när ett sådant
+ * inkommer så rensas ResourceBundle cachen. Denna lösning gör det möjligt för
+ * en användare att uppdatera uitexter, och få genomslag på ändringen, utan att
+ * man behöver starta om servern.
  * <p>
- * Att bara göra ResourceBundle.cleareCache() fungerar inte eftersom resource bundlet även är cachat
- * av jsf (i alla fall om det är definierat via faces-config.xml istället för f:loadBundle). Lösningen
- * är att mha reflection rensa den interna map som innehåller jsfs resource bundle cache.
+ * Att bara göra ResourceBundle.cleareCache() fungerar inte eftersom resource
+ * bundlet även är cachat av jsf (i alla fall om det är definierat via
+ * faces-config.xml istället för f:loadBundle). Lösningen är att mha reflection
+ * rensa den interna map som innehåller jsfs resource bundle cache.
  * <p>
- * http://stackoverflow.com/questions/4325164/how-to-reload-resource-bundle-in-web-application
+ * http://stackoverflow.com/questions/4325164/how-to-reload-resource-bundle-in-
+ * web-application
  * 
  * @author Mats L
  *
@@ -36,25 +39,32 @@ public class DBResourceBundleReloader {
 	public void onReload(@Observes final DBResourceBundleReloadEvent bundleReloadEvent) {
 		ResourceBundle.clearCache(Thread.currentThread().getContextClassLoader());
 
-		// ApplicationResourceBundle användas av mojarra, men kanske inte av andra jsf implementationer.
+		// ApplicationResourceBundle användas av mojarra, men kanske inte av
+		// andra jsf implementationer.
 		// Byter man implementation så kanske det här inte fungerar längre.
-		ApplicationResourceBundle appBundle = ApplicationAssociate.getCurrentInstance().getResourceBundles()
-				.get(DBResourceBundle.class.getName());
+		Map<String, ApplicationResourceBundle> appBundles = ApplicationAssociate.getCurrentInstance()
+				.getResourceBundles();
+		ApplicationResourceBundle appBundle = appBundles.get("msgs");
 		Map<Locale, ResourceBundle> resources = getFieldValue(appBundle, "resources");
-		resources.clear();
+		if (resources != null) {
+			resources.clear();
+		}
 	}
-	
+
 	/*
-	   Alternativ som bara använder reflection och ingen import.
-	 
-	   Class<?> applicationAssociateClass = Class.forName("com.sun.faces.application.ApplicationAssociate");
-	   Method getCurrentInstance = applicationAssociateClass.getMethod("getCurrentInstance");
-	   Object applicationAssociate = getCurrentInstance.invoke(null);
-	   Method getResourceBundles = applicationAssociate.getClass().getMethod("getResourceBundles");
-	   Map<String, ?> resourceBundles = (Map<String, ?>)getResourceBundles.invoke(applicationAssociate);
-	   Object appBundle = resourceBundles.get(name);
-	   Map<Locale, ResourceBundle> resources = getFieldValue(appBundle, "resources");
-	   resources.clear();
+	 * Alternativ som bara använder reflection och ingen import.
+	 * 
+	 * Class<?> applicationAssociateClass =
+	 * Class.forName("com.sun.faces.application.ApplicationAssociate"); Method
+	 * getCurrentInstance =
+	 * applicationAssociateClass.getMethod("getCurrentInstance"); Object
+	 * applicationAssociate = getCurrentInstance.invoke(null); Method
+	 * getResourceBundles =
+	 * applicationAssociate.getClass().getMethod("getResourceBundles");
+	 * Map<String, ?> resourceBundles = (Map<String,
+	 * ?>)getResourceBundles.invoke(applicationAssociate); Object appBundle =
+	 * resourceBundles.get(name); Map<Locale, ResourceBundle> resources =
+	 * getFieldValue(appBundle, "resources"); resources.clear();
 	 */
 
 	@SuppressWarnings("unchecked")

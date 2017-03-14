@@ -16,14 +16,21 @@
    <ui:insert name="head" />
 </h:head>
 <h:body>
-<!--     <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/> -->
+	<f:facet name="last">
+		<h:outputStylesheet name="css/screen.css" />
+	</f:facet>
+    <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
 	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
 	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
     </p:dialog>
-    <div id="content">
+    <div class="wrapper">
+    <ui:include src="topbar.xhtml" />
+	<ui:include src="sidebar.xhtml" />
+    <div class="main">
          <ui:insert name="content">
              [Template content will be inserted here]
          </ui:insert>
-    </div>  
+    </div>
+    </div>
 </h:body>
 </html>

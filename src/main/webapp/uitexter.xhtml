@@ -8,51 +8,6 @@
    
     <ui:define name="head">
    		<title>dgfdgfdgfdf</title>
-   		<style>
-   			html,body {
-				padding: 0;
-				margin: 0;
-				font-family: Verdana, sans-serif;
-				font-size: 80%;
-			}
-			
-			h1 {
-				font-size: 4em;
-			}
-			
-			body {
-				background-color: #fff;
-				color: #000;
-			}
-			
-			#wrapper {
-				width: 800px;
-				margin: 20px auto;
-			}
-			
-			#header {
-				padding: 40px 20px;
-				background-color: #000;
-				color: #fff;
-			}
-			
-			#mid {
-				padding: 30px 20px;
-			}
-			
-			#footer {
-				text-align: center;
-				font-size: 0.9em;
-				font-style: italic;
-			}
-			h2 {
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				margin-top: 10px;
-			}
-   		</style>
     </ui:define>
     
     <ui:define name="content">
@@ -64,7 +19,7 @@
             	<h:form id="tableForm">
                 <p:growl id="msg" />
 	            <h:panelGroup rendered="#{not empty textAdmin.textList}">
-		            <p:dataTable id="userTable" var="_text" value="#{textAdmin.textList}" widgetVar="textTableW" >
+		            <p:dataTable id="userTable" var="_text" value="#{textAdmin.textList}" widgetVar="textTableW">
 					    <p:column>
 		                    <f:facet name="header">
 		                        <h:outputText value="Nyckel" />
@@ -88,6 +43,9 @@
 					</p:dataTable>
 			    </h:panelGroup>
 		    </h:form>
+		    <h:panelGroup>
+		    	<h:link value="gå hem" outcome="/index" />
+		    </h:panelGroup>
             </div>
             <div id="footer">
                  <!-- <h:graphicImage height="50" width="50" value="/resources/gfx/083.png" alt="LU logo" />  -->
@@ -97,12 +55,11 @@
                  </p>
             </div>
         </div>
-    </ui:define>
-    
-    <p:dialog
+        
+        <p:dialog
 			header="Ändra uitext"
-			widgetVar="editUitextDialog"
-			resizable="false">
+			resizable="false"
+			widgetVar="editUitextDialog">
 		<h:form>
 			<h:panelGrid columns="2" cellpadding="5">
 				<h:outputText value="Nyckel" />
@@ -112,6 +69,12 @@
 	            <p:inputText id="text" value="#{textAdmin.selectedText.value}" required="true" label="text" />
 	 
 	            <f:facet name="footer">
+	                <p:commandButton id="idTextButtonUpdate" 
+			    		action="#{textAdmin.updateSelectedText()}" 
+			    		value="Uppdatera" 
+			    		update="@widgetVar(textTableW)"
+			    		oncomplete="PF('editUitextDialog').hide();">
+			        </p:commandButton>
 	                <p:commandButton id="idTextButtonUpdateCancel" 
 			    		value="Avbryt" 
 			    		type="button"
@@ -121,4 +84,5 @@
 	        </h:panelGrid>
         </h:form>
 	</p:dialog>
+    </ui:define>
 </ui:composition>
