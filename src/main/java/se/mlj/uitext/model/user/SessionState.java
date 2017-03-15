@@ -1,6 +1,7 @@
 package se.mlj.uitext.model.user;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -15,6 +16,7 @@ public class SessionState implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private boolean showSidebar = true;
+	private String selectedMenuItem;
 
 	public boolean isShowSidebar() {
 		return showSidebar;
@@ -28,4 +30,5 @@ public class SessionState implements Serializable {
 		showSidebar = !showSidebar;
 	}
 
+	
 }

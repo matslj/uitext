@@ -1,35 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:ui="http://java.sun.com/jsf/facelets"
-   xmlns:f="http://java.sun.com/jsf/core"
-   xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:p="http://primefaces.org/ui">
-   
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
 	<div class="sidebar">
-        <div class="nano">
-            <div class="nano-content sidebar-scroll-content">
-                <div class="appTitle">
-                	<h:outputText value="BLUBBER" />
-                </div>
+		<div class="nano">
+			<div class="nano-content sidebar-scroll-content">
+				<div class="appTitle">
+					<h:outputText value="UITEXT" />
+				</div>
 
-                <div class="profile">
-                    <div style="border: 1px solid black; margin: 0 auto; width: 95px; height: 95px; background-color: #ef6262; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;">
-                	<h:graphicImage value="/resources/gfx/lu-logga.svg" width="80" height="80" />
-                	</div>
-                    <a id="profile-button" href="#">
-                        <span class="username">John Doe</span>
-                        <i class="fa fa-fw fa-cog"></i>
-                    </a>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Account</span></a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span class="menu-badge">2</span></a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
-                    </ul>
-                </div>
+				<div class="profile">
+					<div class="logo">
+						<h:graphicImage value="/resources/gfx/logo_gu.png" width="75" height="75" />
+					</div>
+					<a id="profile-button" href="#"> <span class="username">John
+							Doe</span> <i class="fa fa-fw fa-cog"></i>
+					</a>
+					<ul>
+						<li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Account</span></a></li>
+						<li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span
+								class="menu-badge">2</span></a></li>
+						<li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
+					</ul>
+				</div>
 
-                <div class="menu"><ul id="j_idt19" class="menu-container"><li id="om_dashboard" role="menuitem"><a href="/ggg/dashboard.xhtml"><i class="fa fa-home fa-fw"></i><span>Dashboard</span></a></li><li id="om_components" role="menuitem"><a href="#"><i class="fa fa-sitemap fa-fw"></i><span>Components</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_sample" role="menuitem"><a href="/ggg/sample.xhtml"><i class="fa fa-columns fa-fw"></i><span>Sample Page</span></a></li><li id="om_forms" role="menuitem"><a href="/ggg/forms.xhtml"><i class="fa fa-code fa-fw"></i><span>Forms</span></a></li><li id="om_data" role="menuitem"><a href="/ggg/data.xhtml"><i class="fa fa-table fa-fw"></i><span>Data</span></a></li><li id="om_panels" role="menuitem"><a href="/ggg/panel.xhtml"><i class="fa fa-list-alt fa-fw"></i><span>Panels</span></a></li><li id="om_overlays" role="menuitem"><a href="/ggg/overlay.xhtml"><i class="fa fa-square fa-fw"></i><span>Overlays</span></a></li><li id="om_menus" role="menuitem"><a href="/ggg/menu.xhtml"><i class="fa fa-minus-square-o fa-fw"></i><span>Menus</span></a></li><li id="om_messages" role="menuitem"><a href="/ggg/messages.xhtml"><i class="fa fa-circle-o-notch fa-fw"></i><span>Messages</span></a></li><li id="om_charts" role="menuitem"><a href="/ggg/charts.xhtml"><i class="fa fa-area-chart fa-fw"></i><span>Charts</span></a></li><li id="om_file" role="menuitem"><a href="/ggg/file.xhtml"><i class="fa fa-arrow-circle-o-up fa-fw"></i><span>File</span></a></li><li id="om_misc" role="menuitem"><a href="/ggg/misc.xhtml"><i class="fa fa-user-secret fa-fw"></i><span>Misc</span></a></li></ul></li><li id="om_db_landing" role="menuitem"><a href="/ggg/landing.xhtml"><i class="fa fa-certificate fa-fw"></i><span>Landing</span></a></li><li id="om_default" role="menuitem"><a href="#"><i class="fa fa-life-saver fa-fw"></i><span>Template Pages</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_empty" role="menuitem"><a href="/ggg/empty.xhtml"><i class="fa fa-square-o fa-fw"></i><span>Empty Page</span></a></li><li id="om_login" role="menuitem"><a href="/ggg/login.xhtml"><i class="fa fa-sign-in fa-fw"></i><span>Login Page</span></a></li><li id="om_error" role="menuitem"><a href="/ggg/error.xhtml"><i class="fa fa-exclamation-circle fa-fw"></i><span>Error Page</span></a></li><li id="om_404" role="menuitem"><a href="/ggg/404.xhtml"><i class="fa fa-times fa-fw"></i><span>404 Page</span></a></li><li id="om_access" role="menuitem"><a href="/ggg/access.xhtml"><i class="fa fa-exclamation-triangle fa-fw"></i><span>Access Denied Page</span></a></li></ul></li><li id="om_hierarchy" role="menuitem"><a href="#"><i class="fa fa-gg fa-fw"></i><span>Menu Hierarchy</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_sm1" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 1</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_sm11" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 1.1</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_lnk111" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 1.1.1</span></a></li><li id="om_lnk112" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 1.1.2</span></a></li><li id="om_lnk113" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 1.1.3</span></a></li></ul></li><li id="om_sm12" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 1.2</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_lnk121" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 1.2.1</span></a></li></ul></li></ul></li><li id="om_sm2" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 2</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_sm21" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 2.1</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_lnk211" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 2.1.1</span></a></li><li id="om_lnk212" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 2.1.2</span></a></li></ul></li><li id="om_sm22" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Submenu 2.2</span><i class="fa fa-fw fa-angle-down"></i></a><ul role="menu"><li id="om_lnk221" role="menuitem"><a href="#"><i class="fa fa-sign-in fa-fw"></i><span>Link 2.2.1</span></a></li></ul></li></ul></li></ul></li><li id="om_doc" role="menuitem"><a href="/ggg/docs.xhtml"><i class="fa fa-book fa-fw"></i><span>Documentation</span></a></li></ul>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="menu">
+					<ul class="menu-container">
+						<li role="menuitem">
+							<h:link outcome="/index"><i class="fa fa-home fa-fw"></i><span>Översikt</span></h:link>
+						</li>
+						<li id="om_components" role="menuitem"><a href="#"><i
+								class="fa fa-sitemap fa-fw"></i><span>Components</span><i
+								class="fa fa-fw fa-angle-down"></i></a>
+						<ul role="menu">
+								<li id="om_sample" role="menuitem"><a
+									href="/ggg/sample.xhtml"><i class="fa fa-columns fa-fw"></i><span>Sample
+											Page</span></a></li>
+								<li id="om_forms" role="menuitem"><a
+									href="/ggg/forms.xhtml"><i class="fa fa-code fa-fw"></i><span>Forms</span></a></li>
+								<li id="om_data" role="menuitem"><a href="/ggg/data.xhtml"><i
+										class="fa fa-table fa-fw"></i><span>Data</span></a></li>
+								<li id="om_panels" role="menuitem"><a
+									href="/ggg/panel.xhtml"><i class="fa fa-list-alt fa-fw"></i><span>Panels</span></a></li>
+								<li id="om_overlays" role="menuitem"><a
+									href="/ggg/overlay.xhtml"><i class="fa fa-square fa-fw"></i><span>Overlays</span></a></li>
+								<li id="om_menus" role="menuitem"><a href="/ggg/menu.xhtml"><i
+										class="fa fa-minus-square-o fa-fw"></i><span>Menus</span></a></li>
+								<li id="om_messages" role="menuitem"><a
+									href="/ggg/messages.xhtml"><i
+										class="fa fa-circle-o-notch fa-fw"></i><span>Messages</span></a></li>
+								<li id="om_charts" role="menuitem"><a
+									href="/ggg/charts.xhtml"><i class="fa fa-area-chart fa-fw"></i><span>Charts</span></a></li>
+								<li id="om_file" role="menuitem"><a href="/ggg/file.xhtml"><i
+										class="fa fa-arrow-circle-o-up fa-fw"></i><span>File</span></a></li>
+								<li id="om_misc" role="menuitem"><a href="/ggg/misc.xhtml"><i
+										class="fa fa-user-secret fa-fw"></i><span>Misc</span></a></li>
+							</ul></li>
+						<li role="menuitem"><h:link outcome="/uitexter"><i class="fa fa-certificate fa-fw"></i><span>UItexter</span></h:link></li>
+						<li id="om_default" role="menuitem"><a href="#"><i
+								class="fa fa-life-saver fa-fw"></i><span>Template Pages</span><i
+								class="fa fa-fw fa-angle-down"></i></a>
+						<ul role="menu">
+								<li id="om_empty" role="menuitem"><a
+									href="/ggg/empty.xhtml"><i class="fa fa-square-o fa-fw"></i><span>Empty
+											Page</span></a></li>
+								<li id="om_login" role="menuitem"><a
+									href="/ggg/login.xhtml"><i class="fa fa-sign-in fa-fw"></i><span>Login
+											Page</span></a></li>
+								<li id="om_error" role="menuitem"><a
+									href="/ggg/error.xhtml"><i
+										class="fa fa-exclamation-circle fa-fw"></i><span>Error
+											Page</span></a></li>
+								<li id="om_404" role="menuitem"><a href="/ggg/404.xhtml"><i
+										class="fa fa-times fa-fw"></i><span>404 Page</span></a></li>
+								<li id="om_access" role="menuitem"><a
+									href="/ggg/access.xhtml"><i
+										class="fa fa-exclamation-triangle fa-fw"></i><span>Access
+											Denied Page</span></a></li>
+							</ul></li>
+						<li id="om_hierarchy" role="menuitem"><a href="#"><i
+								class="fa fa-gg fa-fw"></i><span>Menu Hierarchy</span><i
+								class="fa fa-fw fa-angle-down"></i></a>
+						<ul role="menu">
+								<li id="om_sm1" role="menuitem"><a href="#"><i
+										class="fa fa-sign-in fa-fw"></i><span>Submenu 1</span><i
+										class="fa fa-fw fa-angle-down"></i></a>
+								<ul role="menu">
+										<li id="om_sm11" role="menuitem"><a href="#"><i
+												class="fa fa-sign-in fa-fw"></i><span>Submenu 1.1</span><i
+												class="fa fa-fw fa-angle-down"></i></a>
+										<ul role="menu">
+												<li id="om_lnk111" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 1.1.1</span></a></li>
+												<li id="om_lnk112" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 1.1.2</span></a></li>
+												<li id="om_lnk113" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 1.1.3</span></a></li>
+											</ul></li>
+										<li id="om_sm12" role="menuitem"><a href="#"><i
+												class="fa fa-sign-in fa-fw"></i><span>Submenu 1.2</span><i
+												class="fa fa-fw fa-angle-down"></i></a>
+										<ul role="menu">
+												<li id="om_lnk121" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 1.2.1</span></a></li>
+											</ul></li>
+									</ul></li>
+								<li id="om_sm2" role="menuitem"><a href="#"><i
+										class="fa fa-sign-in fa-fw"></i><span>Submenu 2</span><i
+										class="fa fa-fw fa-angle-down"></i></a>
+								<ul role="menu">
+										<li id="om_sm21" role="menuitem"><a href="#"><i
+												class="fa fa-sign-in fa-fw"></i><span>Submenu 2.1</span><i
+												class="fa fa-fw fa-angle-down"></i></a>
+										<ul role="menu">
+												<li id="om_lnk211" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 2.1.1</span></a></li>
+												<li id="om_lnk212" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 2.1.2</span></a></li>
+											</ul></li>
+										<li id="om_sm22" role="menuitem"><a href="#"><i
+												class="fa fa-sign-in fa-fw"></i><span>Submenu 2.2</span><i
+												class="fa fa-fw fa-angle-down"></i></a>
+										<ul role="menu">
+												<li id="om_lnk221" role="menuitem"><a href="#"><i
+														class="fa fa-sign-in fa-fw"></i><span>Link 2.2.1</span></a></li>
+											</ul></li>
+									</ul></li>
+							</ul></li>
+						<li id="om_doc" role="menuitem"><a href="/ggg/docs.xhtml"><i
+								class="fa fa-book fa-fw"></i><span>Documentation</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </ui:composition>

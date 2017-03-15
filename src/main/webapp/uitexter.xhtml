@@ -30,7 +30,7 @@
 		                    <f:facet name="header">
 		                        <h:outputText value="Text" />
 		                    </f:facet>
-		                    <p:commandLink style="text-decoration: none;" process="@this" immediate="true" action="#{textAdmin.setSelectedText(_text)}" update="@widgetVar(editUitextDialog)" oncomplete="PF('editUitextDialog').show()">
+		                    <p:commandLink style="color: blue;" process="@this" immediate="true" action="#{textAdmin.setSelectedText(_text)}" update="@widgetVar(editUitextDialog)" oncomplete="PF('editUitextDialog').show()">
 			                    <h:outputText value="#{_text.value}" />
 			                </p:commandLink>
 		                </p:column>
