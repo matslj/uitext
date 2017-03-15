@@ -180,7 +180,7 @@ body {
 	color: #77c7ff;
 }
 
-.wrapper .topbar #menu-button {
+.wrapper .topbar .menu-button {
 	display: inline-block;
 	font-size: 28px;
 	float: left;
@@ -192,7 +192,7 @@ body {
 	transition: color 0.3s;
 }
 
-.wrapper .topbar #menu-button:hover {
+.wrapper .topbar .menu-button:hover {
 	color: #77c7ff;
 }
 
@@ -432,7 +432,23 @@ body {
 	vertical-align: middle;
 }
 
+/* Hidden sidebar */
+.wrapper.sidebar-hide .topbar {
+	left: 0;
+}
+.wrapper.sidebar-hide .main {
+	margin-left: 0;
+}
+.wrapper.sidebar-hide .sidebar {
+	margin-left: -250px;
+	width: 250px;
+}
+.wrapper.sidebar-hide .footer {
+	margin-left: 0;
+}
+
 /* Responsive */
+/*
 @media ( min-width : 1025px) {
 	.wrapper.sidebar-inactive-l .topbar {
 		left: 0;
@@ -447,7 +463,7 @@ body {
 		margin-left: 0;
 	}
 }
-
+*/
 @media ( max-width : 1024px) {
 	.wrapper .topbar {
 		left: 0;
@@ -457,15 +473,16 @@ body {
 	}
 	.wrapper .sidebar {
 		margin-left: -250px;
-		margin-top: 50px;
 		width: 250px;
 	}
 	.wrapper .footer {
 		margin-left: 0;
 	}
+	/*
 	.wrapper.sidebar-active-m .sidebar {
 		margin-left: 0;
 	}
+	*/
 }
 
 @media ( max-width : 640px) {

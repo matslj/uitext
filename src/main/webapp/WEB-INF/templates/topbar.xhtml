@@ -6,10 +6,14 @@
    xmlns:p="http://primefaces.org/ui">
    
 	<div class="topbar clearfix">
-        <a id="menu-button" href="#">
-            <span class="fa fa-bars"></span>
-        </a>
-        
+<!--         <a id="menu-button" href="#"> -->
+<!--             <span class="fa fa-bars"></span> -->
+<!--         </a> -->
+        <h:form id="menu-form">
+			<p:commandLink id="menu-button-id" global="false" onclick="blubber.menu.showHideSidebar(#{sessionState.showSidebar});" update="@this" styleClass="menu-button" action="#{sessionState.toggleSidebar}">
+	        	<span class="fa fa-bars"></span>
+	    	</p:commandLink>
+        </h:form>
         <span class="topbar-title">Dashboard</span>
         
         <a id="options-menu-button" href="#">

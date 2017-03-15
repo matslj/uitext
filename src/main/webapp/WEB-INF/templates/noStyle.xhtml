@@ -8,12 +8,33 @@
    
 <ui:insert name="metadata" />
 <h:head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta charset="utf-8" />
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
    <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
    <link rel="icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
    <h:outputScript library="primefaces" name="jquery/jquery.js" />
    <ui:insert name="head" />
+   <script>
+   		var blubber = blubber || {};
+   		
+   		blubber.menu = (function($) {
+   			var SIDEBAR_HIDE = 'sidebar-hide';
+   			
+   			return {
+   				showHideSidebar : function(currValue) {
+   		   			$wrapper = $('#wrapperId');
+   		   			if (!currValue) {
+   		   				$wrapper.removeClass(SIDEBAR_HIDE);
+   					} else {
+   						$wrapper.addClass(SIDEBAR_HIDE);
+   					}
+   		   		}
+   			};
+   		}(jQuery));
+   </script>
 </h:head>
 <h:body>
 	<f:facet name="last">
@@ -23,7 +44,7 @@
 	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
 	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
     </p:dialog>
-    <div class="wrapper">
+    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper#{sessionState.showSidebar ? '' : ' sidebar-hide'}">
     <ui:include src="topbar.xhtml" />
 	<ui:include src="sidebar.xhtml" />
     <div class="main">
@@ -31,6 +52,6 @@
              [Template content will be inserted here]
          </ui:insert>
     </div>
-    </div>
+    </h:panelGroup>
 </h:body>
 </html>

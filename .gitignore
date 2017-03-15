@@ -4,3 +4,4 @@ target/
 .settings/
 /bin/
 .metadata/
+.tern-project
