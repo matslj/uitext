@@ -34,7 +34,7 @@
 	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
 	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
     </p:dialog>
-    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper#{sessionState.showSidebar ? '' : ' sidebar-hide'}">
+    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper#{sessionState.showSidebar ? ' sidebar-active-m' : ' sidebar-inactive-l'}">
     <ui:include src="topbar.xhtml" />
 	<ui:include src="sidebar.xhtml" />
     <div class="main">

@@ -461,7 +461,7 @@ body {
 }
 
 /* Responsive */
-/*
+
 @media ( min-width : 1025px) {
 	.wrapper.sidebar-inactive-l .topbar {
 		left: 0;
@@ -476,7 +476,7 @@ body {
 		margin-left: 0;
 	}
 }
-*/
+
 @media ( max-width : 1024px) {
 	.wrapper .topbar {
 		left: 0;
@@ -486,16 +486,17 @@ body {
 	}
 	.wrapper .sidebar {
 		margin-left: -250px;
+		margin-top: 50px;
 		width: 250px;
 	}
 	.wrapper .footer {
 		margin-left: 0;
 	}
-	/*
+	
 	.wrapper.sidebar-active-m .sidebar {
 		margin-left: 0;
 	}
-	*/
+
 }
 
 @media ( max-width : 640px) {
