@@ -11,20 +11,29 @@
     </ui:define>
     
     <ui:define name="content">
-        <div id="wrapper">
-            <div id="header">
-                <h1>ccccc</h1>
-            </div>
-            <div id="mid">
-            	HOHO
-            </div>
-            <div id="footer">
-                 <!-- <h:graphicImage height="50" width="50" value="/resources/gfx/083.png" alt="LU logo" />  -->
-                 <hr style="width: 95%; color: #EFEFEF; background-color: #EFEFEF; border-color: #EFEFEF;" />
-                 <p>
-                    Av tfrtfrt, 2015 för <a href="http://www.lu.se/lucat/group/018011060">ytyutyutu</a>
-                 </p>
-            </div>
+        <div class="ui-g">
+			<div class="ui-g-12">
+				<h1>Exempelsida</h1>
+				<p:separator />
+				<p:breadCrumb>
+				    <p:menuitem value="Översikt" url="/index" />
+				    <p:menuitem value="Exempelsida" url="/sample" />
+				</p:breadCrumb>
+			</div>
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic" header="Exempelpanel 1">
+				    </p:panel>
+				</div>
+				<div class="ui-g-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic2" header="Exempelpanel 2">
+					</p:panel>
+				</div>
+				<div class="ui-g-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic3" header="Exempelpanel 3">
+				    </p:panel>
+				</div>
+			</div>
         </div>
     </ui:define>
 </ui:composition>

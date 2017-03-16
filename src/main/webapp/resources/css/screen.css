@@ -10,6 +10,15 @@ body {
 	font-size: 70%;
 }
 
+.main h1:FIRST-CHILD {
+	padding-bottom: 4px;
+	margin: 15px 0 10px;
+	border-bottom: 1px solid #eee;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
 .wrapper {
 	padding: 0;
 }

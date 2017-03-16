@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:cc="http://java.sun.com/jsf/composite" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions" xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <cc:interface>
+        <!-- Nyckeln för hämtning av text från uiTextResolver -->
+        <cc:attribute name="textKey" type="java.lang.String" required="true" />
+        <!-- Position för tooltiprutan. Välj på top, bottom, left, right. Default är top. -->
+        <cc:attribute name="position" type="java.lang.String" default="top"/>
+        <!-- Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra. -->
+        <cc:attribute name="size" type="java.lang.String" default="1em"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div id="#{cc.clientId}" style="display: inline-block; margin: 0 3px; position: relative;">
+    		<span jsf:id="infoIcon" style="vertical-align: top; font-size: #{cc.attrs.size}; color: #246fa8; position: relative; top: -4px; left: 0; cursor: pointer; cursor: hand;"><i class="fa fa-info-circle"/></span>
+    		<p:tooltip id="toolTipFade" for="infoIcon" position="#{cc.attrs.position}">
+<!--     			<h:outputText value="#{uiTextResolver.getValue(cc.attrs.textKey)}" escape="false" /> -->
+    		</p:tooltip>
+        </div>
+    </cc:implementation>
+</html>
