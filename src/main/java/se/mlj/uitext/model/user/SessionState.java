@@ -16,7 +16,6 @@ public class SessionState implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private boolean showSidebar = true;
-	private String selectedMenuItem;
 
 	public boolean isShowSidebar() {
 		return showSidebar;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:cc="http://java.sun.com/jsf/composite" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions" xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <cc:interface>
+        <!-- Destination för klicket. Funkar som h:link outcome. -->
+        <cc:attribute name="outcome" type="java.lang.String" default="#" />
+        <!-- Text på menyposten -->
+        <cc:attribute name="text" type="java.lang.String" required="true" />
+        <!-- fa-ikonen som ska användas framför menytexten -->
+        <cc:attribute name="faicon" type="java.lang.String" default=""/>
+    </cc:interface>
+
+    <cc:implementation>
+    	<li role="menuitem">
+    	    <c:choose>
+    	    	<c:when test="#{cc.attrs.outcome eq '#'}">
+    	    		<a href="#">
+						<i class="#{cc.attrs.faicon}"></i>
+						<span>#{cc.attrs.text}</span>
+						<i class="fa fa-fw fa-angle-down"></i>
+					</a>
+				</c:when>
+				<c:otherwise>
+					<h:link outcome="#{cc.attrs.outcome}">
+						<i class="#{cc.attrs.faicon}"></i>
+						<span>#{cc.attrs.text}</span>
+					</h:link>
+				</c:otherwise>
+			</c:choose>
+			
+			<h:outputText value="&lt;ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#'}" />
+			<cc:insertChildren />
+			<h:outputText value="&lt;/ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#'}" />
+
+		</li>
+    </cc:implementation>
+</html>

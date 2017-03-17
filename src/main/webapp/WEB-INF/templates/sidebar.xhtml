@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="sidebar">
@@ -29,32 +30,17 @@
 
 			<div class="menu">
 				<ul class="menu-container">
-					<li role="menuitem"><h:link outcome="/index">
-							<i class="fa fa-home fa-fw"></i>
-							<span>Översikt</span>
-						</h:link></li>
-					<li role="menuitem"><a href="#"><i
-							class="fa fa-sitemap fa-fw"></i><span>Exempel</span><i
-							class="fa fa-fw fa-angle-down"></i></a>
-						<ul role="menu">
-							<li role="menuitem">
-								<h:link outcome="/sample">
-									<i class="fa fa-columns fa-fw"></i>
-									<span>Exempelsida 1</span>
-								</h:link>
-							</li>
-							<li id="om_login" role="menuitem"><a href="/ggg/login.xhtml"><i
-									class="fa fa-sign-in fa-fw"></i><span>Login Page</span></a></li>
-							<li id="om_error" role="menuitem"><a href="/ggg/error.xhtml"><i
-									class="fa fa-exclamation-circle fa-fw"></i><span>Error
-										Page</span></a></li>
-							<li id="om_404" role="menuitem"><a href="/ggg/404.xhtml"><i
-									class="fa fa-times fa-fw"></i><span>404 Page</span></a></li>
-							<li id="om_access" role="menuitem"><a
-								href="/ggg/access.xhtml"><i
-									class="fa fa-exclamation-triangle fa-fw"></i><span>Access
-										Denied Page</span></a></li>
-						</ul></li>
+					<my:menuitem outcome="/index" faicon="fa fa-home fa-fw" text="Översikt" />
+					<my:menuitem faicon="fa fa-sitemap fa-fw" text="Exempel">
+					    <my:menuitem outcome="/sample" faicon="fa fa-columns fa-fw" text="Exempelsida 1" />
+						<my:menuitem outcome="" faicon="fa fa-exclamation-circle fa-fw" text="Error Page" />
+						<li id="om_404" role="menuitem"><a href="/ggg/404.xhtml"><i
+								class="fa fa-times fa-fw"></i><span>404 Page</span></a></li>
+						<li id="om_access" role="menuitem"><a
+							href="/ggg/access.xhtml"><i
+								class="fa fa-exclamation-triangle fa-fw"></i><span>Access
+									Denied Page</span></a></li>
+					</my:menuitem>
 					<li role="menuitem">
 						<h:link outcome="/uitexter">
 							<i class="fa fa-certificate fa-fw"></i>
