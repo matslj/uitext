@@ -1,4 +1,4 @@
-package se.mlj.uitext.text.entity;
+package se.mlj.uitext.business.text.entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,8 +9,8 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import se.mlj.uitext.text.boundary.ResourceBundleServiceLocal;
-import se.mlj.uitext.text.entity.UIText;
+import se.mlj.uitext.business.text.boundary.ResourceBundleServiceLocal;
+import se.mlj.uitext.business.text.entity.UIText;
 
 @ViewScoped
 @Named("textAdmin")

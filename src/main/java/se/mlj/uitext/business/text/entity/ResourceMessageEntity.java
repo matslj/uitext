@@ -1,4 +1,4 @@
-package se.mlj.uitext.text.entity;
+package se.mlj.uitext.business.text.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

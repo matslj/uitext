@@ -1,4 +1,4 @@
-package se.mlj.uitext.text.control;
+package se.mlj.uitext.business.text.control;
 
 import java.util.Locale;
 

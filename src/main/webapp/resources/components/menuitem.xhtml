@@ -6,34 +6,32 @@
     <cc:interface>
         <!-- Destination för klicket. Funkar som h:link outcome. -->
         <cc:attribute name="outcome" type="java.lang.String" default="#" />
+        <cc:attribute name="submenu" type="java.lang.Boolean" default="false" />
         <!-- Text på menyposten -->
-        <cc:attribute name="text" type="java.lang.String" required="true" />
+        <cc:attribute name="text" type="java.lang.String" />
         <!-- fa-ikonen som ska användas framför menytexten -->
-        <cc:attribute name="faicon" type="java.lang.String" default=""/>
+        <cc:attribute name="icon" type="java.lang.String" default=""/>
     </cc:interface>
 
     <cc:implementation>
-    	<li role="menuitem">
-    	    <c:choose>
-    	    	<c:when test="#{cc.attrs.outcome eq '#'}">
-    	    		<a href="#">
-						<i class="#{cc.attrs.faicon}"></i>
-						<span>#{cc.attrs.text}</span>
-						<i class="fa fa-fw fa-angle-down"></i>
-					</a>
-				</c:when>
-				<c:otherwise>
-					<h:link outcome="#{cc.attrs.outcome}">
-						<i class="#{cc.attrs.faicon}"></i>
-						<span>#{cc.attrs.text}</span>
-					</h:link>
-				</c:otherwise>
-			</c:choose>
-			
-			<h:outputText value="&lt;ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#'}" />
-			<cc:insertChildren />
-			<h:outputText value="&lt;/ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#'}" />
-
-		</li>
+    	<h:outputText value="&lt;ul class=&quot;menu-container&quot;&gt;" escape="false" rendered="#{empty cc.attrs.text}" />
+    	<h:outputText value="&lt;li role=&quot;menuitem&quot;&gt;" escape="false" rendered="#{not empty cc.attrs.text}" />
+		<ui:fragment rendered="#{cc.attrs.submenu and not empty cc.attrs.text}">
+			<a href="#"><i class="#{cc.attrs.icon}"></i><span>#{cc.attrs.text}</span><i class="fa fa-fw fa-angle-down"></i></a>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{not cc.attrs.submenu and cc.attrs.outcome eq '#' and not empty cc.attrs.text}">
+			<a href="#"><i class="#{cc.attrs.icon}"></i><span>#{cc.attrs.text}</span></a>
+		</ui:fragment>
+		
+		<h:link outcome="#{cc.attrs.outcome}" rendered="#{cc.attrs.outcome ne '#' and not empty cc.attrs.text}">
+			<i class="#{cc.attrs.icon}"></i><span>#{cc.attrs.text}</span>
+		</h:link>
+		
+		<h:outputText value="&lt;ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#' and not empty cc.attrs.text}" />
+		<cc:insertChildren />
+		<h:outputText value="&lt;/ul&gt;" escape="false" rendered="#{cc.attrs.outcome eq '#' and not empty cc.attrs.text}" />
+		<h:outputText value="&lt;/li role=&quot;menuitem&quot;&gt;" escape="false" rendered="#{not empty cc.attrs.text}" />
+		<h:outputText value="&lt;/ul&gt;" escape="false" rendered="#{empty cc.attrs.text}" />
     </cc:implementation>
 </html>

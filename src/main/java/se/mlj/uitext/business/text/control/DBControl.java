@@ -1,4 +1,4 @@
-package se.mlj.uitext.text.control;
+package se.mlj.uitext.business.text.control;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,8 +14,8 @@ import javax.naming.NamingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import se.mlj.uitext.text.boundary.ResourceBundleServiceLocal;
-import se.mlj.uitext.text.entity.UIText;
+import se.mlj.uitext.business.text.boundary.ResourceBundleServiceLocal;
+import se.mlj.uitext.business.text.entity.UIText;
 
 public class DBControl extends Control {
 	private Logger logger = LoggerFactory.getLogger(DBControl.class);

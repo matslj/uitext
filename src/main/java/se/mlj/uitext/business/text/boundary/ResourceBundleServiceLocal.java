@@ -1,11 +1,11 @@
-package se.mlj.uitext.text.boundary;
+package se.mlj.uitext.business.text.boundary;
 
 import java.util.List;
 import java.util.Locale;
 
 import javax.ejb.Local;
 
-import se.mlj.uitext.text.entity.UIText;
+import se.mlj.uitext.business.text.entity.UIText;
 
 
 /**
