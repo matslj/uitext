@@ -12,7 +12,7 @@ public class AbstractEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected Long id;
+	protected Long id = null;
 	
 	@Version
 	@Column(nullable = false)

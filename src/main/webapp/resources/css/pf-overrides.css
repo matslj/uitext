@@ -1,3 +1,21 @@
 .ui-breadcrumb {
 	margin: 15px 0;
 }
+
+.ui-panel .ui-panel-content {
+	padding: 1em;
+}
+
+.ui-panel .ui-panel-footer {
+	margin: 0;
+}
+
+.ui-panel-footer.ui-widget-content .ui-button {
+	float: right;
+}
+
+.ui-panel-footer.ui-widget-content:after {
+    content:'';
+    display:block;
+    clear: both;
+}

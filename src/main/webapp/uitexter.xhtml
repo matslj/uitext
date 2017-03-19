@@ -7,7 +7,7 @@
 	template="/WEB-INF/templates/noStyle.xhtml">
 
 	<ui:define name="head">
-		<title>dgfdgfdgfdf</title>
+		<title>UI-texter</title>
 	</ui:define>
 
 	<ui:define name="content">
@@ -22,8 +22,8 @@
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-xl-4">
-					<p:panel id="basic" header="Information om texter">
-						<h:form id="tableForm">
+					<h:form id="tableForm">
+						<p:panel id="basic" header="Information om texter">
 							<h:panelGroup rendered="#{not empty textAdmin.textList}">
 								<p:dataTable id="userTable" var="_text"
 									value="#{textAdmin.textList}" widgetVar="textTableW">
@@ -52,26 +52,42 @@
 									</p:column>
 								</p:dataTable>
 							</h:panelGroup>
-						</h:form>
-					</p:panel>
+						
+							<f:facet name="footer">
+								<p:commandButton process="@this"
+									immediate="true" action="#{textAdmin.setSelectedText(null)}"
+									update="@widgetVar(editUitextDialog)"
+									oncomplete="PF('editUitextDialog').show()"
+									value="Ny text">
+								</p:commandButton>
+							</f:facet>
+						</p:panel>
+					</h:form>
 				</div>
 			</div>
 		</div>
 
-		<p:dialog header="Ändra uitext" resizable="false"
+		<p:dialog header="#{textAdmin.selectedText.id ne null ? 'Ändra' : 'Skapa'} uitext" resizable="false"
 			widgetVar="editUitextDialog">
 			<h:form>
 				<h:panelGrid columns="2" cellpadding="5">
-					<h:outputText value="Nyckel" />
-					<h:outputText value="#{textAdmin.selectedText.key}" />
+					<h:outputLabel for="key" value="Nyckel:" />
+					<h:outputText value="#{textAdmin.selectedText.key}" rendered="#{textAdmin.selectedText.id ne null}" />
+					<p:inputText id="key" value="#{textAdmin.selectedText.key}" rendered="#{textAdmin.selectedText.id eq null}"
+						required="true" label="key" />
 
 					<h:outputLabel for="text" value="Text:" />
 					<p:inputText id="text" value="#{textAdmin.selectedText.value}"
 						required="true" label="text" />
 
 					<f:facet name="footer">
-						<p:commandButton id="idTextButtonUpdate"
+						<p:commandButton id="idTextButtonUpdate" rendered="#{textAdmin.selectedText.id ne null}"
 							action="#{textAdmin.updateSelectedText()}" value="Uppdatera"
+							update="@widgetVar(textTableW)"
+							oncomplete="PF('editUitextDialog').hide();">
+						</p:commandButton>
+						<p:commandButton id="idTextButtonCreate" rendered="#{textAdmin.selectedText.id eq null}"
+							action="#{textAdmin.updateSelectedText()}" value="Skapa"
 							update="@widgetVar(textTableW)"
 							oncomplete="PF('editUitextDialog').hide();">
 						</p:commandButton>

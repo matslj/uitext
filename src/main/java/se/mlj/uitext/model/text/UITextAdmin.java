@@ -38,7 +38,12 @@ public class UITextAdmin implements Serializable {
 	}
 
 	public void setSelectedText(UIText selectedText) {
-		this.selectedText = selectedText;
+		if (selectedText == null) {
+			this.selectedText = new UIText();
+			this.selectedText.setLocale("sv");
+		} else {
+			this.selectedText = selectedText;
+		}
 	}
 	
 	public void updateSelectedText() {
