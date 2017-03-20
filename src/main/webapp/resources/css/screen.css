@@ -19,6 +19,10 @@ body {
 	line-height: 1.1;
 }
 
+#topbar-icons>div {
+	display: inline-block;
+}
+
 .wrapper {
 	padding: 0;
 }
@@ -267,9 +271,9 @@ body {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
-	-webkit-box-shadow: 5px 5px 5px 0px rgba(28,27,28,1);
-	-moz-box-shadow: 5px 5px 5px 0px rgba(28,27,28,1);
-	box-shadow: 5px 5px 5px 0px rgba(28,27,28,1);
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
+	-moz-box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
+	box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
 }
 
 .wrapper .sidebar .profile img {
@@ -458,19 +462,21 @@ body {
 .wrapper.sidebar-hide .topbar {
 	left: 0;
 }
+
 .wrapper.sidebar-hide .main {
 	margin-left: 0;
 }
+
 .wrapper.sidebar-hide .sidebar {
 	margin-left: -250px;
 	width: 250px;
 }
+
 .wrapper.sidebar-hide .footer {
 	margin-left: 0;
 }
 
 /* Responsive */
-
 @media ( min-width : 1025px) {
 	.wrapper.sidebar-inactive-l .topbar {
 		left: 0;
@@ -483,6 +489,49 @@ body {
 	}
 	.wrapper.sidebar-inactive-l .footer {
 		margin-left: 0;
+	}
+	
+	.wrapper .topbar #topbar-icons>div>ul {
+		position: absolute;
+		top: 50px;
+		right: 5px;
+		display: block;
+		width: 250px;
+		background-color: #ffffff;
+		-webkit-animation-duration: .5s;
+		-moz-animation-duration: .5s;
+		animation-duration: .5s;
+		list-style-type: none;
+		margin: 0;
+		padding: 8px 0;
+		-webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+		-moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+	}
+	.wrapper .topbar #topbar-icons>div>ul a {
+		padding: 8px 16px;
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		color: #5f666c;
+	}
+	.wrapper .topbar #topbar-icons>div>ul a .fa {
+		margin-right: 8px;
+	}
+	.wrapper .topbar #topbar-icons>div>ul a:hover {
+		background-color: #f0f3f5;
+		-moz-transition: background-color 0.3s;
+		-o-transition: background-color 0.3s;
+		-webkit-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+	}
+	.wrapper .topbar #topbar-icons>div>ul li.active-top-menu>ul {
+		display: block;
+	}
+	.layout-wrapper .topbar-items>li .topbar-message img {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 8px;
 	}
 }
 
@@ -501,11 +550,10 @@ body {
 	.wrapper .footer {
 		margin-left: 0;
 	}
-	
 	.wrapper.sidebar-active-m .sidebar {
 		margin-left: 0;
 	}
-
+	
 }
 
 @media ( max-width : 640px) {

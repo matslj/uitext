@@ -1,9 +1,9 @@
 package se.mlj.uitext.model.text;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.enterprise.event.Event;
 import javax.faces.context.FacesContext;
@@ -18,8 +18,6 @@ import se.mlj.uitext.business.text.entity.UIText;
 @ViewScoped
 @Named("textAdmin")
 public class UITextAdmin implements Serializable {
-	
-	private static final String[] allowedLocales = {"sv", "en"};
 	
 	/**
 	 * 
@@ -63,14 +61,14 @@ public class UITextAdmin implements Serializable {
 		reloadEvent.fire(new DBResourceBundleReloadEvent(FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage()));
 	}
 	
-	public void countryLocaleCodeChanged(ValueChangeEvent e) {
+	public void localeChanged(ValueChangeEvent e) {
         String newLocaleValue = e.getNewValue().toString();
-        //loop country map to compare the locale code
-        for (Map.Entry<String, Object> entry : countries.entrySet()) {
-            if (entry.getValue().toString().equals(newLocaleValue)) {
-                FacesContext.getCurrentInstance()
-                        .getViewRoot().setLocale((Locale) entry.getValue());
-            }
+        Iterator<Locale> i = FacesContext.getCurrentInstance().getApplication().getSupportedLocales();
+        while (i.hasNext()) {
+        	Locale l = (Locale) i.next();
+        	if (l.getLanguage().equals(newLocaleValue)) {
+        		FacesContext.getCurrentInstance().getViewRoot().setLocale(l);
+        	}
         }
     }
 	

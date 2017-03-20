@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:ui="http://java.sun.com/jsf/facelets"
-   xmlns:f="http://java.sun.com/jsf/core"
-   xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:p="http://primefaces.org/ui">
-   
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
 	<div class="topbar clearfix">
-<!--         <a id="menu-button" href="#"> -->
-<!--             <span class="fa fa-bars"></span> -->
-<!--         </a> -->
-        <h:form id="menu-form">
-			<p:commandLink id="menu-button-id" global="false" onclick="uitext.menu.showHideSidebar(#{sessionState.showSidebar});" update="@this" styleClass="menu-button" action="#{sessionState.toggleSidebar}">
-	        	<span class="fa fa-bars"></span>
-	    	</p:commandLink>
-        </h:form>
-        <span class="topbar-title">UI-Text</span>
-        
-        <a id="options-menu-button" href="#">
-            <span class="fa fa-ellipsis-h"></span>
-        </a>
-        
-        <div id="topbar-icons" class="animated">
-            <a href="#">
-                <span class="topbar-item-text">Messages</span>
-                <span class="topbar-icon fa fa-envelope-o animated swing"></span>
-                <span class="topbar-badge animated rubberBand">5</span>
-            </a>
-            <a href="#">
-                <span class="topbar-item-text">Settings</span>
-                <span class="topbar-icon fa fa-gear"></span>
-            </a>
-            <a href="#">
-                <span class="topbar-item-text">User</span>
-                <span class="topbar-icon fa fa-user"></span>
-            </a>
-        </div>
-        
-    </div>
+		<!--         <a id="menu-button" href="#"> -->
+		<!--             <span class="fa fa-bars"></span> -->
+		<!--         </a> -->
+		<h:form id="menu-form">
+			<p:commandLink id="menu-button-id" global="false"
+				onclick="uitext.menu.showHideSidebar(#{sessionState.showSidebar});"
+				update="@this" styleClass="menu-button"
+				action="#{sessionState.toggleSidebar}">
+				<span class="fa fa-bars"></span>
+			</p:commandLink>
+		</h:form>
+		<span class="topbar-title">UI-Text</span> <a id="options-menu-button"
+			href="#"> <span class="fa fa-ellipsis-h"></span>
+		</a>
+
+		<div id="topbar-icons" class="animated">
+			<div>
+				<a href="#"> <span class="topbar-item-text">Messages</span> <span
+					class="topbar-icon fa fa-envelope-o animated swing"></span> <span
+					class="topbar-badge animated rubberBand">5</span>
+				</a>
+			</div>
+			<div>
+				<a href="#"> <span class="topbar-item-text">Settings</span> <span
+					class="topbar-icon fa fa-gear"></span>
+				</a>
+				<ul class="animated fadeInDown">
+					<li role="menuitem"><a href="#"> <i
+							class="fa fa-fw fa-lock"></i> <span>Lock Screen</span>
+					</a></li>
+					<li role="menuitem"><a href="#"> <i
+							class="fa fa-fw fa-picture-o"></i> <span>Wallpaper</span>
+					</a></li>
+				</ul>
+			</div>
+			<div>
+				<a href="#"> <span class="topbar-item-text">User</span> <span
+					class="topbar-icon fa fa-user"></span>
+				</a>
+			</div>
+		</div>
+
+	</div>
 </ui:composition>

@@ -19,3 +19,11 @@
     display:block;
     clear: both;
 }
+
+/* topbar */
+
+.topbar .ui-inputswitch.ui-widget {
+	position: relative;
+	top: 5px;
+}
+
