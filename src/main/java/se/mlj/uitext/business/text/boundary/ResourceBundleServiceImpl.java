@@ -14,41 +14,54 @@ import se.mlj.uitext.business.text.entity.UIText;
 
 @Stateless
 public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
-	
+
 	@Inject
-    EntityManager em;
+	EntityManager em;
 
-    @Inject
-    Logger logger;
+	@Inject
+	Logger logger;
 
-    public List<UIText> getAllTexts(Locale locale) {
-        try {
-            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL_BY_LOCALE, UIText.class).setParameter("locale", locale.getLanguage()).
-            		getResultList();
-        } catch (NoResultException nre) {
-            return null;
-        }
-    }
-    
-    public List<UIText> getAllTexts() {
-        try {
-            return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).getResultList();
-        } catch (NoResultException nre) {
-            return null;
-        }
-    }
+	public List<UIText> getAllTexts(Locale locale) {
+		try {
+			return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL_BY_LOCALE, UIText.class)
+					.setParameter("locale", locale.getLanguage()).getResultList();
+		} catch (NoResultException nre) {
+			return null;
+		}
+	}
 
-    public UIText findById(Long id) {
-        return em.find(UIText.class, id);
-    }
+	public List<UIText> getAllTexts() {
+		try {
+			return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).getResultList();
+		} catch (NoResultException nre) {
+			return null;
+		}
+	}
 
-    public UIText createUpdateText(UIText text) {
-        return em.merge(text);
-    }
+	public UIText findById(Long id) {
+		return em.find(UIText.class, id);
+	}
 
-    public void deleteUser(UIText text) {
-        text = findById(text.getId());
-        em.remove(text);
-    }
+	public UIText createUpdateText(UIText text) {
+		if (text.getId() != null) {
+			return em.merge(text);
+		} else {
+			UIText temp = null;
+			try {
+				temp = em.createNamedQuery(UIText.QUERYNAME_FIND_BY_KEY_AND_LOCALE, UIText.class)
+						.setParameter("key", text.getKey()).setParameter("locale", text.getLocale()).getSingleResult();
+				temp.setValue(text.getValue());
+			} catch (NoResultException ne) {
+				// Finns inte sedan tidigare => skapa ny
+				return em.merge(text);
+			}
+			return temp;
+		}
+	}
+
+	public void deleteUser(UIText text) {
+		text = findById(text.getId());
+		em.remove(text);
+	}
 
 }
