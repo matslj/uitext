@@ -16,12 +16,14 @@
    <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
    <link rel="icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
    <h:outputScript library="primefaces" name="jquery/jquery.js" />
-   <h:outputScript library="js" name="uitext.js" />
+   <h:outputScript library="js" name="uitext-sidebar.js" />
+   <h:outputScript library="js" name="uitext-topbar.js" />
    <ui:insert name="head" />
    <script>
    		(function($) {
    			$(document).ready(function() {
-   	   			uitext.menu.init();
+   	   			uitext.sidebar.init();
+   	   			uitext.topbar.init();
    			});
    	    })(jQuery);
    </script>

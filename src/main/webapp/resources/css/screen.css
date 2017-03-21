@@ -37,7 +37,7 @@ body {
 	left: 250px;
 	height: 50px;
 	background-color: #2b5c83;
-	padding: .7em 1.5em 0em 1.5em;
+	padding: 10px 20px 0 20px; /* .7em 1.5em 0em 1.5em; */
 	box-sizing: border-box;
 	color: #ffffff;
 	z-index: 101;
@@ -58,7 +58,7 @@ body {
 	animation-duration: .5s;
 }
 
-.wrapper .topbar #topbar-icons a {
+.wrapper .topbar #topbar-icons>div>a {
 	position: relative;
 	color: #ffffff;
 	margin-left: 20px;
@@ -491,48 +491,6 @@ body {
 		margin-left: 0;
 	}
 	
-	.wrapper .topbar #topbar-icons>div>ul {
-		position: absolute;
-		top: 50px;
-		right: 5px;
-		display: block;
-		width: 250px;
-		background-color: #ffffff;
-		-webkit-animation-duration: .5s;
-		-moz-animation-duration: .5s;
-		animation-duration: .5s;
-		list-style-type: none;
-		margin: 0;
-		padding: 8px 0;
-		-webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
-		-moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
-		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
-	}
-	.wrapper .topbar #topbar-icons>div>ul a {
-		padding: 8px 16px;
-		display: block;
-		width: 100%;
-		box-sizing: border-box;
-		color: #5f666c;
-	}
-	.wrapper .topbar #topbar-icons>div>ul a .fa {
-		margin-right: 8px;
-	}
-	.wrapper .topbar #topbar-icons>div>ul a:hover {
-		background-color: #f0f3f5;
-		-moz-transition: background-color 0.3s;
-		-o-transition: background-color 0.3s;
-		-webkit-transition: background-color 0.3s;
-		transition: background-color 0.3s;
-	}
-	.wrapper .topbar #topbar-icons>div>ul li.active-top-menu>ul {
-		display: block;
-	}
-	.layout-wrapper .topbar-items>li .topbar-message img {
-		display: inline-block;
-		vertical-align: middle;
-		margin-right: 8px;
-	}
 }
 
 @media ( max-width : 1024px) {
@@ -553,7 +511,56 @@ body {
 	.wrapper.sidebar-active-m .sidebar {
 		margin-left: 0;
 	}
+}
+
+@media (min-width : 641px) {
+	.wrapper .topbar #topbar-icons>div {
+		position: relative;
+	}
 	
+	.wrapper .topbar #topbar-icons>div>ul {
+		position: absolute;
+		top: 40px;
+		right: 0;
+		display: none;
+		width: 250px;
+		background-color: #ffffff;
+		-webkit-animation-duration: .5s;
+		-moz-animation-duration: .5s;
+		animation-duration: .5s;
+		list-style-type: none;
+		margin: 0;
+		padding: 8px 0;
+		-webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+		-moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+	}
+	.wrapper .topbar #topbar-icons>div>ul a {
+		text-decoration: none;
+		padding: 8px 16px;
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		color: #5f666c;
+	}
+	.wrapper .topbar #topbar-icons>div>ul a .fa {
+		margin-right: 8px;
+	}
+	.wrapper .topbar #topbar-icons>div>ul a:hover {
+		background-color: #f0f3f5;
+		-moz-transition: background-color 0.3s;
+		-o-transition: background-color 0.3s;
+		-webkit-transition: background-color 0.3s;
+		transition: background-color 0.3s;
+	}
+	.wrapper .topbar #topbar-icons>div.active>ul {
+		display: block;
+	}
+	.layout-wrapper .topbar-items>li .topbar-message img {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 8px;
+	}
 }
 
 @media ( max-width : 640px) {
@@ -635,5 +642,9 @@ body {
 		top: 9px;
 		right: 10px;
 		color: #cccccc;
+	}
+	
+	.wrapper .topbar #topbar-icons>div.active>ul {
+		display: none;
 	}
 }
