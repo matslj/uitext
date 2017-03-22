@@ -34,12 +34,11 @@ public class UIText {
 	public static final String QUERY_FIND_BY_KEY_AND_LOCALE = "SELECT u from UIText u WHERE u.key=:key AND u.locale=:locale";
 
 	@Id
-	private String key;
+	String key;
+	@Id
+	String locale;
 
 	private String value;
-	
-	@Id
-	private String locale;
 	
 	@Version
 	@Column(nullable = false)

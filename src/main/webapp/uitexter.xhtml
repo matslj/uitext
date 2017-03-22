@@ -24,19 +24,19 @@
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-xl-6">
 					<h:form id="tableForm">
-						<p:panel id="basic" header="Information om texter">
+						<p:panel id="basic" header="#{msgs['page.uitexter.panel.textlist.header']}">
 							<h:panelGroup rendered="#{not empty textAdmin.textList}">
 								<p:dataTable id="userTable" var="_text"
 									value="#{textAdmin.textList}" widgetVar="textTableW">
 									<p:column>
 										<f:facet name="header">
-											<h:outputText value="Nyckel" />
+											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.key']}" />
 										</f:facet>
 										<h:outputText value="#{_text.key}" />
 									</p:column>
 									<p:column>
 										<f:facet name="header">
-											<h:outputText value="Text" />
+											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.value']}" />
 										</f:facet>
 										<p:commandLink style="color: blue;" process="@this"
 											immediate="true" action="#{textAdmin.setSelectedText(_text)}"
@@ -47,7 +47,7 @@
 									</p:column>
 									<p:column>
 										<f:facet name="header">
-											<h:outputText value="Landsbeteckning" />
+											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.locale']}" />
 										</f:facet>
 										<h:outputText value="#{_text.locale}" />
 									</p:column>

@@ -3,6 +3,7 @@ package se.mlj.uitext.model.user;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 @SessionScoped
@@ -37,8 +38,10 @@ public class SessionState implements Serializable {
 		this.textEditMode = textEditMode;
 	}
 	
-	public void toggleEditMode() {
+	public String toggleEditMode() {
 		this.textEditMode = !this.textEditMode;
+		String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+		return viewId + "?faces-redirect=true";
 	}
 
 }

@@ -26,7 +26,7 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 	EntityManager em;
 
 	@Inject
-	Logger logger;
+	Logger log;
 
 	@Override
 	public List<UIText> getAllTexts(Locale locale) {
@@ -57,7 +57,12 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 
 	@Override
 	public UIText createUpdateText(UIText text) {
-		// UIText t = findById(text.getKey(), text.getLocale());
+		log.info(text.toString());
+		UIText t = findById(text.getKey(), text.getLocale());
+		if (t != null) {
+			t.setValue(text.getValue());
+			return em.merge(t);
+		}
 		return em.merge(text);
 	}
 	
