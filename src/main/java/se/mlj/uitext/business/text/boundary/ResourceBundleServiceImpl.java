@@ -11,7 +11,14 @@ import javax.persistence.NoResultException;
 import org.slf4j.Logger;
 
 import se.mlj.uitext.business.text.entity.UIText;
+import se.mlj.uitext.business.text.entity.UITextId;
 
+/**
+ * För information se {@link ResourceBundleServiceLocal}.
+ * 
+ * @author ldc-msl
+ *
+ */
 @Stateless
 public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 
@@ -21,6 +28,7 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 	@Inject
 	Logger logger;
 
+	@Override
 	public List<UIText> getAllTexts(Locale locale) {
 		try {
 			return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL_BY_LOCALE, UIText.class)
@@ -30,6 +38,7 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 		}
 	}
 
+	@Override
 	public List<UIText> getAllTexts() {
 		try {
 			return em.createNamedQuery(UIText.QUERYNAME_FIND_ALL, UIText.class).getResultList();
@@ -38,29 +47,40 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 		}
 	}
 
-	public UIText findById(Long id) {
-		return em.find(UIText.class, id);
+	/**
+	 * 
+	 */
+	public UIText findById(String key, String locale) {
+		UITextId compKey = new UITextId(key, locale);
+		return em.find(UIText.class, compKey);
 	}
 
+	@Override
 	public UIText createUpdateText(UIText text) {
-		if (text.getId() != null) {
-			return em.merge(text);
-		} else {
-			UIText temp = null;
-			try {
-				temp = em.createNamedQuery(UIText.QUERYNAME_FIND_BY_KEY_AND_LOCALE, UIText.class)
-						.setParameter("key", text.getKey()).setParameter("locale", text.getLocale()).getSingleResult();
-				temp.setValue(text.getValue());
-			} catch (NoResultException ne) {
-				// Finns inte sedan tidigare => skapa ny
-				return em.merge(text);
-			}
-			return temp;
-		}
+		// UIText t = findById(text.getKey(), text.getLocale());
+		return em.merge(text);
 	}
+	
+//	public UIText createUpdateText(UIText text) {
+//		if (text.getId() != null) {
+//			return em.merge(text);
+//		} else {
+//			UIText temp = null;
+//			try {
+//				temp = em.createNamedQuery(UIText.QUERYNAME_FIND_BY_KEY_AND_LOCALE, UIText.class)
+//						.setParameter("key", text.getKey()).setParameter("locale", text.getLocale()).getSingleResult();
+//				temp.setValue(text.getValue());
+//			} catch (NoResultException ne) {
+//				// Finns inte sedan tidigare => skapa ny
+//				return em.merge(text);
+//			}
+//			return temp;
+//		}
+//	}
 
-	public void deleteUser(UIText text) {
-		text = findById(text.getId());
+	@Override
+	public void deleteText(UIText text) {
+		text = findById(text.getKey(), text.getLocale());
 		em.remove(text);
 	}
 

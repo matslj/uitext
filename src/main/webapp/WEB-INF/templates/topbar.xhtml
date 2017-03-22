@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="topbar clearfix">
@@ -17,7 +18,9 @@
 <!-- 				<span class="fa fa-bars"></span> -->
 <!-- 			</p:commandLink> -->
 		
-			<span class="topbar-title">UI-Text</span> <a id="options-menu-button"
+			<span class="topbar-title"><h:outputText value="#{msgs['topbar.title']}"/></span>
+			
+			<a id="options-menu-button"
 				href="#"> <span class="fa fa-ellipsis-h"></span>
 			</a>
 	
@@ -67,29 +70,36 @@
 					</h:outputLink>
 					<ul class="animated fadeInDown">
 						<li role="menuitem">
-							
 							<p:commandLink global="false"
 								ajax="false"
 								process="@this"
 								immediate="true"
 								action="#{sessionState.toggleEditMode()}">
 								<ui:fragment rendered="#{sessionState.textEditMode}">
-									<i class="fa fa-fw fa-lock"></i> <span>Lås textändring</span>
+									<i class="fa fa-fw fa-lock"></i> <span><h:outputText value="#{msgs['topbar.settings.textedit.close']}"/></span>
 								</ui:fragment>
 								<ui:fragment  rendered="#{not sessionState.textEditMode}">
-									<i class="fa fa-fw fa-unlock"></i> <span>Öppna textändring</span>
+									<i class="fa fa-fw fa-unlock"></i> <span><h:outputText value="#{msgs['topbar.settings.textedit.open']}"/></span>
 								</ui:fragment>
 							</p:commandLink>
 						</li>
 						<li role="menuitem"><a href="#"> <i
-								class="fa fa-fw fa-picture-o"></i> <span>Wallpaper</span>
+								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.settings.highcontrast']}"/></span>
 						</a></li>
 					</ul>
 				</div>
 				<div>
-					<a href="#"> <span class="topbar-item-text">User</span> <span
-						class="topbar-icon fa fa-user"></span>
-					</a>
+					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text">Language</span> <span
+						class="topbar-icon fa fa-language"></span>
+					</h:outputLink>
+					<ul class="animated fadeInDown">
+						<li role="menuitem"><a href="#"> <i
+								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.language.swedish']}"/></span>
+						</a></li>
+						<li role="menuitem"><a href="#"> <i
+								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.language.english']}"/></span>
+						</a></li>
+					</ul>
 				</div>
 			</div>
 		</h:form>

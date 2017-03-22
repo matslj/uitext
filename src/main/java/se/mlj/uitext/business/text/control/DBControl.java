@@ -21,7 +21,7 @@ public class DBControl extends Control {
 	private Logger logger = LoggerFactory.getLogger(DBControl.class);
 
 	/**
-	 * With this control, only one format is acceptable: the db format.
+	 * Endast vårt påhittade 'db' format stöds.
 	 */
 	@Override
 	public List<String> getFormats(String baseName) {

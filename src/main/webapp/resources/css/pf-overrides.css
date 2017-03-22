@@ -1,6 +1,10 @@
+/* Breadcrumbs */
+
 .ui-breadcrumb {
 	margin: 15px 0;
 }
+
+/* Panels */
 
 .ui-panel .ui-panel-content {
 	padding: 1em;
@@ -12,6 +16,13 @@
 
 .ui-panel-footer.ui-widget-content .ui-button {
 	float: right;
+}
+
+.ui-panel-footer.ui-widget-content>a {
+	float: right;
+	display: inline-block;
+	color: #025DA6;
+	text-decoration: none;
 }
 
 .ui-panel-footer.ui-widget-content:after {

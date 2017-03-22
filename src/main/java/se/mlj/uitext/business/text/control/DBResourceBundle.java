@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 public class DBResourceBundle extends ResourceBundle {
 
-	protected static final String BUNDLE_NAME = DBResourceBundle.class.getName();
+	public static final String BUNDLE_NAME = DBResourceBundle.class.getName();
 
 	public DBResourceBundle() {
 		this(Locale.getDefault());

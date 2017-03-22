@@ -4,12 +4,13 @@
     xmlns:cc="http://java.sun.com/jsf/composite" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions" xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <cc:interface>
-        <!-- Nyckeln för hämtning av text från resource bundle -->
+        <!-- Nyckel för hämtning av text från resource bundle -->
         <cc:attribute name="textKey" type="java.lang.String" required="true" />
+        <cc:attribute name="styleClass" type="java.lang.String"/>
     </cc:interface>
 
     <cc:implementation>
-    	<span id="#{cc.clientId}">
+    	<span id="#{cc.clientId}" class="#{cc.attrs.styleClass}">
 			<!-- Ändringsbart läge -->
 	    	<p:commandLink rendered="#{sessionState.textEditMode}"
 	    	    style="color: blue;" process="@this"
@@ -17,7 +18,6 @@
 				update="@widgetVar(editUitextDialog)"
 				oncomplete="PF('editUitextDialog').show()">
 				<h:outputText value="#{msgs[cc.attrs.textKey]}" />
-<!-- 				<h:outputText rendered="#{empty msgs[cc.attrs.textKey]}" value="#{cc.attrs.textKey}" /> -->
 			</p:commandLink>
             <!-- Ej ändringsbart läge -->
 	    	<h:outputText rendered="#{not sessionState.textEditMode}" value="#{msgs[cc.attrs.textKey]}" escape="false" />

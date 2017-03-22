@@ -12,8 +12,11 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.slf4j.Logger;
+
 import se.mlj.uitext.business.text.boundary.ResourceBundleServiceLocal;
 import se.mlj.uitext.business.text.entity.UIText;
+import se.mlj.uitext.common.utils.Resources;
 
 @ViewScoped
 @Named("textAdmin")
@@ -29,6 +32,9 @@ public class UITextAdmin implements Serializable {
 	
 	@Inject
 	Event<DBResourceBundleReloadEvent> reloadEvent;
+	
+	@Inject
+	Logger log;
 	
 	private UIText selectedText;
 	

@@ -4,24 +4,25 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
+	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
 	template="/WEB-INF/templates/noStyle.xhtml">
 
 	<ui:define name="head">
-		<title>UI-texter</title>
+		<title>UI-text - #{msgs['page.uitexter.title']}</title>
 	</ui:define>
 
 	<ui:define name="content">
 		<div class="ui-g">
 			<div class="ui-g-12">
-				<h1>UI-texter</h1>
+				<h1><my:uitext textKey="page.uitexter.title" /></h1>
 				<p:separator />
 				<p:breadCrumb>
 					<p:menuitem value="Översikt" url="/index" />
-					<p:menuitem value="UI-texter" url="/uitexter" />
+					<p:menuitem value="#{msgs['page.uitexter.title']}" url="/uitexter" />
 				</p:breadCrumb>
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
-				<div class="ui-g-12 ui-md-6 ui-xl-4">
+				<div class="ui-g-12 ui-xl-6">
 					<h:form id="tableForm">
 						<p:panel id="basic" header="Information om texter">
 							<h:panelGroup rendered="#{not empty textAdmin.textList}">

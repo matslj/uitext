@@ -13,6 +13,8 @@ import javax.persistence.PersistenceContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import se.mlj.uitext.business.text.control.DBResourceBundle;
+
 /**
  * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans
  * 
@@ -26,8 +28,6 @@ import org.slf4j.LoggerFactory;
  * </pre>
  */
 public class Resources {
-	
-	public static final String BUNDLE_BASE_NAME = "se.mlj.uitext.messages";
 
     // use @SuppressWarnings to tell IDE to ignore warnings about field not being referenced directly
     @SuppressWarnings("unused")
@@ -44,7 +44,7 @@ public class Resources {
     public static String getMessageFromBundle(String messageKey) {
     	FacesContext facesContext = FacesContext.getCurrentInstance();
     	Locale locale = facesContext.getViewRoot().getLocale();
-    	ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_BASE_NAME, locale);
+    	ResourceBundle bundle = ResourceBundle.getBundle(DBResourceBundle.BUNDLE_NAME, locale);
     	return bundle.getString(messageKey);
     }
 }
