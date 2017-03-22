@@ -7,12 +7,15 @@
 
 	<div class="topbar clearfix">
 		<h:form id="menu-form">
-			<p:commandLink id="menu-button-id" global="false"
-				onclick="uitext.sidebar.showHideSidebar(#{sessionState.showSidebar});"
-				update="@this" styleClass="menu-button"
-				action="#{sessionState.toggleSidebar}">
-				<span class="fa fa-bars"></span>
-			</p:commandLink>
+			<a id="topbar-menu-button" class="menu-button" href="#">
+	            <span class="fa fa-bars"></span>
+	        </a>
+<!-- 			<p:commandLink id="menu-button-id" global="false" -->
+<!-- 				onclick="uitext.sidebar.showHideSidebar(#{sessionState.showSidebar});" -->
+<!-- 				update="@this" styleClass="menu-button" -->
+<!-- 				action="#{sessionState.toggleSidebar}"> -->
+<!-- 				<span class="fa fa-bars"></span> -->
+<!-- 			</p:commandLink> -->
 		
 			<span class="topbar-title">UI-Text</span> <a id="options-menu-button"
 				href="#"> <span class="fa fa-ellipsis-h"></span>
@@ -63,9 +66,21 @@
 						class="topbar-icon fa fa-gear"></span>
 					</h:outputLink>
 					<ul class="animated fadeInDown">
-						<li role="menuitem"><a href="#"> <i
-								class="fa fa-fw fa-lock"></i> <span>Lock Screen</span>
-						</a></li>
+						<li role="menuitem">
+							
+							<p:commandLink global="false"
+								ajax="false"
+								process="@this"
+								immediate="true"
+								action="#{sessionState.toggleEditMode()}">
+								<ui:fragment rendered="#{sessionState.textEditMode}">
+									<i class="fa fa-fw fa-lock"></i> <span>Lås textändring</span>
+								</ui:fragment>
+								<ui:fragment  rendered="#{not sessionState.textEditMode}">
+									<i class="fa fa-fw fa-unlock"></i> <span>Öppna textändring</span>
+								</ui:fragment>
+							</p:commandLink>
+						</li>
 						<li role="menuitem"><a href="#"> <i
 								class="fa fa-fw fa-picture-o"></i> <span>Wallpaper</span>
 						</a></li>

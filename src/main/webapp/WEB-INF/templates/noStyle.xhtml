@@ -37,14 +37,15 @@
 	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
 	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
     </p:dialog>
-    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper#{sessionState.showSidebar ? ' sidebar-active-m' : ' sidebar-inactive-l'}">
-    <ui:include src="topbar.xhtml" />
-	<ui:include src="sidebar.xhtml" />
-    <div class="main">
-         <ui:insert name="content">
-             [Template content will be inserted here]
-         </ui:insert>
-    </div>
+<!--     styleClass="wrapper#{sessionState.showSidebar ? ' sidebar-active-m' : ' sidebar-inactive-l'}" -->
+    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
+    	<ui:include src="topbar.xhtml" />
+		<ui:include src="sidebar.xhtml" />
+	    <h:panelGroup id="mainId" layout="block" styleClass="main">
+	         <ui:insert name="content">
+	             [Template content will be inserted here]
+	         </ui:insert>
+	    </h:panelGroup>
     </h:panelGroup>
     
 	<!-- Dialogruta för skapa/ändra ui-texter -->
@@ -52,7 +53,7 @@
 		widgetVar="editUitextDialog">
 		<h:form>
 			<h:panelGrid columns="2" cellpadding="5">
-				<h:outputLabel for="key" value="Nyckel:" />
+				<h:outputLabel for="key-uitext" value="Nyckel:" />
 				<h:outputText value="#{textAdmin.selectedText.key}" rendered="#{textAdmin.selectedText.id ne null}" />
 				<p:inputText id="key-uitext" value="#{textAdmin.selectedText.key}" rendered="#{textAdmin.selectedText.id eq null}"
 					required="true" label="key-uitext" />
@@ -64,18 +65,19 @@
 				<f:facet name="footer">
 					<p:commandButton id="idTextButtonUpdate" rendered="#{textAdmin.selectedText.id ne null}"
 						action="#{textAdmin.updateSelectedText()}" value="Uppdatera"
-						update="@widgetVar(textTableW)"
+						update=":mainId"
 						oncomplete="PF('editUitextDialog').hide();">
 					</p:commandButton>
 					<p:commandButton id="idTextButtonCreate" rendered="#{textAdmin.selectedText.id eq null}"
 						action="#{textAdmin.updateSelectedText()}" value="Skapa"
-						update="@widgetVar(textTableW)"
+						update=":mainId"
 						oncomplete="PF('editUitextDialog').hide();">
 					</p:commandButton>
 					<p:commandButton id="idTextButtonUpdateCancel" value="Avbryt"
 						type="button" onclick="PF('editUitextDialog').hide();">
 					</p:commandButton>
 				</f:facet>
+				<!-- @widgetVar(textTableW) -->
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>

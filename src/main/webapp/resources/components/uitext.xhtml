@@ -6,8 +6,6 @@
     <cc:interface>
         <!-- Nyckeln för hämtning av text från resource bundle -->
         <cc:attribute name="textKey" type="java.lang.String" required="true" />
-        <!-- Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra. -->
-        <cc:attribute name="size" type="java.lang.String" default="1em"/>
     </cc:interface>
 
     <cc:implementation>
@@ -18,7 +16,7 @@
 				immediate="true" action="#{textAdmin.setSelectedText(cc.attrs.textKey, msgs[cc.attrs.textKey])}"
 				update="@widgetVar(editUitextDialog)"
 				oncomplete="PF('editUitextDialog').show()">
-				<h:outputText value="msgs[cc.attrs.textKey]" />
+				<h:outputText value="#{msgs[cc.attrs.textKey]}" />
 <!-- 				<h:outputText rendered="#{empty msgs[cc.attrs.textKey]}" value="#{cc.attrs.textKey}" /> -->
 			</p:commandLink>
             <!-- Ej ändringsbart läge -->

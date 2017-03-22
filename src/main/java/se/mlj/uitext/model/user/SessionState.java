@@ -36,5 +36,9 @@ public class SessionState implements Serializable {
 	public void setTextEditMode(boolean textEditMode) {
 		this.textEditMode = textEditMode;
 	}
+	
+	public void toggleEditMode() {
+		this.textEditMode = !this.textEditMode;
+	}
 
 }
