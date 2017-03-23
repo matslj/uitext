@@ -67,15 +67,4 @@ public class UITextAdmin implements Serializable {
 		reloadEvent.fire(new DBResourceBundleReloadEvent(FacesContext.getCurrentInstance().getViewRoot().getLocale().getLanguage()));
 	}
 	
-	public void localeChanged(ValueChangeEvent e) {
-        String newLocaleValue = e.getNewValue().toString();
-        Iterator<Locale> i = FacesContext.getCurrentInstance().getApplication().getSupportedLocales();
-        while (i.hasNext()) {
-        	Locale l = i.next();
-        	if (l.getLanguage().equals(newLocaleValue)) {
-        		FacesContext.getCurrentInstance().getViewRoot().setLocale(l);
-        	}
-        }
-    }
-	
 }

@@ -59,8 +59,8 @@
 	         -->
 			<div id="topbar-icons" class="animated">
 				<div>
-					<a href="#"> <span class="topbar-item-text">Messages</span> <span
-						class="topbar-icon fa fa-envelope-o animated swing"></span> <span
+					<a href="#"> <span class="topbar-item-text">Todo</span> <span
+						class="topbar-icon fa fa-bell-o animated swing"></span> <span
 						class="topbar-badge animated rubberBand">5</span>
 					</a>
 				</div>
@@ -88,17 +88,21 @@
 						</a></li>
 					</ul>
 				</div>
-				<div>
+				<div class="language">
 					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text">Language</span> <span
 						class="topbar-icon fa fa-language"></span>
 					</h:outputLink>
 					<ul class="animated fadeInDown">
-						<li role="menuitem"><a href="#"> <i
-								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.language.swedish']}"/></span>
-						</a></li>
-						<li role="menuitem"><a href="#"> <i
-								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.language.english']}"/></span>
-						</a></li>
+						<li role="menuitem">
+							<p:commandLink global="false" action="#{localeManager.setLanguage('sv')}" process="@this" immediate="true" ajax="false">
+	                            <h:graphicImage alt="Swedish flag" value="/resources/gfx/icons/Sweden_24.png" /> <span><h:outputText value="#{msgs['topbar.language.swedish']}"/></span>
+	                        </p:commandLink>
+	                    </li>
+						<li role="menuitem">
+							<p:commandLink global="false" action="#{localeManager.setLanguage('en')}" process="@this" immediate="true" ajax="false">
+	                            <h:graphicImage alt="English flag" value="/resources/gfx/icons/GreatBritain_24.png" /> <span><h:outputText value="#{msgs['topbar.language.english']}"/></span>
+	                        </p:commandLink>
+	                    </li>
 					</ul>
 				</div>
 			</div>

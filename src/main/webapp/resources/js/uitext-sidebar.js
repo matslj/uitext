@@ -7,10 +7,12 @@ var uitext = uitext || {};
 uitext.sidebar = (function($) {
 	var MENU_CONTAINER = '.menu-container',
 	    MENU_BUTTON = '#topbar-menu-button',
+	    PROFILE_BUTTON = '#profile-button',
 	    SELECTED_MENU_ITEM = 'active-menuitem',
 	    
 	    $menuContainer = null,
 	    $menuButton = null,
+	    $profileButton = null,
 	    $wrapper = null,
 	
 	/**
@@ -101,6 +103,18 @@ uitext.sidebar = (function($) {
         e.preventDefault();
 	},
 	
+	profileButtonHandler = function(e) {
+        var profileMenu = $(this).next('ul');
+        if(profileMenu.is(':visible')) {
+            profileMenu.slideUp();
+        }
+        else {
+            profileMenu.slideDown();
+        }
+        
+        e.preventDefault();
+    },
+	
 	isDesktop = function() {
         return window.innerWidth > 1024;
     };
@@ -128,6 +142,7 @@ uitext.sidebar = (function($) {
    		init : function() {
    			$menuContainer = $(MENU_CONTAINER);
    			$menuButton = $(MENU_BUTTON);
+   			$profileButton = $(PROFILE_BUTTON);
    			$wrapper = $('#wrapperId');
    			
    			resolveMenuSelection();
@@ -135,6 +150,7 @@ uitext.sidebar = (function($) {
    			// Register events
    			$menuContainer.off('click').on('click', menuClickHandler);
    			$menuButton.off('click').on('click', topbarMenuHandler);
+   			$profileButton.off('click').on('click', profileButtonHandler);
    		}
 	};
 }(jQuery));

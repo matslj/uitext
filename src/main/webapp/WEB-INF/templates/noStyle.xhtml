@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv"
+<html lang="#{localeManager.language}"
    xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:f="http://java.sun.com/jsf/core"
@@ -29,6 +29,7 @@
    </script>
 </h:head>
 <h:body>
+	<f:view locale="#{localeManager.locale}">
 	<f:facet name="last">
 		<h:outputStylesheet name="css/screen.css" />
 		<h:outputStylesheet name="css/pf-overrides.css" />		
@@ -47,7 +48,7 @@
 	         </ui:insert>
 	    </h:panelGroup>
 	    <div class="footer">
-        	<span class="footer-text">Application footer</span>
+        	<p>Application footer</p>
     	</div>
     </h:panelGroup>
     
@@ -84,5 +85,6 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
+	</f:view>
 </h:body>
 </html>

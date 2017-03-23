@@ -1,13 +1,26 @@
 html {
 	height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #edf0f5;
+	background-color: #fff; /* #edf0f5; */
 	font-family: Verdana, sans-serif;
 	font-size: 70%;
+	height: 100%; /* footer addition */
+}
+
+#topbar-icons .language>ul>li>a img, #topbar-icons .language>ul>li>a span {
+	vertical-align: middle;
+	margin-right: 7px;
 }
 
 .main h1:FIRST-CHILD {
@@ -25,6 +38,8 @@ body {
 
 .wrapper {
 	padding: 0;
+	min-height: 100%; /* footer addition */
+	position: relative; /* footer addition */
 }
 
 .wrapper .topbar {
@@ -441,21 +456,32 @@ body {
 	transition: margin-left 0.3s;
 	margin-left: 250px;
 	padding: 50px 16px 16px 16px;
+	padding-bottom: 7em; /* footer addition */
 }
 
 .wrapper .footer {
 	margin-left: 250px;
-	height: 40px;
+	height: 4em;
 	background-color: #ffffff;
 	padding: .7em 1.5em 0em 1.5em;
+	
+	/* below - footer addition */
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	background-color: #000;
+  	color: #fff;
+  	-moz-transition: margin-left 0.3s;
+	-o-transition: margin-left 0.3s;
+	-webkit-transition: margin-left 0.3s;
+	transition: margin-left 0.3s;
+	text-align: center;
 }
 
-.wrapper .footer img {
+.wrapper .footer p {
 	vertical-align: middle;
-}
-
-.wrapper .footer .footer-text {
-	vertical-align: middle;
+	margin: 0;
 }
 
 /* Hidden sidebar */
