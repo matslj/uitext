@@ -4,34 +4,37 @@
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:p="http://primefaces.org/ui"
+   xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
    template="/WEB-INF/templates/noStyle.xhtml">
    
     <ui:define name="head">
-   		<title>dgfdgfdgfdf</title>
+   		<title>UIText - #{msgs['page.sample.one']}</title>
     </ui:define>
     
     <ui:define name="content">
         <div class="ui-g">
 			<div class="ui-g-12">
-				<h1>Exempelsida</h1>
+				<h1><my:uitext textKey="page.sample.one" /></h1>
 				<p:separator />
 				<p:breadCrumb>
 				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="Exempelsida" url="/sample" />
+				    <p:menuitem value="#{msgs['page.sample.one']}" url="/sample" />
 				</p:breadCrumb>
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic" header="Exempelpanel 1">
-					<h:outputText value="#{sessionState.textEditMode}" />
+						<my:uitext textKey="global.lorem.ipsum" />
 				    </p:panel>
 				</div>
 				<div class="ui-g-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic2" header="Exempelpanel 2">
+						<my:uitext textKey="global.lorem.ipsum" />
 					</p:panel>
 				</div>
 				<div class="ui-g-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic3" header="Exempelpanel 3">
+						<my:uitext textKey="global.lorem.ipsum" />
 				    </p:panel>
 				</div>
 			</div>

@@ -26,3 +26,8 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.panel
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.panel.textlist.table.locale', 'Språk', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.panel.textlist.table.locale', 'Language', 'en');
 
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum', 'Suspendisse potenti. Nunc at maximus justo. Praesent faucibus, lacus at tempor efficitur, lectus lacus placerat augue, quis vestibulum dolor ligula at arcu. Nulla sed ante ex. Aenean sollicitudin placerat cursus. Nunc ultricies massa eget mattis vestibulum. Nam lorem sem, cursus vel finibus a, varius nec dui.', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum', 'Suspendisse potenti. Nunc at maximus justo. Praesent faucibus, lacus at tempor efficitur, lectus lacus placerat augue, quis vestibulum dolor ligula at arcu. Nulla sed ante ex. Aenean sollicitudin placerat cursus. Nunc ultricies massa eget mattis vestibulum. Nam lorem sem, cursus vel finibus a, varius nec dui.', 'en');
+
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Exempelsida 1', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Example page 1', 'en');
