@@ -12,10 +12,13 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #fff; /* #edf0f5; */
-	font-family: Verdana, sans-serif;
+	background-color: #fff;
 	font-size: 70%;
 	height: 100%; /* footer addition */
+	
+	color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857;
 }
 
 #topbar-icons .language>ul>li>a img, #topbar-icons .language>ul>li>a span {
@@ -23,13 +26,28 @@ body {
 	margin-right: 7px;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
 .main h1:FIRST-CHILD {
+	border-bottom: 1px solid #eee;
+    margin: 30px 0 20px;
+    padding-bottom: 9px;
+	
+	font-size: 36px;
+	
+	/*
 	padding-bottom: 4px;
 	margin: 15px 0 10px;
-	/* border-bottom: 1px solid #eee; */
+	border-bottom: 1px solid #eee;
 	font-size: 26px;
 	font-weight: 500;
 	line-height: 1.1;
+	*/
 }
 
 #topbar-icons>div {
@@ -50,6 +68,7 @@ body {
 	position: fixed;
 	right: 0;
 	left: 250px;
+	/* min-height: 50px; */
 	height: 50px;
 	background-color: #2b5c83;
 	padding: 10px 20px 0 20px; /* .7em 1.5em 0em 1.5em; */
@@ -58,10 +77,14 @@ body {
 	z-index: 101;
 }
 
+.wrapper .topbar .menu-button span {
+	vertical-align: top;
+}
+
 .wrapper .topbar .topbar-title {
 	display: inline-block;
 	font-size: 20px;
-	margin: 5px 0 0 15px;
+	margin: 0 0 0 15px;
 	vertical-align: top;
 }
 
@@ -275,6 +298,10 @@ body {
 	text-decoration: none;
 	text-align: center;
 	padding: 20px 0;
+	-moz-transition: padding-top 0.5s, padding-bottom 0.5s;
+	-o-transition: padding-top 0.5s, padding-bottom 0.5s;
+	-webkit-transition: padding-top 0.5s, padding-bottom 0.5s;
+	transition: padding-top 0.5s, padding-bottom 0.5s;
 }
 
 .wrapper .sidebar .profile .logo {
@@ -289,6 +316,18 @@ body {
 	-webkit-box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
 	-moz-box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
 	box-shadow: 5px 5px 5px 0px rgba(28, 27, 28, 1);
+	
+	-moz-transition: height 0.5s, width 0.5s;
+	-o-transition: height 0.5s, width 0.5s;
+	-webkit-transition: height 0.5s, width 0.5s;
+	transition: height 0.5s, width 0.5s;
+}
+
+.wrapper .sidebar .profile .logo img {
+	-moz-transition: height 0.5s, width 0.5s;
+	-o-transition: height 0.5s, width 0.5s;
+	-webkit-transition: height 0.5s, width 0.5s;
+	transition: height 0.5, width 0.5ss;
 }
 
 .wrapper .sidebar .profile img {
@@ -531,6 +570,20 @@ body {
 		margin-top: 50px;
 		width: 250px;
 	}
+	.wrapper .sidebar .profile .logo {
+		 height: 0;
+		 width: 0;
+	}
+	.wrapper .sidebar .profile .logo img {
+		 height: 0;
+		 width: 0;
+	}
+	.wrapper .sidebar .profile {
+		padding: 5px 0;
+	}
+	.wrapper .sidebar .profile > ul {
+		margin-bottom: -5px;
+	}
 	.wrapper .footer {
 		margin-left: 0;
 	}
@@ -539,7 +592,7 @@ body {
 	}
 }
 
-@media (min-width : 641px) {
+@media (min-width : 640px) {
 	.wrapper .topbar #topbar-icons>div {
 		position: relative;
 	}

@@ -7,6 +7,7 @@ var uitext = uitext || {};
 uitext.sidebar = (function($) {
 	var MENU_CONTAINER = '.menu-container',
 	    MENU_BUTTON = '#topbar-menu-button',
+	    OPTIONS_MENU = '#options-menu-button',
 	    PROFILE_BUTTON = '#profile-button',
 	    SELECTED_MENU_ITEM = 'active-menuitem',
 	    
@@ -114,27 +115,32 @@ uitext.sidebar = (function($) {
         
         e.preventDefault();
     },
+    
+    optionsButtonHandler = function(e) {
+        if(!$this.animatingOptionsMenu) {
+            $this.animatingOptionsMenu = true;
+            if($this.topbarIcons.hasClass('topbar-icons-visible')) {
+                $this.topbarIcons.addClass('flipOutX');
+                setTimeout(function() {
+                    $this.topbarIcons.removeClass('topbar-icons-visible flipOutX');
+                    $this.animatingOptionsMenu = false;
+                },450);
+            } else {
+                $this.topbarIcons.addClass('topbar-icons-visible');
+                $this.topbarIcons.addClass('flipInX');
+                $this.animatingOptionsMenu = false;
+            }
+        }
+
+        $this.wrapper.removeClass('sidebar-active-m sidebar-inactive-l');
+        e.preventDefault();
+    },
 	
 	isDesktop = function() {
         return window.innerWidth > 1024;
     };
 	
 	return {
-		/**
-		 * Dölj/visa sidomenyn baserat på nuvarande tillstånd för sidomenyn.
-		 * 
-		 * @param currValue boolean - om true så betyder det att nuvarande tillstånd är att menyn visas,
-		 *                  och således ska den nu döljas av den här metoden. Om false så betyder det att
-		 *                  nuvarande tillstånd är att menyn är dold, och då ska den här metoden göra att
-		 *                  den visas igen.
-		 */
-		showHideSidebar : function(currValue) {
-   			if (currValue) {
-   				$wrapper.attr('class', 'wrapper sidebar-inactive-l');
-			} else {
-				$wrapper.attr('class', 'wrapper sidebar-active-m');
-			}
-   		},
    		
    		/**
    		 * Initializerar modulen. Anropas lämpligen från en $(document).ready()-funktion.
@@ -142,14 +148,16 @@ uitext.sidebar = (function($) {
    		init : function() {
    			$menuContainer = $(MENU_CONTAINER);
    			$menuButton = $(MENU_BUTTON);
+   			$optionsMenuButton = $(OPTIONS_MENU);
    			$profileButton = $(PROFILE_BUTTON);
    			$wrapper = $('#wrapperId');
    			
    			resolveMenuSelection();
 
-   			// Register events
+   			// Register eventhandling
    			$menuContainer.off('click').on('click', menuClickHandler);
    			$menuButton.off('click').on('click', topbarMenuHandler);
+   			$optionsMenuButton.off('click').on('click', optionsButtonHandler);
    			$profileButton.off('click').on('click', profileButtonHandler);
    		}
 	};
