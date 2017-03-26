@@ -21,23 +21,22 @@
 						Doe</span> <i class="fa fa-fw fa-cog"></i>
 				</a>
 				<ul>
-					<li><a href="#"><i class="fa fa-fw fa-sliders"></i><span>Account</span></a></li>
+					<li><a href="#"><i class="fa fa-fw fa-sliders"></i><span><h:outputText value="#{msgs['sidebar.profile.account']}"/></span></a></li>
 <!-- 					<li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span -->
 <!-- 							class="menu-badge">2</span></a></li> -->
-					<li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span>Logout</span></a></li>
+					<li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span><h:outputText value="#{msgs['sidebar.profile.logout']}"/></span></a></li>
 				</ul>
 			</div>
 
 			<div class="menu">
 				<my:menuitem>
-					<my:menuitem outcome="/index" icon="fa fa-home fa-fw" text="Översikt" />
-					<my:menuitem submenu="true" icon="fa fa-sitemap fa-fw" text="Exempel">
-					    <my:menuitem outcome="/sample" icon="fa fa-columns fa-fw" text="Exempelsida 1" />
-						<my:menuitem icon="fa fa-exclamation-circle fa-fw" text="Error Page" />
-						<my:menuitem icon="fa fa-times fa-fw" text="404 Page" />
-						<my:menuitem icon="fa fa-exclamation-triangle fa-fw" text="Access Denied Page" />
+					<my:menuitem outcome="/index" icon="fa fa-home fa-fw" text="#{msgs['sidebar.link.home']}" />
+					<my:menuitem outcome="/uitexter" icon="fa fa-certificate fa-fw" text="#{msgs['sidebar.link.uitexts']}" />
+					<my:menuitem submenu="true" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}">
+					    <my:menuitem outcome="/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
+						<my:menuitem outcome="/errorpages/error" icon="fa fa-minus-circle fa-fw" text="Error Page" />
+						<my:menuitem outcome="/errorpages/error_404" icon="fa fa-chain-broken fa-fw" text="404 Page" />
 					</my:menuitem>
-					<my:menuitem outcome="/uitexter" icon="fa fa-certificate fa-fw" text="UItexter" />
 					<my:menuitem submenu="true" icon="fa fa-gg fa-fw" text="Exempelmeny">
 						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1">
 							<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1.1">

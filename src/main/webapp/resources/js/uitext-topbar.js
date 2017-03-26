@@ -8,9 +8,13 @@ uitext.topbar = (function($) {
 	var TOPBAR_ICONS = '#topbar-icons',
 	    ACTIVE = 'active',
 	    TOPBAR_SUBMENU_HOLDER = 'topbar-menu',
+	    OPTIONS_MENU = '#options-menu-button',
 	    
     $topbarIcons = null,
+    $optionsMenuButton = null,
+    $wrapper = null,
     menuClick = false,
+    expandedMenuClick = false;
     
     topbarIconsSubmenuClickhandler = function(e) {
 		var $target = $(e.target),
@@ -27,19 +31,18 @@ uitext.topbar = (function($) {
 		}
 	},
 	
-	registerEvents = function() {
-		
-		// Register topbar-icons eventhandling
-		$topbarIcons.off('click').on('click', topbarIconsSubmenuClickhandler);
-		
-		// Ta bort öppna menyer som inte ska vara öppna
-		$(document.body).off('click').on('click', function() {
-			if (!menuClick) {
-				$topbarIcons.find('div').removeClass(ACTIVE);
-			}
-			menuClick = false;
-		});
-	};
+	optionsButtonHandler = function(e) {
+        if($topbarIcons.hasClass('topbar-icons-visible')) {
+            $topbarIcons.removeClass('topbar-icons-visible');
+            expandedMenuClick = false;
+        } else {
+            $topbarIcons.addClass('topbar-icons-visible');
+            expandedMenuClick = true;
+        }
+
+        $wrapper.removeClass('sidebar-active-m sidebar-inactive-l');
+        e.preventDefault();
+    };
 	
 	return {
    		
@@ -48,9 +51,25 @@ uitext.topbar = (function($) {
    		 */
    		init : function() {
    			$topbarIcons = $(TOPBAR_ICONS);
+   			$optionsMenuButton = $(OPTIONS_MENU);
+   			$wrapper = $('#wrapperId');
    			
-   			// Register events
-   			registerEvents();
+
+   			// Register topbar-icons eventhandling
+   			$topbarIcons.off('click').on('click', topbarIconsSubmenuClickhandler);
+   			$optionsMenuButton.off('click').on('click', optionsButtonHandler);
+   			
+   			// Ta bort öppna menyer som inte ska vara öppna
+   			$(document.body).off('click').on('click', function() {
+   				if (!menuClick) {
+   					$topbarIcons.find('div').removeClass(ACTIVE);
+   				}
+   				menuClick = false;
+   				if (!expandedMenuClick) {
+   					$topbarIcons.removeClass('topbar-icons-visible');
+   				}
+   				expandedMenuClick = false;
+   			});
    		}
 	};
 }(jQuery));

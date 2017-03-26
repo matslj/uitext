@@ -11,12 +11,6 @@
 			<a id="topbar-menu-button" class="menu-button" href="#">
 	            <span class="fa fa-bars"></span>
 	        </a>
-<!-- 			<p:commandLink id="menu-button-id" global="false" -->
-<!-- 				onclick="uitext.sidebar.showHideSidebar(#{sessionState.showSidebar});" -->
-<!-- 				update="@this" styleClass="menu-button" -->
-<!-- 				action="#{sessionState.toggleSidebar}"> -->
-<!-- 				<span class="fa fa-bars"></span> -->
-<!-- 			</p:commandLink> -->
 		
 			<span class="topbar-title"><h:outputText value="#{msgs['topbar.title']}"/></span>
 			
@@ -59,13 +53,13 @@
 	         -->
 			<div id="topbar-icons" class="animated">
 				<div>
-					<a href="#"> <span class="topbar-item-text">Todo</span> <span
+					<a href="#"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.todo.title']}"/></span> <span
 						class="topbar-icon fa fa-bell-o animated swing"></span> <span
 						class="topbar-badge animated rubberBand">5</span>
 					</a>
 				</div>
 				<div>
-					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text">Settings</span> <span
+					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.settings.title']}"/></span> <span
 						class="topbar-icon fa fa-gear"></span>
 					</h:outputLink>
 					<ul class="animated fadeInDown">
@@ -89,7 +83,7 @@
 					</ul>
 				</div>
 				<div class="language">
-					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text">Language</span> <span
+					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.language.title']}"/></span> <span
 						class="topbar-icon fa fa-language"></span>
 					</h:outputLink>
 					<ul class="animated fadeInDown">

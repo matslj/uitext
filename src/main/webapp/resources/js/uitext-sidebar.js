@@ -7,7 +7,6 @@ var uitext = uitext || {};
 uitext.sidebar = (function($) {
 	var MENU_CONTAINER = '.menu-container',
 	    MENU_BUTTON = '#topbar-menu-button',
-	    OPTIONS_MENU = '#options-menu-button',
 	    PROFILE_BUTTON = '#profile-button',
 	    SELECTED_MENU_ITEM = 'active-menuitem',
 	    
@@ -115,26 +114,6 @@ uitext.sidebar = (function($) {
         
         e.preventDefault();
     },
-    
-    optionsButtonHandler = function(e) {
-        if(!$this.animatingOptionsMenu) {
-            $this.animatingOptionsMenu = true;
-            if($this.topbarIcons.hasClass('topbar-icons-visible')) {
-                $this.topbarIcons.addClass('flipOutX');
-                setTimeout(function() {
-                    $this.topbarIcons.removeClass('topbar-icons-visible flipOutX');
-                    $this.animatingOptionsMenu = false;
-                },450);
-            } else {
-                $this.topbarIcons.addClass('topbar-icons-visible');
-                $this.topbarIcons.addClass('flipInX');
-                $this.animatingOptionsMenu = false;
-            }
-        }
-
-        $this.wrapper.removeClass('sidebar-active-m sidebar-inactive-l');
-        e.preventDefault();
-    },
 	
 	isDesktop = function() {
         return window.innerWidth > 1024;
@@ -148,7 +127,6 @@ uitext.sidebar = (function($) {
    		init : function() {
    			$menuContainer = $(MENU_CONTAINER);
    			$menuButton = $(MENU_BUTTON);
-   			$optionsMenuButton = $(OPTIONS_MENU);
    			$profileButton = $(PROFILE_BUTTON);
    			$wrapper = $('#wrapperId');
    			
@@ -157,7 +135,6 @@ uitext.sidebar = (function($) {
    			// Register eventhandling
    			$menuContainer.off('click').on('click', menuClickHandler);
    			$menuButton.off('click').on('click', topbarMenuHandler);
-   			$optionsMenuButton.off('click').on('click', optionsButtonHandler);
    			$profileButton.off('click').on('click', profileButtonHandler);
    		}
 	};

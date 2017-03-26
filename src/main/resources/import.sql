@@ -10,10 +10,29 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.settings.hig
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.settings.highcontrast', 'High contrast mode', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.title', 'UI-Text', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.title', 'UI-Text', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.todo.title', 'Att göra', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.todo.title', 'Todo', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.settings.title', 'Inställningar', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.settings.title', 'Settings', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.title', 'Språk', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.title', 'Language', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.swedish', 'Svenska', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.swedish', 'Swedish', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.english', 'Engelska', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'topbar.language.english', 'English', 'en');
+
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.home', 'Översikt', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.home', 'Dashboard', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.profile.account', 'Profil', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.profile.account', 'Profile', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.profile.logout', 'Logga ut', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.profile.logout', 'Logout', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.uitexts', 'UItexter', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.uitexts', 'UItexter', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.examples', 'Exempel', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.examples', 'Examples', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.example1', 'Exempelsida 1', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.example1', 'Example page 1', 'en');
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.title', 'UI-texter', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.title', 'UI-texts', 'en');

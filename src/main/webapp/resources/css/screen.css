@@ -21,6 +21,10 @@ body {
     line-height: 1.42857;
 }
 
+a {
+	outline: 0;
+}
+
 #topbar-icons .language>ul>li>a img, #topbar-icons .language>ul>li>a span {
 	vertical-align: middle;
 	margin-right: 7px;
@@ -673,19 +677,19 @@ body {
 		-webkit-border-bottom-right-radius: 3px;
 		border-bottom-right-radius: 3px;
 	}
-	.wrapper .topbar #topbar-icons a {
+	.wrapper .topbar #topbar-icons div {
 		display: block;
 		padding: 10px;
 		margin-left: 0;
+	}
+	.wrapper .topbar #topbar-icons div a {
+		padding-left: 0;
 		-moz-transition: padding-left 0.3s;
 		-o-transition: padding-left 0.3s;
 		-webkit-transition: padding-left 0.3s;
 		transition: padding-left 0.3s;
 	}
-	.wrapper .topbar #topbar-icons a:first-child {
-		height: 18px;
-	}
-	.wrapper .topbar #topbar-icons a:hover {
+	.wrapper .topbar #topbar-icons div a:hover {
 		color: #007be5;
 		padding-left: 15px;
 	}
@@ -700,30 +704,26 @@ body {
 		width: 20px;
 	}
 	.wrapper .topbar #topbar-icons a span.topbar-badge {
-		font-size: 12px;
-		top: 10px;
-		right: 10px;
+		font-size: 10px;
+		top: -7px;
+		right: 54px;
 	}
 	.wrapper .topbar #topbar-icons.topbar-icons-visible {
 		display: block;
 	}
-	.wrapper .topbar #topbar-icons .topbar-search {
-		top: 0px;
-		padding: 10px;
+	.wrapper .topbar #topbar-icons>div ul {
+		list-style: none;
+		margin-bottom: 0;
 	}
-	.wrapper .topbar #topbar-icons .topbar-search input {
-		width: 100%;
-		box-sizing: border-box;
-		border-bottom-width: 1px;
-		border-bottom-color: #cccccc;
+	.wrapper .topbar #topbar-icons>div ul li {
+		padding: 5px 0;
 	}
-	.wrapper .topbar #topbar-icons .topbar-search .topbar-search-icon {
-		top: 9px;
-		right: 10px;
-		color: #cccccc;
+	.wrapper .topbar #topbar-icons>div ul li a {
+		font-size: 14px;
+		text-decoration: none;
+		color: #fff;
 	}
-	
-	.wrapper .topbar #topbar-icons>div.active>ul {
-		display: none;
+	.wrapper .topbar #topbar-icons>div ul li a i:FIRST-CHILD {
+		margin-right: 5px;
 	}
 }
