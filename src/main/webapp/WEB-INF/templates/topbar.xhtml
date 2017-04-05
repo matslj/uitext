@@ -6,15 +6,16 @@
 	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
 	xmlns:p="http://primefaces.org/ui">
 
-	<div class="topbar clearfix">
+	<div class="topbar">
 		<h:form id="menu-form">
-			<a id="topbar-menu-button" class="menu-button" href="#">
+			<a id="sidebar-toggle-button" class="menu-button" href="#">
 	            <span class="fa fa-bars"></span>
 	        </a>
 		
 			<span class="topbar-title"><h:outputText value="#{msgs['topbar.title']}"/></span>
 			
-			<a id="options-menu-button"
+			<!-- Visas när skärmen är mindre än x px och kan då användas för att toggla topbar-icons-menyn nedan. -->
+			<a id="topbar-icons-toggle-button"
 				href="#"> <span class="fa fa-ellipsis-h"></span>
 			</a>
 	
@@ -34,7 +35,7 @@
 	        	Om ingen direktnavigation ska ske från a-tagen; om den istället ska vara en behållare för en undermeny;
 	        	så ska följande göras:
 	        	<div>
-	        	    <a href="#" class="topbar-menu> (för h:outputLink så sätts 'value' till # och styleClass sätts till 'topbar-menu')
+	        	    <a href="#" class="topbar-submenu> (för h:outputLink så sätts 'value' till # och styleClass sätts till 'topbar-submenu')
 	        	    	<span class="topbar-icon fa fa..."> </span>
 	        	    </a>
 	        	    <ul>
@@ -51,18 +52,18 @@
 	        	    </ul>
 	        	</div>
 	         -->
-			<div id="topbar-icons" class="animated">
+			<div id="topbar-icons">
 				<div>
-					<a href="#"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.todo.title']}"/></span> <span
-						class="topbar-icon fa fa-bell-o animated swing"></span> <span
-						class="topbar-badge animated rubberBand">5</span>
+					<a href="#"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.todo.title']}"/></span> <span
+						class="topbar-icon fa fa-bell-o"></span> <span
+						class="topbar-badge">5</span>
 					</a>
 				</div>
 				<div>
-					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.settings.title']}"/></span> <span
+					<h:outputLink value="#" styleClass="topbar-submenu"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.settings.title']}"/></span> <span
 						class="topbar-icon fa fa-gear"></span>
 					</h:outputLink>
-					<ul class="animated fadeInDown">
+					<ul>
 						<li role="menuitem">
 							<p:commandLink global="false"
 								ajax="false"
@@ -83,7 +84,7 @@
 					</ul>
 				</div>
 				<div class="language">
-					<h:outputLink value="#" styleClass="topbar-menu"> <span class="topbar-item-text"><h:outputText value="#{msgs['topbar.language.title']}"/></span> <span
+					<h:outputLink value="#" styleClass="topbar-submenu"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.language.title']}"/></span> <span
 						class="topbar-icon fa fa-language"></span>
 					</h:outputLink>
 					<ul class="animated fadeInDown">

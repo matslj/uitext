@@ -120,7 +120,7 @@ a {
 	font-size: 28px;
 }
 
-.wrapper .topbar #topbar-icons a span.topbar-item-text {
+.wrapper .topbar #topbar-icons a span.topbar-icon-text {
 	font-size: 20px;
 	display: none;
 }
@@ -251,7 +251,7 @@ a {
 	color: #77c7ff;
 }
 
-.wrapper .topbar #options-menu-button {
+.wrapper .topbar #topbar-icons-toggle-button {
 	display: none;
 	font-size: 28px;
 	float: right;
@@ -263,7 +263,7 @@ a {
 	transition: color 0.3s;
 }
 
-.wrapper .topbar #options-menu-button:hover {
+.wrapper .topbar #topbar-icons-toggle-button:hover {
 	color: #77c7ff;
 }
 
@@ -650,7 +650,7 @@ a {
 	.wrapper .topbar {
 		text-align: center;
 	}
-	.wrapper .topbar #options-menu-button {
+	.wrapper .topbar #topbar-icons-toggle-button {
 		display: inline-block;
 	}
 	.wrapper .topbar #topbar-icons {
@@ -693,7 +693,7 @@ a {
 		color: #007be5;
 		padding-left: 15px;
 	}
-	.wrapper .topbar #topbar-icons a span.topbar-item-text {
+	.wrapper .topbar #topbar-icons a span.topbar-icon-text {
 		display: inline;
 		font-size: 16px;
 	}

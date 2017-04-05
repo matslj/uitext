@@ -6,7 +6,6 @@ var uitext = uitext || {};
    		
 uitext.sidebar = (function($) {
 	var MENU_CONTAINER = '.menu-container',
-	    MENU_BUTTON = '#topbar-menu-button',
 	    PROFILE_BUTTON = '#profile-button',
 	    SELECTED_MENU_ITEM = 'active-menuitem',
 	    
@@ -83,26 +82,6 @@ uitext.sidebar = (function($) {
 		}
 	},
 	
-	topbarMenuHandler = function(e) {
-		$(this).toggleClass('active');
-        
-        if(isDesktop()) {
-            $wrapper.toggleClass('sidebar-inactive-l');
-            
-            if($wrapper.hasClass('sidebar-inactive-l')) {
-                $wrapper.removeClass('sidebar-active-m');
-            }
-        } else {
-            $wrapper.toggleClass('sidebar-active-m');
-            
-            if($wrapper.hasClass('sidebar-active-m')) {
-                $wrapper.removeClass('sidebar-inactive-l');
-            }
-        }
-        
-        e.preventDefault();
-	},
-	
 	profileButtonHandler = function(e) {
         var profileMenu = $(this).next('ul');
         if(profileMenu.is(':visible')) {
@@ -113,12 +92,8 @@ uitext.sidebar = (function($) {
         }
         
         e.preventDefault();
-    },
-	
-	isDesktop = function() {
-        return window.innerWidth > 1024;
     };
-	
+
 	return {
    		
    		/**
@@ -126,7 +101,6 @@ uitext.sidebar = (function($) {
    		 */
    		init : function() {
    			$menuContainer = $(MENU_CONTAINER);
-   			$menuButton = $(MENU_BUTTON);
    			$profileButton = $(PROFILE_BUTTON);
    			$wrapper = $('#wrapperId');
    			
@@ -134,7 +108,6 @@ uitext.sidebar = (function($) {
 
    			// Register eventhandling
    			$menuContainer.off('click').on('click', menuClickHandler);
-   			$menuButton.off('click').on('click', topbarMenuHandler);
    			$profileButton.off('click').on('click', profileButtonHandler);
    		}
 	};

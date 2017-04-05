@@ -6,12 +6,13 @@ var uitext = uitext || {};
    		
 uitext.topbar = (function($) {
 	var TOPBAR_ICONS = '#topbar-icons',
+		MENU_BUTTON = '#sidebar-toggle-button',
 	    ACTIVE = 'active',
-	    TOPBAR_SUBMENU_HOLDER = 'topbar-menu',
-	    OPTIONS_MENU = '#options-menu-button',
+	    TOPBAR_SUBMENU_HOLDER = 'topbar-submenu',
+	    TOPBAR_ICON_TOGGLE_BUTTON = '#topbar-icons-toggle-button',
 	    
     $topbarIcons = null,
-    $optionsMenuButton = null,
+    $topbarIconsToggleButton = null,
     $wrapper = null,
     menuClick = false,
     expandedMenuClick = false;
@@ -31,7 +32,27 @@ uitext.topbar = (function($) {
 		}
 	},
 	
-	optionsButtonHandler = function(e) {
+	topbarMenuHandler = function(e) {
+		$(this).toggleClass('active');
+        
+        if(isDesktop()) {
+            $wrapper.toggleClass('sidebar-inactive-l');
+            
+            if($wrapper.hasClass('sidebar-inactive-l')) {
+                $wrapper.removeClass('sidebar-active-m');
+            }
+        } else {
+            $wrapper.toggleClass('sidebar-active-m');
+            
+            if($wrapper.hasClass('sidebar-active-m')) {
+                $wrapper.removeClass('sidebar-inactive-l');
+            }
+        }
+        
+        e.preventDefault();
+	},
+	
+	iconsToggleButtonHandler = function(e) {
         if($topbarIcons.hasClass('topbar-icons-visible')) {
             $topbarIcons.removeClass('topbar-icons-visible');
             expandedMenuClick = false;
@@ -42,6 +63,10 @@ uitext.topbar = (function($) {
 
         $wrapper.removeClass('sidebar-active-m sidebar-inactive-l');
         e.preventDefault();
+    },
+    
+    isDesktop = function() {
+        return window.innerWidth > 1024;
     };
 	
 	return {
@@ -51,13 +76,15 @@ uitext.topbar = (function($) {
    		 */
    		init : function() {
    			$topbarIcons = $(TOPBAR_ICONS);
-   			$optionsMenuButton = $(OPTIONS_MENU);
+   			$menuButton = $(MENU_BUTTON);
+   			$topbarIconsToggleButton = $(TOPBAR_ICON_TOGGLE_BUTTON);
    			$wrapper = $('#wrapperId');
    			
 
    			// Register topbar-icons eventhandling
    			$topbarIcons.off('click').on('click', topbarIconsSubmenuClickhandler);
-   			$optionsMenuButton.off('click').on('click', optionsButtonHandler);
+   			$menuButton.off('click').on('click', topbarMenuHandler);
+   			$topbarIconsToggleButton.off('click').on('click', iconsToggleButtonHandler);
    			
    			// Ta bort öppna menyer som inte ska vara öppna
    			$(document.body).off('click').on('click', function() {
