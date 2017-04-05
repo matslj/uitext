@@ -1,13 +1,10 @@
 package se.mlj.uitext.model.text;
 
 import java.io.Serializable;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 
 import javax.enterprise.event.Event;
 import javax.faces.context.FacesContext;
-import javax.faces.event.ValueChangeEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,7 +13,6 @@ import org.slf4j.Logger;
 
 import se.mlj.uitext.business.text.boundary.ResourceBundleServiceLocal;
 import se.mlj.uitext.business.text.entity.UIText;
-import se.mlj.uitext.common.utils.Resources;
 
 @ViewScoped
 @Named("textAdmin")

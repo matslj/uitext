@@ -47,9 +47,7 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 		}
 	}
 
-	/**
-	 * 
-	 */
+	@Override
 	public UIText findById(String key, String locale) {
 		UITextId compKey = new UITextId(key, locale);
 		return em.find(UIText.class, compKey);
@@ -65,28 +63,11 @@ public class ResourceBundleServiceImpl implements ResourceBundleServiceLocal {
 		}
 		return em.merge(text);
 	}
-	
-//	public UIText createUpdateText(UIText text) {
-//		if (text.getId() != null) {
-//			return em.merge(text);
-//		} else {
-//			UIText temp = null;
-//			try {
-//				temp = em.createNamedQuery(UIText.QUERYNAME_FIND_BY_KEY_AND_LOCALE, UIText.class)
-//						.setParameter("key", text.getKey()).setParameter("locale", text.getLocale()).getSingleResult();
-//				temp.setValue(text.getValue());
-//			} catch (NoResultException ne) {
-//				// Finns inte sedan tidigare => skapa ny
-//				return em.merge(text);
-//			}
-//			return temp;
-//		}
-//	}
 
 	@Override
 	public void deleteText(UIText text) {
-		text = findById(text.getKey(), text.getLocale());
-		em.remove(text);
+		UIText t = findById(text.getKey(), text.getLocale());
+		em.remove(t);
 	}
 
 }
