@@ -10,6 +10,9 @@ uitext.topbar = (function($) {
 	    ACTIVE = 'active',
 	    TOPBAR_SUBMENU_HOLDER = 'topbar-submenu',
 	    TOPBAR_ICON_TOGGLE_BUTTON = '#topbar-icons-toggle-button',
+	    SIDEBAR_INACTIVE_LARGE = 'sidebar-inactive-l',
+	    SIDEBAR_ACTIVE_MEDIUM = 'sidebar-active-m',
+	    TOPBAR_ICONS_VISIBLE = 'topbar-icons-visible',
 	    
     $topbarIcons = null,
     $topbarIconsToggleButton = null,
@@ -36,16 +39,16 @@ uitext.topbar = (function($) {
 		$(this).toggleClass('active');
         
         if(isDesktop()) {
-            $wrapper.toggleClass('sidebar-inactive-l');
+            $wrapper.toggleClass(SIDEBAR_INACTIVE_LARGE);
             
-            if($wrapper.hasClass('sidebar-inactive-l')) {
-                $wrapper.removeClass('sidebar-active-m');
+            if($wrapper.hasClass(SIDEBAR_INACTIVE_LARGE)) {
+                $wrapper.removeClass(SIDEBAR_ACTIVE_MEDIUM);
             }
         } else {
-            $wrapper.toggleClass('sidebar-active-m');
+            $wrapper.toggleClass(SIDEBAR_ACTIVE_MEDIUM);
             
-            if($wrapper.hasClass('sidebar-active-m')) {
-                $wrapper.removeClass('sidebar-inactive-l');
+            if($wrapper.hasClass(SIDEBAR_ACTIVE_MEDIUM)) {
+                $wrapper.removeClass(SIDEBAR_INACTIVE_LARGE);
             }
         }
         
@@ -53,15 +56,15 @@ uitext.topbar = (function($) {
 	},
 	
 	iconsToggleButtonHandler = function(e) {
-        if($topbarIcons.hasClass('topbar-icons-visible')) {
-            $topbarIcons.removeClass('topbar-icons-visible');
+        if($topbarIcons.hasClass(TOPBAR_ICONS_VISIBLE)) {
+            $topbarIcons.removeClass(TOPBAR_ICONS_VISIBLE);
             expandedMenuClick = false;
         } else {
-            $topbarIcons.addClass('topbar-icons-visible');
+            $topbarIcons.addClass(TOPBAR_ICONS_VISIBLE);
             expandedMenuClick = true;
         }
 
-        $wrapper.removeClass('sidebar-active-m sidebar-inactive-l');
+        $wrapper.removeClass(SIDEBAR_ACTIVE_MEDIUM + ' ' + SIDEBAR_INACTIVE_LARGE);
         e.preventDefault();
     },
     
@@ -93,7 +96,7 @@ uitext.topbar = (function($) {
    				}
    				menuClick = false;
    				if (!expandedMenuClick) {
-   					$topbarIcons.removeClass('topbar-icons-visible');
+   					$topbarIcons.removeClass(TOPBAR_ICONS_VISIBLE);
    				}
    				expandedMenuClick = false;
    			});

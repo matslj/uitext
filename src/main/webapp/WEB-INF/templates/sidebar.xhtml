@@ -7,23 +7,19 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="sidebar">
-		<div class="sidebar-scroll-content">
-			<!-- 				<div class="appTitle"> -->
-			<!-- 					<h:outputText value="UITEXT" /> -->
-			<!-- 				</div> -->
-
+		<!-- Scroll container - om vi behöver använda nano till exempel. -->
+		<div>
 			<div class="profile">
 				<div class="logo">
 					<h:graphicImage value="/resources/gfx/logo_gu.png" width="75"
 						height="75" />
 				</div>
 				<a id="profile-button" href="#"> <span class="username">John
-						Doe</span> <i class="fa fa-fw fa-cog"></i>
+						Doe</span> <i class="fa fa-fw fa-user"></i>
 				</a>
 				<ul>
 					<li><a href="#"><i class="fa fa-fw fa-sliders"></i><span><h:outputText value="#{msgs['sidebar.profile.account']}"/></span></a></li>
-<!-- 					<li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span -->
-<!-- 							class="menu-badge">2</span></a></li> -->
+					<li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span class="menu-badge">5</span></a></li>
 					<li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span><h:outputText value="#{msgs['sidebar.profile.logout']}"/></span></a></li>
 				</ul>
 			</div>

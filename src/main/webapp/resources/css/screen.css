@@ -25,7 +25,7 @@ a {
 	outline: 0;
 }
 
-#topbar-icons .language>ul>li>a img, #topbar-icons .language>ul>li>a span {
+#topbar-icons .topbar-language-options>ul>li>a img, #topbar-icons .topbar-language-options>ul>li>a span {
 	vertical-align: middle;
 	margin-right: 7px;
 }
@@ -384,15 +384,17 @@ a {
 	border: 0 none;
 }
 
-.wrapper .sidebar .sidebar-scroll-content {
+/* Scroll container - start */
+.wrapper .sidebar>div {
 	display: block;
 	height: 100%;
 	position: relative;
 }
 
-.wrapper .sidebar .sidebar-scroll-content .menu-container {
+.wrapper .sidebar>div .menu-container {
 	padding-bottom: 80px;
 }
+/* Scroll container - end */
 
 .wrapper .sidebar ul {
 	list-style-type: none;

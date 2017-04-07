@@ -20,7 +20,7 @@
 			</a>
 	
 	        <!-- 
-	        	Meny med ikoner/länkar + eventuell undermeny till ikon/länk.
+	        	Meny med ikoner/länkar och eventuella undermenyer till dessa
 	        	
 	        	Struktur:
 	        	Under topbar-icons gäller följande för varje ikon i menyn:
@@ -83,11 +83,11 @@
 						</a></li>
 					</ul>
 				</div>
-				<div class="language">
+				<div class="topbar-language-options">
 					<h:outputLink value="#" styleClass="topbar-submenu"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.language.title']}"/></span> <span
 						class="topbar-icon fa fa-language"></span>
 					</h:outputLink>
-					<ul class="animated fadeInDown">
+					<ul>
 						<li role="menuitem">
 							<p:commandLink global="false" action="#{localeManager.setLanguage('sv')}" process="@this" immediate="true" ajax="false">
 	                            <h:graphicImage alt="Swedish flag" value="/resources/gfx/icons/Sweden_24.png" /> <span><h:outputText value="#{msgs['topbar.language.swedish']}"/></span>
