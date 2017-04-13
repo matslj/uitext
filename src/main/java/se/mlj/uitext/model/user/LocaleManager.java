@@ -9,6 +9,16 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 
+/**
+ * Används för att hålla reda på eller ändra aktuell locale.
+ * Localen för en sida sätts i default.xhtml-templaten mha
+ * <b>&lt;f:view locale="#{localeManager.locale}"&gt;</b> och default locale (om ingen har satts av användaren
+ * i sessionen) hämtas från det initiala requestet i samband med att den här javaklassen skapas. Se
+ * init-metoden nedan.
+ * 
+ * @author Mats L
+ *
+ */
 @Named
 @SessionScoped
 public class LocaleManager implements Serializable {

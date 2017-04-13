@@ -12,8 +12,6 @@ import javax.inject.Named;
 import com.sun.faces.application.ApplicationAssociate;
 import com.sun.faces.application.ApplicationResourceBundle;
 
-import se.mlj.uitext.business.text.control.DBResourceBundle;
-
 /**
  * Lyssnar efter ett {@link DBResourceBundleReloadEvent} och när ett sådant
  * inkommer så rensas ResourceBundle cachen. Denna lösning gör det möjligt för

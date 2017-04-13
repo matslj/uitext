@@ -53,7 +53,7 @@
     </h:panelGroup>
     
 	<!-- Dialogruta för skapa/ändra ui-texter -->
-    <p:dialog header="#{not empty textAdmin.selectedText.value ? 'Ändra' : 'Skapa'} uitext" resizable="false"
+    <p:dialog id="ui-text-dialog" modal="true" header="#{not empty textAdmin.selectedText.value ? 'Ändra' : 'Skapa'} uitext" resizable="false"
 		widgetVar="editUitextDialog">
 		<h:form>
 			<h:panelGrid columns="2" cellpadding="5">
@@ -63,8 +63,8 @@
 					required="true" label="key-uitext" />
 
 				<h:outputLabel for="text-uitext" value="Text:" />
-				<p:inputText id="text-uitext" value="#{textAdmin.selectedText.value}"
-					required="true" label="text-uitext" />
+				<p:inputTextarea id="text-uitext" value="#{textAdmin.selectedText.value}"
+					required="true" label="text-uitext" rows="6" cols="50" />
 
 				<f:facet name="footer">
 					<p:commandButton id="idTextButtonUpdate" rendered="#{not empty textAdmin.selectedText.value}"

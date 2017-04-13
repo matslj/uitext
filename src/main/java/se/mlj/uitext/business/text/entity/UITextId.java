@@ -2,9 +2,12 @@ package se.mlj.uitext.business.text.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Embeddable;
-
-
+/**
+ * Sammansatt naturlig primärnyckel för ui-texter.
+ * 
+ * @author Mats L
+ *
+ */
 public class UITextId implements Serializable {
 	
 	/**

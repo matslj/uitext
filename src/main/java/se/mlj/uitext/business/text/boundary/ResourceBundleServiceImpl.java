@@ -16,7 +16,7 @@ import se.mlj.uitext.business.text.entity.UITextId;
 /**
  * För information se {@link ResourceBundleServiceLocal}.
  * 
- * @author ldc-msl
+ * @author Mats L
  *
  */
 @Stateless

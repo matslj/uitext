@@ -36,7 +36,7 @@ uitext.topbar = (function($) {
 	},
 	
 	topbarMenuHandler = function(e) {
-		$(this).toggleClass('active');
+		$(this).toggleClass(ACTIVE);
         
         if(isDesktop()) {
             $wrapper.toggleClass(SIDEBAR_INACTIVE_LARGE);

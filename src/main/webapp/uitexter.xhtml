@@ -33,6 +33,12 @@
 										</f:facet>
 										<h:outputText value="#{_text.key}" />
 									</p:column>
+									<p:column style="width: 4em; text-align: center;">
+										<f:facet name="header">
+											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.locale']}" />
+										</f:facet>
+										<h:outputText value="#{_text.locale}" />
+									</p:column>
 									<p:column>
 										<f:facet name="header">
 											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.value']}" />
@@ -43,12 +49,6 @@
 											oncomplete="PF('editUitextDialog').show()">
 											<h:outputText value="#{_text.value}" />
 										</p:commandLink>
-									</p:column>
-									<p:column>
-										<f:facet name="header">
-											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.locale']}" />
-										</f:facet>
-										<h:outputText value="#{_text.locale}" />
 									</p:column>
 								</p:dataTable>
 							</h:panelGroup>

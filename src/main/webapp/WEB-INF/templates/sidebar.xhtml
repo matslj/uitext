@@ -7,55 +7,51 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="sidebar">
-		<!-- Scroll container - om vi behöver använda nano till exempel. -->
-		<div>
-			<div class="profile">
-				<div class="logo">
-					<h:graphicImage value="/resources/gfx/logo_gu.png" width="75"
-						height="75" />
-				</div>
-				<a id="profile-button" href="#"> <span class="username">John
-						Doe</span> <i class="fa fa-fw fa-user"></i>
-				</a>
-				<ul>
-					<li><a href="#"><i class="fa fa-fw fa-sliders"></i><span><h:outputText value="#{msgs['sidebar.profile.account']}"/></span></a></li>
-					<li><a href="#"><i class="fa fa-fw fa-bell"></i><span>Notifications</span><span class="menu-badge">5</span></a></li>
-					<li><a href="#"><i class="fa fa-fw fa-sign-out"></i><span><h:outputText value="#{msgs['sidebar.profile.logout']}"/></span></a></li>
-				</ul>
+		<div class="profile">
+			<div class="logo">
+				<h:graphicImage value="/resources/gfx/logo_gu.png" width="75"
+					height="75" />
 			</div>
+			<a id="profile-button" href="#"> <span class="username">John
+					Doe</span> <i class="fa fa-fw fa-user"></i>
+			</a>
+			<my:menuitem>
+				<my:menuitem icon="fa fa-sliders fa-fw" text="#{msgs['sidebar.profile.account']}" />
+				<my:menuitem icon="fa fa-sign-out fa-fw" text="#{msgs['sidebar.profile.logout']}" />
+		    </my:menuitem>
+		</div>
 
-			<div class="menu">
-				<my:menuitem>
-					<my:menuitem outcome="/index" icon="fa fa-home fa-fw" text="#{msgs['sidebar.link.home']}" />
-					<my:menuitem outcome="/uitexter" icon="fa fa-certificate fa-fw" text="#{msgs['sidebar.link.uitexts']}" />
-					<my:menuitem submenu="true" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}">
-					    <my:menuitem outcome="/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
-						<my:menuitem outcome="/errorpages/error" icon="fa fa-minus-circle fa-fw" text="Error Page" />
-						<my:menuitem outcome="/errorpages/error_404" icon="fa fa-chain-broken fa-fw" text="404 Page" />
-					</my:menuitem>
-					<my:menuitem submenu="true" icon="fa fa-gg fa-fw" text="Exempelmeny">
-						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1">
-							<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1.1">
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.1" />
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.2" />
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.3" />
-							</my:menuitem>
-							<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1.2">
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.2.1" />
-							</my:menuitem>
+		<div class="menu">
+			<my:menuitem styleClass="menu-container">
+				<my:menuitem outcome="/index" icon="fa fa-home fa-fw" text="#{msgs['sidebar.link.home']}" />
+				<my:menuitem outcome="/uitexter" icon="fa fa-certificate fa-fw" text="#{msgs['sidebar.link.uitexts']}" />
+				<my:menuitem submenu="true" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}">
+				    <my:menuitem outcome="/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
+					<my:menuitem outcome="/errorpages/error" icon="fa fa-minus-circle fa-fw" text="Error Page" />
+					<my:menuitem outcome="/errorpages/error_404" icon="fa fa-chain-broken fa-fw" text="404 Page" />
+				</my:menuitem>
+				<my:menuitem submenu="true" icon="fa fa-gg fa-fw" text="Exempelmeny">
+					<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1">
+						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1.1">
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.1" />
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.2" />
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.1.3" />
 						</my:menuitem>
-						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2">
-							<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2.1">
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.1.1" />
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.1.2" />
-							</my:menuitem>
-							<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2.2">
-								<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.2.1" />
-							</my:menuitem>
+						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 1.2">
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 1.2.1" />
+						</my:menuitem>
+					</my:menuitem>
+					<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2">
+						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2.1">
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.1.1" />
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.1.2" />
+						</my:menuitem>
+						<my:menuitem submenu="true" icon="fa fa-sign-in fa-fw" text="Undermeny 2.2">
+							<my:menuitem icon="fa fa-sign-in fa-fw" text="Länk 2.2.1" />
 						</my:menuitem>
 					</my:menuitem>
 				</my:menuitem>
-			</div>
+			</my:menuitem>
 		</div>
 	</div>
 </ui:composition>
