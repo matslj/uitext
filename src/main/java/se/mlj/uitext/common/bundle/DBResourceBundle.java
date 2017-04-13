@@ -1,4 +1,4 @@
-package se.mlj.uitext.business.text.control;
+package se.mlj.uitext.common.bundle;
 
 import java.util.Enumeration;
 import java.util.Locale;

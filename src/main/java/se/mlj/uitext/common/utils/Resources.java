@@ -13,7 +13,7 @@ import javax.persistence.PersistenceContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import se.mlj.uitext.business.text.control.DBResourceBundle;
+import se.mlj.uitext.common.bundle.DBResourceBundle;
 
 /**
  * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans
