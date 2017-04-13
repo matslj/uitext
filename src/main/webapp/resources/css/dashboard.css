@@ -278,7 +278,7 @@ a {
 	position: relative;
 	color: #ffffff;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 1.3em; /* 14px; */
 	padding: 15px;
 	display: block;
 	box-sizing: border-box;
