@@ -1,0 +1,5 @@
+/* I den här filen placeras css som:
+   - inte är overrides av primefaces default-beteende här
+   - inte behandlar layouten för dashboarden
+   
+   Css som rör ovanstående ska läggas i respektive css fil. */

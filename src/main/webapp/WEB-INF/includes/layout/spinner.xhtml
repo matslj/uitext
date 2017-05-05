@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
+	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
+    </p:dialog>
+</ui:composition>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:p="http://primefaces.org/ui">
+
+	<!-- Dialogruta för skapa/ändra ui-texter -->
+    <p:dialog id="ui-text-dialog" modal="true" header="#{not empty textAdmin.selectedText.value ? 'Ändra' : 'Skapa'} uitext" resizable="false"
+		widgetVar="editUitextDialog">
+		<h:form>
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="key-uitext" value="Nyckel:" />
+				<h:outputText value="#{textAdmin.selectedText.key}" rendered="#{not empty textAdmin.selectedText.value}" />
+				<p:inputText id="key-uitext" value="#{textAdmin.selectedText.key}" rendered="#{empty textAdmin.selectedText.value}"
+					required="true" label="key-uitext" />
+
+				<h:outputLabel for="text-uitext" value="Text:" />
+				<p:inputTextarea id="text-uitext" value="#{textAdmin.selectedText.value}"
+					required="true" label="text-uitext" rows="6" cols="50" />
+
+				<f:facet name="footer">
+					<p:commandButton id="idTextButtonUpdate" rendered="#{not empty textAdmin.selectedText.value}"
+						action="#{textAdmin.updateSelectedText()}" value="Uppdatera"
+						update=":mainId"
+						oncomplete="PF('editUitextDialog').hide();">
+					</p:commandButton>
+					<p:commandButton id="idTextButtonCreate" rendered="#{empty textAdmin.selectedText.value}"
+						action="#{textAdmin.updateSelectedText()}" value="Skapa"
+						update=":mainId"
+						oncomplete="PF('editUitextDialog').hide();">
+					</p:commandButton>
+					<p:commandButton id="idTextButtonUpdateCancel" value="Avbryt"
+						type="button" onclick="PF('editUitextDialog').hide();">
+					</p:commandButton>
+				</f:facet>
+				<!-- @widgetVar(textTableW) -->
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+</ui:composition>

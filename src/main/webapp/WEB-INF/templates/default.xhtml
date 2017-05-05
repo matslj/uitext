@@ -29,62 +29,26 @@
    </script>
 </h:head>
 <h:body>
-	<f:view locale="#{localeManager.locale}">
-	<f:facet name="last">
-		<h:outputStylesheet name="css/dashboard.css" />
-		<h:outputStylesheet name="css/pf-overrides.css" />		
-	</f:facet>
-    <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
-	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
-	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
-    </p:dialog>
-<!--     styleClass="wrapper#{sessionState.showSidebar ? ' sidebar-active-m' : ' sidebar-inactive-l'}" -->
-    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
-    	<ui:include src="topbar.xhtml" />
-		<ui:include src="sidebar.xhtml" />
-	    <h:panelGroup id="mainId" layout="block" styleClass="main">
-	         <ui:insert name="content">
-	             [Template content will be inserted here]
-	         </ui:insert>
+	<f:view contentType="text/html" locale="#{localeManager.locale}">
+		<f:facet name="last">
+			<h:outputStylesheet name="css/dashboard.css" />
+			<h:outputStylesheet name="css/pf-overrides.css" />		
+			<h:outputStylesheet name="css/app.css" />		
+		</f:facet>
+	    <ui:include src="/WEB-INF/includes/layout/spinner.xhtml" />
+	    
+	    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
+	    	<ui:include src="/WEB-INF/includes/layout/topbar.xhtml" />
+			<ui:include src="/WEB-INF/includes/layout/sidebar.xhtml" />
+		    <h:panelGroup id="mainId" layout="block" styleClass="main">
+		         <ui:insert name="content">
+		             [Template content will be inserted here]
+		         </ui:insert>
+		    </h:panelGroup>
+		    <ui:include src="/WEB-INF/includes/layout/footer.xhtml" />
 	    </h:panelGroup>
-	    <div class="footer">
-        	<p>Application footer</p>
-    	</div>
-    </h:panelGroup>
-    
-	<!-- Dialogruta för skapa/ändra ui-texter -->
-    <p:dialog id="ui-text-dialog" modal="true" header="#{not empty textAdmin.selectedText.value ? 'Ändra' : 'Skapa'} uitext" resizable="false"
-		widgetVar="editUitextDialog">
-		<h:form>
-			<h:panelGrid columns="2" cellpadding="5">
-				<h:outputLabel for="key-uitext" value="Nyckel:" />
-				<h:outputText value="#{textAdmin.selectedText.key}" rendered="#{not empty textAdmin.selectedText.value}" />
-				<p:inputText id="key-uitext" value="#{textAdmin.selectedText.key}" rendered="#{empty textAdmin.selectedText.value}"
-					required="true" label="key-uitext" />
-
-				<h:outputLabel for="text-uitext" value="Text:" />
-				<p:inputTextarea id="text-uitext" value="#{textAdmin.selectedText.value}"
-					required="true" label="text-uitext" rows="6" cols="50" />
-
-				<f:facet name="footer">
-					<p:commandButton id="idTextButtonUpdate" rendered="#{not empty textAdmin.selectedText.value}"
-						action="#{textAdmin.updateSelectedText()}" value="Uppdatera"
-						update=":mainId"
-						oncomplete="PF('editUitextDialog').hide();">
-					</p:commandButton>
-					<p:commandButton id="idTextButtonCreate" rendered="#{empty textAdmin.selectedText.value}"
-						action="#{textAdmin.updateSelectedText()}" value="Skapa"
-						update=":mainId"
-						oncomplete="PF('editUitextDialog').hide();">
-					</p:commandButton>
-					<p:commandButton id="idTextButtonUpdateCancel" value="Avbryt"
-						type="button" onclick="PF('editUitextDialog').hide();">
-					</p:commandButton>
-				</f:facet>
-				<!-- @widgetVar(textTableW) -->
-			</h:panelGrid>
-		</h:form>
-	</p:dialog>
+	    
+	    <ui:include src="/WEB-INF/includes/layout/uitextDialog.xhtml" />
 	</f:view>
 </h:body>
 </html>

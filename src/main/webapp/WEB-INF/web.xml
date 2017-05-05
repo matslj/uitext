@@ -2,6 +2,9 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	
+	<display-name>My project</display-name>
+	
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
@@ -29,10 +32,6 @@
 	</context-param>
 	<!-- Slut på det som ska 'enablas' innan produktionssättning -->
 	<!-- ************************************************************************** -->
-	<session-config>
-		<!-- Ser till att sessionens id (jsessionid) inte inkluderas i URL:en. -->
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
 	<context-param>
 		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
 		<param-value>true</param-value>
@@ -41,6 +40,8 @@
 		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
 		<param-value>true</param-value>
 	</context-param>
+	
+	<!-- Primefaces settings -->
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
 		<param-value>omega</param-value>
@@ -49,35 +50,14 @@
 		<param-name>primefaces.FONT_AWESOME</param-name>
 		<param-value>true</param-value>
 	</context-param>
+	
+	<!-- Omnifaces settings -->
 	<context-param>
 		<param-name>org.omnifaces.FACES_VIEWS_SCAN_PATHS</param-name>
 		<param-value>/*.xhtml</param-value>
 	</context-param>
-	<mime-mapping>
-		<extension>eot</extension>
-		<mime-type>application/vnd.ms-fontobject</mime-type>
-	</mime-mapping>
-	<mime-mapping>
-		<extension>otf</extension>
-		<mime-type>font/opentype</mime-type>
-	</mime-mapping>
-	<mime-mapping>
-		<extension>ttf</extension>
-		<mime-type>application/x-font-ttf</mime-type>
-	</mime-mapping>
-	<mime-mapping>
-		<extension>woff</extension>
-		<mime-type>application/x-font-woff</mime-type>
-	</mime-mapping>
-	<mime-mapping>
-		<extension>woff2</extension>
-		<mime-type>application/x-font-woff2</mime-type>
-	</mime-mapping>
-	<mime-mapping>
-		<extension>svg</extension>
-		<mime-type>image/svg+xml</mime-type>
-	</mime-mapping>
-
+	
+	<!-- Servlets -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -87,7 +67,73 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Session management -->
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only> <!-- Klientskript får inte manipulera session cookies. -->
+		</cookie-config>
+		<!-- Ser till att sessionens id (jsessionid) inte inkluderas i URL:en. -->
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
+	
+	<error-page>
+		<error-code>400</error-code>
+		<location>/errorpages/400.xhtml</location>
+	</error-page>
+	<error-page>
+		<!-- Forbidden directory listing -->
+		<error-code>403</error-code>
+		<location>/errorpages/404.xhtml</location>
+	</error-page>
+	<error-page>
+	    <!-- Missing resource -->
+		<error-code>404</error-code>
+		<location>/errorpages/404.xhtml</location>
+	</error-page>
+	<error-page>
+	    <!-- Uncaught exception -->
+		<error-code>500</error-code>
+		<location>/errorpages/500.xhtml</location>
+	</error-page>
+	<error-page>
+	    <!-- Unsupported servlet method -->
+	    <error-code>503</error-code>
+	    <location>/general-error.html</location>
+	</error-page>
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/errorpages/expired.xhtml</location>
+	</error-page>
+	
+	<!-- Lista på mime-mappings som inte definieras av servern. -->
+	<mime-mapping>
+		<extension>otf</extension>
+		<mime-type>application/x-font-opentype</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ttf</extension>
+		<mime-type>application/x-font-truetype</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff2</extension>
+		<mime-type>application/font-woff2</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>eot</extension>
+		<mime-type>application/vnd.ms-fontobject</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+
 </web-app>
