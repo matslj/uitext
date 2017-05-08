@@ -1,0 +1,19 @@
+<!-- 
+	Hanterar uitexter
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:p="http://primefaces.org/ui"
+>
+
+	<o:tagAttribute name="styleClass" />
+
+    <ul class="#{styleClass}">
+		<ui:insert />
+	</ul>
+</ui:composition>

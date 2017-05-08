@@ -16,6 +16,8 @@
 			<supported-locale>sv</supported-locale>
 			<supported-locale>en</supported-locale>
 		</locale-config>
+		
+		<resource-handler>se.mlj.uitext.model.resourcehandler.ResourceHandlerImplPatch</resource-handler>
 	</application>
 
 	<converter>

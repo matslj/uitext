@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:fu="http://uitext.se/ui"
 	template="/WEB-INF/templates/default.xhtml">
 
 	<ui:define name="head">
@@ -14,7 +14,7 @@
 	<ui:define name="content">
 		<div class="ui-g">
 			<div class="ui-g-12">
-				<h1><my:uitext textKey="page.uitexter.title" /></h1>
+				<h1><fu:uitext textKey="page.uitexter.title" /></h1>
 				<p:breadCrumb>
 					<p:menuitem value="Översikt" url="/index" />
 					<p:menuitem value="#{msgs['page.uitexter.title']}" url="/uitexter" />

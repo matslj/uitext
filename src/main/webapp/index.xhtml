@@ -4,7 +4,7 @@
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:p="http://primefaces.org/ui"
-   xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+   xmlns:fu="http://uitext.se/ui"
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
@@ -14,7 +14,7 @@
     <ui:define name="content">
 		<div class="ui-g">
 			<div class="ui-g-12 ui-sm-12">
-				<h1><my:uitext textKey="home.title" /> <my:infoTooltip textKey="home.title.tooltip" /></h1>
+				<h1><fu:uitext textKey="home.title" /> <fu:tooltip textKey="home.title.tooltip" /></h1>
 				<p:breadCrumb>
 				    <p:menuitem value="Översikt" url="/index" />
 				</p:breadCrumb>
@@ -22,7 +22,7 @@
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic" header="Information om texter">
-				        <my:uitext textKey="text.hello" />
+				        <fu:uitext textKey="text.hello" />
 		            	<f:facet name="footer">
 							<h:link outcome="/uitexter">
 								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
@@ -32,7 +32,7 @@
 				</div>
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic2" header="Information om texter">
-				        <my:uitext textKey="text.hello" />
+				        <fu:uitext textKey="text.hello" />
 						<f:facet name="footer">
 							<h:link outcome="/uitexter">
 								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
@@ -42,7 +42,7 @@
 				</div>
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic3" header="Information om texter">
-				        <my:uitext textKey="text.hello" />
+				        <fu:uitext textKey="text.hello" />
 						<f:facet name="footer">
 							<h:link outcome="/uitexter">
 								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
