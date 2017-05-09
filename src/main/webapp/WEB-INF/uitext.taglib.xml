@@ -56,6 +56,54 @@
 			<type>java.lang.String</type>
 		</attribute>
 	</tag>
+	
+	<tag>
+		<description>Representerar en meny i systemet. Omsluter menuitems.</description>
+		<tag-name>menu</tag-name>
+		<source>tags/menu.xhtml</source>
+		<attribute>
+			<description>Styleclass för menykontainern.</description>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>Menyrad i en meny. Består av direkta länkar eller undermenyer (som i sin tur kan innehålla direkta länkar och eller undermenyer). Måste omslutas av en menu-tag.</description>
+		<tag-name>menuitem</tag-name>
+		<source>tags/menuitem.xhtml</source>
+		<attribute>
+			<description>Anger om ett menyalternativ ska renderas eller ej. Funkar som rendered brukar funka.</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>
+				Destination för klicket. Tre alternativ för värdet på outcome:
+				
+				* text - för att användas i outcome i en h:link
+				* # - för att skapa en undermeny.
+				* tomt (utelämna outcome attributet) - för att skapa en dummylänk som varken är en undermeny eller en vidarelänk.
+			</description>
+			<name>outcome</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Text på menyposten (gäller både direktlänk och submeny).</description>
+			<name>text</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>fa-ikonen som ska användas framför menytexten.</description>
+			<name>icon</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
 
 	<tag>
 		<description>Renders an internal link.</description>
