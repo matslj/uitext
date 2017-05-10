@@ -5,16 +5,28 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	xmlns:o="http://omnifaces.org/ui"
 >
-	<o:tagAttribute name="path" />
-	<o:tagAttribute name="value" />
+	<o:tagAttribute name="id" default="" />
+	<o:tagAttribute name="path" default="" />
+	<o:tagAttribute name="text" default="" />
+	<o:tagAttribute name="icon" default="" />
+	<o:tagAttribute name="styleClass" default="" />
+	<o:tagAttribute name="badgeValue" default="" />
 
-	<h:link
-		outcome="/#{path}" 
-		value="#{value eq null ? i18n[page.get(path).name += '.title'] : value}"
-		title="#{empty component.value ? i18n[page.get(path).name += '.title'] : null}"
-		styleClass="page #{page.is(path) ? 'current' : ''}">
-		<ui:insert />
-	</h:link>
+	<c:choose>
+		<c:when test="#{empty path}">
+			<a id="#{id}" class="#{styleClass}" href="#"> <h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/> 
+	            <span class="#{icon}"></span> <h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
+	        </a>
+		</c:when>
+		<c:otherwise>
+			<h:link styleClass="#{styleClass}" outcome="#{path}"> 
+				<h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/>
+				<h:outputText rendered="#{not empty icon}" styleClass="#{icon}" value=""/>
+				<h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
+			</h:link>
+		</c:otherwise>
+	</c:choose>
 </ui:composition>

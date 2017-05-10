@@ -3,21 +3,17 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:fu="http://uitext.se/ui"
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="topbar">
 		<h:form id="menu-form">
-			<a id="sidebar-toggle-button" class="menu-button" href="#">
-	            <span class="fa fa-bars"></span>
-	        </a>
+	        <fu:link id="hamburger" styleClass="menu-button" icon="fa fa-bars" />
 		
 			<span class="topbar-title"><h:outputText value="#{msgs['topbar.title']}"/></span>
 			
 			<!-- Visas när skärmen är mindre än x px och kan då användas för att toggla topbar-icons-menyn nedan. -->
-			<a id="topbar-icons-toggle-button"
-				href="#"> <span class="fa fa-ellipsis-h"></span>
-			</a>
+			<fu:link id="topbar-icons-toggle-button" icon="fa fa-ellipsis-h" />
 	
 	        <!-- 
 	        	Meny med ikoner/länkar och eventuella undermenyer till dessa
@@ -54,15 +50,10 @@
 	         -->
 			<div id="topbar-icons">
 				<div>
-					<a href="#"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.todo.title']}"/></span> <span
-						class="topbar-icon fa fa-bell-o"></span> <span
-						class="topbar-badge">5</span>
-					</a>
+					<fu:link path="sample" text="#{msgs['topbar.todo.title']}" icon="topbar-icon fa fa-bell-o" badgeValue="5" />
 				</div>
 				<div>
-					<h:outputLink value="#" styleClass="topbar-submenu"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.settings.title']}"/></span> <span
-						class="topbar-icon fa fa-gear"></span>
-					</h:outputLink>
+					<fu:link styleClass="topbar-submenu" text="#{msgs['topbar.settings.title']}" icon="topbar-icon fa fa-gear" />
 					<ul>
 						<li role="menuitem">
 							<p:commandLink global="false"
@@ -71,22 +62,20 @@
 								immediate="true"
 								action="#{sessionState.toggleEditMode()}">
 								<ui:fragment rendered="#{sessionState.textEditMode}">
-									<i class="fa fa-fw fa-lock"></i> <span><h:outputText value="#{msgs['topbar.settings.textedit.close']}"/></span>
+									<i class="fa fa-fw fa-lock"></i><span><h:outputText value="#{msgs['topbar.settings.textedit.close']}"/></span>
 								</ui:fragment>
 								<ui:fragment  rendered="#{not sessionState.textEditMode}">
-									<i class="fa fa-fw fa-unlock"></i> <span><h:outputText value="#{msgs['topbar.settings.textedit.open']}"/></span>
+									<i class="fa fa-fw fa-unlock"></i><span><h:outputText value="#{msgs['topbar.settings.textedit.open']}"/></span>
 								</ui:fragment>
 							</p:commandLink>
 						</li>
-						<li role="menuitem"><a href="#"> <i
-								class="fa fa-fw fa-picture-o"></i> <span><h:outputText value="#{msgs['topbar.settings.highcontrast']}"/></span>
-						</a></li>
+						<li role="menuitem">
+							<fu:link text="#{msgs['topbar.settings.highcontrast']}" icon="topbar-icon fa fa-fw fa-picture-o" />
+						</li>
 					</ul>
 				</div>
 				<div class="topbar-language-options">
-					<h:outputLink value="#" styleClass="topbar-submenu"> <span class="topbar-icon-text"><h:outputText value="#{msgs['topbar.language.title']}"/></span> <span
-						class="topbar-icon fa fa-language"></span>
-					</h:outputLink>
+					<fu:link styleClass="topbar-submenu" text="#{msgs['topbar.language.title']}" icon="topbar-icon fa fa-language" />
 					<ul>
 						<li role="menuitem">
 							<p:commandLink global="false" action="#{localeManager.setLanguage('sv')}" process="@this" immediate="true" ajax="false">

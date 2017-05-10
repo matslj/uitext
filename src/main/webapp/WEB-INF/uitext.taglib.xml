@@ -106,20 +106,44 @@
 	</tag>
 
 	<tag>
-		<description>Renders an internal link.</description>
+		<description>Används (framförallt av layouten) för att rendera olika typer av länkar.</description>
 		<tag-name>link</tag-name>
 		<source>tags/link.xhtml</source>
 		<attribute>
-			<description>The GET path of page to navigate, WITHOUT leading slash and extension.</description>
-			<name>path</name>
-			<required>true</required>
+			<description>Id för länken.</description>
+			<name>id</name>
+			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
-			<description>The value of the link. Defaults to page title.</description>
-			<name>value</name>
+			<description>Länken att navigera till. Om den lämnas tom kommer den att renderas som #. Renderas i övrigt som h:link.</description>
+			<name>path</name>
 			<required>false</required>
-			<type>java.lang.Object</type>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Namnet på länken.</description>
+			<name>text</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>fa-icon-representation</description>
+			<name>icon</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Stil-klass på länk-elementet.</description>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Badge.</description>
+			<name>badgeValue</name>
+			<required>false</required>
+			<type>java.lang.String</type>
 		</attribute>
 	</tag>
 

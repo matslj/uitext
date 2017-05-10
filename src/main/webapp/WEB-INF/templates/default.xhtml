@@ -4,51 +4,41 @@
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:p="http://primefaces.org/ui"
+   xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
    xmlns:ui="http://java.sun.com/jsf/facelets">
    
-<ui:insert name="metadata" />
-<h:head>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta charset="utf-8" />
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-   <meta name="apple-mobile-web-app-capable" content="yes" />
-   <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
-   <link rel="icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" />
-   <h:outputScript library="primefaces" name="jquery/jquery.js" />
-   <h:outputScript library="js" name="uitext-sidebar.js" />
-   <h:outputScript library="js" name="uitext-topbar.js" />
-   <ui:insert name="head" />
-   <script>
-   		(function($) {
-   			$(document).ready(function() {
-   	   			uitext.sidebar.init();
-   	   			uitext.topbar.init();
-   			});
-   	    })(jQuery);
-   </script>
-</h:head>
-<h:body>
-	<f:view contentType="text/html" locale="#{localeManager.locale}">
-		<f:facet name="last">
-			<h:outputStylesheet name="css/dashboard.css" />
-			<h:outputStylesheet name="css/pf-overrides.css" />		
-			<h:outputStylesheet name="css/app.css" />		
-		</f:facet>
-	    <ui:include src="/WEB-INF/includes/layout/spinner.xhtml" />
-	    
-	    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
-	    	<ui:include src="/WEB-INF/includes/layout/topbar.xhtml" />
-			<ui:include src="/WEB-INF/includes/layout/sidebar.xhtml" />
-		    <h:panelGroup id="mainId" layout="block" styleClass="main">
-		         <ui:insert name="content">
-		             [Template content will be inserted here]
-		         </ui:insert>
+    <c:set var="dev" value="#{faces.development}" scope="application" />
+    
+    <f:view contentType="text/html" locale="#{localeManager.locale}">   
+	    <ui:insert name="metadata" />
+		<h:head>
+		   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		   <meta charset="utf-8" />
+		   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		   <meta name="apple-mobile-web-app-capable" content="yes" />
+		   <ui:include src="/WEB-INF/includes/layout/head-resources.xhtml" />
+		</h:head>
+		<h:body>
+			<f:facet name="last">
+				<h:outputStylesheet name="css/dashboard.css" />
+				<h:outputStylesheet name="css/pf-overrides.css" />		
+				<h:outputStylesheet name="css/app.css" />		
+			</f:facet>
+		    <ui:include src="/WEB-INF/includes/layout/spinner.xhtml" />
+		    
+		    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
+		    	<ui:include src="/WEB-INF/includes/layout/topbar.xhtml" />
+				<ui:include src="/WEB-INF/includes/layout/sidebar.xhtml" />
+			    <h:panelGroup id="mainId" layout="block" styleClass="main">
+			         <ui:insert name="content">
+			             [Template content will be inserted here]
+			         </ui:insert>
+			    </h:panelGroup>
+			    <ui:include src="/WEB-INF/includes/layout/footer.xhtml" />
 		    </h:panelGroup>
-		    <ui:include src="/WEB-INF/includes/layout/footer.xhtml" />
-	    </h:panelGroup>
-	    
-	    <ui:include src="/WEB-INF/includes/layout/uitextDialog.xhtml" />
+		    
+		    <ui:include src="/WEB-INF/includes/layout/uitextDialog.xhtml" />
+		</h:body>
 	</f:view>
-</h:body>
 </html>

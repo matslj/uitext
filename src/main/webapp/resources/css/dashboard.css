@@ -107,12 +107,18 @@ a {
 	font-size: 28px;
 }
 
-.wrapper .topbar #topbar-icons a span.topbar-icon-text {
+.wrapper .topbar #topbar-icons li a span.topbar-icon {
+	font-size: 1em;
+	width: 20px;
+	float: left;
+}
+
+.wrapper .topbar #topbar-icons div>a span.icon-text {
 	font-size: 20px;
 	display: none;
 }
 
-.wrapper .topbar #topbar-icons a span.topbar-badge {
+.wrapper .topbar #topbar-icons a span.badge {
 	position: absolute;
 	font-size: 10px;
 	right: -5px;
@@ -567,7 +573,7 @@ a {
 		color: #007be5;
 		padding-left: 15px;
 	}
-	.wrapper .topbar #topbar-icons a span.topbar-icon-text {
+	.wrapper .topbar #topbar-icons div>a span.icon-text {
 		display: inline;
 		font-size: 16px;
 	}
@@ -577,7 +583,7 @@ a {
 		margin: 0px 5px 0px 5px;
 		width: 20px;
 	}
-	.wrapper .topbar #topbar-icons a span.topbar-badge {
+	.wrapper .topbar #topbar-icons a span.badge {
 		font-size: 10px;
 		top: -7px;
 		right: 54px;

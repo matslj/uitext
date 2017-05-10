@@ -6,7 +6,7 @@ var uitext = uitext || {};
    		
 uitext.topbar = (function($) {
 	var TOPBAR_ICONS = '#topbar-icons',
-		MENU_BUTTON = '#sidebar-toggle-button',
+		MENU_BUTTON = '#hamburger',
 	    ACTIVE = 'active',
 	    TOPBAR_SUBMENU_HOLDER = 'topbar-submenu',
 	    TOPBAR_ICON_TOGGLE_BUTTON = '#topbar-icons-toggle-button',
