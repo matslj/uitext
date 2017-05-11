@@ -1,5 +1,8 @@
 <!-- 
-	This tag file renders an internal link.
+	Renderar en länk; antingen en vanlig anchor tag med href satt till # eller en h:link.
+	Vilket det blir beror på om path är satt eller ej (om path är satt så renderas en h:link).
+	
+	Styling finns för använding i topbaren. Generell styling saknas för tillfället.
 -->
 <ui:composition
 	xmlns="http://www.w3.org/1999/xhtml"
@@ -9,24 +12,27 @@
 	xmlns:o="http://omnifaces.org/ui"
 >
 	<o:tagAttribute name="id" default="" />
+	<o:tagAttribute name="rendered" default="#{true}" />
 	<o:tagAttribute name="path" default="" />
 	<o:tagAttribute name="text" default="" />
 	<o:tagAttribute name="icon" default="" />
 	<o:tagAttribute name="styleClass" default="" />
 	<o:tagAttribute name="badgeValue" default="" />
 
-	<c:choose>
-		<c:when test="#{empty path}">
-			<a id="#{id}" class="#{styleClass}" href="#"> <h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/> 
-	            <span class="#{icon}"></span> <h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
-	        </a>
-		</c:when>
-		<c:otherwise>
-			<h:link styleClass="#{styleClass}" outcome="#{path}"> 
-				<h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/>
-				<h:outputText rendered="#{not empty icon}" styleClass="#{icon}" value=""/>
-				<h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
-			</h:link>
-		</c:otherwise>
-	</c:choose>
+	<c:if test="#{rendered ne false}">
+		<c:choose>
+			<c:when test="#{empty path}">
+				<a id="#{id}" class="#{styleClass}" href="#"> <h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/> 
+		            <span class="#{icon}"></span> <h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
+		        </a>
+			</c:when>
+			<c:otherwise>
+				<h:link styleClass="#{styleClass}" outcome="#{path}"> 
+					<h:outputText rendered="#{not empty text}" styleClass="icon-text" value="#{text}"/>
+					<h:outputText rendered="#{not empty icon}" styleClass="#{icon}" value=""/>
+					<h:outputText rendered="#{not empty badgeValue}" styleClass="badge" value="#{badgeValue}"/>
+				</h:link>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
 </ui:composition>

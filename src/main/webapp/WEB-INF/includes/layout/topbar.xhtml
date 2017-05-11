@@ -8,11 +8,13 @@
 
 	<div class="topbar">
 		<h:form id="menu-form">
+			<!-- Hamburgaren: öppnar och stänger vänstermenyn. -->
 	        <fu:link id="hamburger" styleClass="menu-button" icon="fa fa-bars" />
 		
-			<span class="topbar-title"><h:outputText value="#{msgs['topbar.title']}"/></span>
+			<!-- Applikationens namn. -->
+			<h:outputText styleClass="topbar-title" value="#{msgs['topbar.title']}"/>
 			
-			<!-- Visas när skärmen är mindre än x px och kan då användas för att toggla topbar-icons-menyn nedan. -->
+			<!-- Visas när skärmen är mindre än 640 px och kan då användas för att toggla topbar-icons-menyn nedan. -->
 			<fu:link id="topbar-icons-toggle-button" icon="fa fa-ellipsis-h" />
 	
 	        <!-- 
@@ -21,32 +23,22 @@
 	        	Struktur:
 	        	Under topbar-icons gäller följande för varje ikon i menyn:
 	        	<div>
-	        	    <a href=...>
-	        	    	<span class="topbar-icon fa fa..."> </span>
-	        	    </a>
+	        	    länk (direktlänk)
 	        	</div>
 	        	
-	        	Vadsomhelst som renderar till en a-tag kan användas (t.ex h:ouputLink).
+	        	eller 
 	        	
-	        	Om ingen direktnavigation ska ske från a-tagen; om den istället ska vara en behållare för en undermeny;
-	        	så ska följande göras:
 	        	<div>
-	        	    <a href="#" class="topbar-submenu> (för h:outputLink så sätts 'value' till # och styleClass sätts till 'topbar-submenu')
-	        	    	<span class="topbar-icon fa fa..."> </span>
-	        	    </a>
+	        	    menylänk (öppnar en undermeny bestående av li-elementen nedan)
 	        	    <ul>
-	        	    	<li>
-	        	    		<a href=...>
-	        	    		    <i class="fa fa...></i> <span>Text</span>
-	        	    		</a>
-	        	    	</li>
-	        	    	<li>
-	        	    		<a href=...>
-	        	    		    <i class="fa fa...></i> <span>Text</span>
-	        	    		</a>
-	        	    	</li>
+	        	    	<li>...
+	        	    	<li>...
 	        	    </ul>
 	        	</div>
+	        	
+	        	Använd med fördel fu:link för direktlänkar eller länkar som triggar javascript.
+	        	
+	        	Har du behov av att köra backing bean actions så rekommenderas p:commandLink (se användning nedan).
 	         -->
 			<div id="topbar-icons">
 				<div>

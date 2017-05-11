@@ -3,10 +3,21 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:my="http://xmlns.jcp.org/jsf/composite/components"
+	xmlns:fu="http://uitext.se/ui"
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="footer">
-       	<p>Application footer</p>
+		<div class="ui-g">
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-6 ui-g-nopad">
+					<p>Application footer</p>
+					<p>Servicedesk</p>
+					<p>Developed by </p>
+				</div>
+				<div class="ui-g-6 ui-g-nopad">
+					<fu:dev />
+				</div>
+			</div>
+		</div>
    	</div>
 </ui:composition>

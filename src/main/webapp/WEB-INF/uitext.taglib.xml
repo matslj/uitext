@@ -77,7 +77,7 @@
 			<description>Anger om ett menyalternativ ska renderas eller ej. Funkar som rendered brukar funka.</description>
 			<name>rendered</name>
 			<required>false</required>
-			<type>java.lang.String</type>
+			<type>boolean</type>
 		</attribute>
 		<attribute>
 			<description>
@@ -106,7 +106,12 @@
 	</tag>
 
 	<tag>
-		<description>Används (framförallt av layouten) för att rendera olika typer av länkar.</description>
+		<description>
+			Renderar en länk; antingen en vanlig anchor tag med href satt till # eller en h:link.
+			Vilket det blir beror på om path är satt eller ej (om path är satt så renderas en h:link).
+	
+			Styling finns för använding i topbaren. Generell styling saknas för tillfället.
+		</description>
 		<tag-name>link</tag-name>
 		<source>tags/link.xhtml</source>
 		<attribute>
@@ -114,6 +119,12 @@
 			<name>id</name>
 			<required>false</required>
 			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Anger om en länk ska visas eller ej. Funkar som rendered brukar funka.</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>boolean</type>
 		</attribute>
 		<attribute>
 			<description>Länken att navigera till. Om den lämnas tom kommer den att renderas som #. Renderas i övrigt som h:link.</description>
