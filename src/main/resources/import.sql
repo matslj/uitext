@@ -33,6 +33,27 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.exampl
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.examples', 'Examples', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.example1', 'Exempelsida 1', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.example1', 'Example page 1', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.texts', 'Texter', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.texts', 'Texts', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.standardtexts', 'Standardtexter', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.standardtexts', 'Standard texts', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.organization', 'Organisation', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.organization', 'Organization', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.users', 'Användare', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.users', 'Users', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.system', 'System', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.system', 'System', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search', 'Sök', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search', 'Search', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.planer', 'Planer', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.planer', 'Plans', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.information', 'Information', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.information', 'Information', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.tillfalle', 'Tillfälle', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.tillfalle', 'Moment', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.planer', 'Planer', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.planer', 'Plans', 'en');
+
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.title', 'UI-texter', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.title', 'UI-texts', 'en');
