@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:fu="http://uitext.se/ui"
+   template="/WEB-INF/templates/default.xhtml">
+   
+    <ui:define name="head">
+   		<title>UIText - #{msgs['page.planer.plan.title']}</title>
+    </ui:define>
+    
+    <ui:define name="content">
+    	<p:menubar>
+	    	<p:menuitem value="#{msgs['page.planer.plan.historik']}" url="http://www.primefaces.org" icon="fa fa-plus" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.protokoll']}" url="http://www.primefaces.org" icon="fa fa-plus" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.litteraturlista']}" url="http://www.primefaces.org" icon="fa fa-plus" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.pdf']}" url="http://www.primefaces.org" icon="fa fa-plus" />
+    	</p:menubar>
+        <div class="ui-g">
+			<div class="ui-g-12">
+				<h1><fu:uitext textKey="page.sample.one" /></h1>
+				<p:breadCrumb>
+				    <p:menuitem value="Översikt" url="/index" />
+				    <p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
+				    <p:menuitem value="#{msgs['page.planer.plan.title']}" outcome="/planer/plan" />
+				</p:breadCrumb>
+			</div>
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-12 ui-md-6">
+					<p:panel id="basic" header="Exempelpanel 1">
+						<fu:uitext textKey="global.lorem.ipsum" />
+				    </p:panel>
+				</div>
+				<div class="ui-g-12 ui-md-6">
+					<p:panel id="basic2" header="Exempelpanel 2">
+						<fu:uitext textKey="global.lorem.ipsum" />
+					</p:panel>
+				</div>
+			</div>
+        </div>
+    </ui:define>
+</ui:composition>

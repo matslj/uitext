@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fu="http://uitext.se/ui"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="head">
+		<title>UI-text - #{msgs['page.standardtexter.title']}</title>
+	</ui:define>
+
+	<ui:define name="content">
+		<div class="ui-g">
+			<div class="ui-g-12">
+				<h1><fu:uitext textKey="page.standardtexter.title" /></h1>
+				<p:breadCrumb>
+					<p:menuitem value="Översikt" outcome="/index" />
+					<p:menuitem value="#{msgs['page.standardtexter.title']}" outcome="/texter/standardtexter" />
+				</p:breadCrumb>
+			</div>
+			<div class="ui-g-12 ui-g-nopad">
+				
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
