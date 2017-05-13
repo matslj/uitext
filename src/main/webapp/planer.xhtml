@@ -8,37 +8,31 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>UIText - #{msgs['page.sample.one']}</title>
+   		<title>UIText - #{msgs['page.planer.title']}</title>
     </ui:define>
     
     <ui:define name="content">
     	<p:menubar>
-	    	<p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
-	    	<p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+	    	<p:menuitem value="#{msgs['page.planer.nyplan']}" outcome="/planer/plan" icon="fa fa-plus" />
     	</p:menubar>
         <div class="ui-g">
 			<div class="ui-g-12">
 				<h1><fu:uitext textKey="page.sample.one" /></h1>
 				<p:breadCrumb>
 				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="#{msgs['page.sample.one']}" url="/sample" />
+				    <p:menuitem value="#{msgs['page.planer.title']}" url="/planer" />
 				</p:breadCrumb>
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
-				<div class="ui-g-12 ui-md-6 ui-xl-4">
+				<div class="ui-g-12 ui-md-6">
 					<p:panel id="basic" header="Exempelpanel 1">
 						<fu:uitext textKey="global.lorem.ipsum" />
 				    </p:panel>
 				</div>
-				<div class="ui-g-12 ui-md-6 ui-xl-4">
+				<div class="ui-g-12 ui-md-6">
 					<p:panel id="basic2" header="Exempelpanel 2">
 						<fu:uitext textKey="global.lorem.ipsum" />
 					</p:panel>
-				</div>
-				<div class="ui-g-12 ui-md-6 ui-xl-4">
-					<p:panel id="basic3" header="Exempelpanel 3">
-						<fu:uitext textKey="global.lorem.ipsum" />
-				    </p:panel>
 				</div>
 			</div>
         </div>

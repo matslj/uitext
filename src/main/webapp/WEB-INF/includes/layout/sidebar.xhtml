@@ -24,22 +24,22 @@
 		<div class="menu">
 			<fu:menu styleClass="menu-container">
 				<fu:menuitem outcome="/index" icon="fa fa-home fa-fw" text="#{msgs['sidebar.link.home']}" />
-				<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.planer']}" />
+				<fu:menuitem outcome="/planer" icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.planer']}" />
 				<fu:menuitem outcome="#" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.search']}">
-				    <fu:menuitem icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.search.planer']}" />
-					<fu:menuitem icon="fa fa-minus-circle fa-fw" text="#{msgs['sidebar.link.search.information']}" />
-					<fu:menuitem icon="fa fa-chain-broken fa-fw" text="#{msgs['sidebar.link.search.tillfalle']}" />
+				    <fu:menuitem outcome="/search/planSok" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.search.planer']}" />
+					<fu:menuitem outcome="/search/informationSok" icon="fa fa-minus-circle fa-fw" text="#{msgs['sidebar.link.search.information']}" />
+					<fu:menuitem outcome="/search/tillfalleSok" icon="fa fa-chain-broken fa-fw" text="#{msgs['sidebar.link.search.tillfalle']}" />
 				</fu:menuitem>
 				<fu:menuitem outcome="#" icon="fa fa-gg fa-fw" text="#{msgs['sidebar.link.system']}">
 					<fu:menuitem outcome="#" icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.texts']}">
-						<fu:menuitem outcome="/uitexter" icon="fa fa-certificate fa-fw" text="#{msgs['sidebar.link.uitexts']}" />
-						<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.standardtexts']}" />
+						<fu:menuitem outcome="/texter/uitexter" icon="fa fa-certificate fa-fw" text="#{msgs['sidebar.link.uitexts']}" />
+						<fu:menuitem outcome="/texter/standardtexter" icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.standardtexts']}" />
 					</fu:menuitem>
 					<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.organization']}" />
 					<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.users']}" />
 				</fu:menuitem>
 				<fu:menuitem outcome="#" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}">
-				    <fu:menuitem outcome="/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
+				    <fu:menuitem outcome="/exempel/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
 					<fu:menuitem outcome="/errorpages/expired" icon="fa fa-minus-circle fa-fw" text="View expired" />
 					<fu:menuitem outcome="/errorpages/404" icon="fa fa-chain-broken fa-fw" text="404 Page" />
 				</fu:menuitem>
