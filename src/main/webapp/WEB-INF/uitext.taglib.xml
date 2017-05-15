@@ -40,6 +40,49 @@
 	</tag>
 	
 	<tag>
+		<description>Lägger in en fa-info-circle icon och kopplar ett primefaces tooltip till denna ikon.</description>
+		<tag-name>outputEntry</tag-name>
+		<source>tags/outputEntry.xhtml</source>
+		<attribute>
+			<description>Anger om ett menyalternativ ska renderas eller ej. Funkar som rendered brukar funka.</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description>
+			</description>
+			<name>label</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Text på menyposten (gäller både direktlänk och submeny).</description>
+			<name>text</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Nyckeln för hämtning av text från resource bundle.</description>
+			<name>ttTextKey</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Position för tooltiprutan. Välj på top, bottom, left, right. Default är top.</description>
+			<name>ttPosition</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra.</description>
+			<name>ttSize</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
 		<description>Om ui-texter är i redigeringsläge så visas en klickbar länk, som vid klick öppnar en dialogruta för ändring av ui-text.</description>
 		<tag-name>uitext</tag-name>
 		<source>tags/uitext.xhtml</source>
