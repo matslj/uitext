@@ -53,6 +53,8 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.search.tillfalle', 'Moment', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.planer', 'Planer', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.planer', 'Plans', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.information', 'Information', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'sidebar.link.information', 'Information', 'en');
 
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.uitexter.title', 'UI-texter', 'sv');

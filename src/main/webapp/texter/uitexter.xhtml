@@ -21,7 +21,7 @@
 				</p:breadCrumb>
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
-				<div class="ui-g-12 ui-xl-6">
+				<div class="ui-g-12">
 					<h:form id="tableForm">
 						<p:panel id="basic" header="#{msgs['page.uitexter.panel.textlist.header']}">
 							<h:panelGroup rendered="#{not empty textAdmin.textList}">
@@ -33,7 +33,7 @@
 										</f:facet>
 										<h:outputText value="#{_text.key}" />
 									</p:column>
-									<p:column style="width: 4em; text-align: center;">
+									<p:column style="width: 5em; text-align: center;">
 										<f:facet name="header">
 											<h:outputText value="#{msgs['page.uitexter.panel.textlist.table.locale']}" />
 										</f:facet>

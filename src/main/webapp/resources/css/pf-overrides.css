@@ -54,6 +54,15 @@
 .ui-menu.ui-menubar.ui-widget.ui-widget-content .ui-menu-list .ui-menuitem-link {
 }
 
+/* Datatable */
+
+.ui-datatable-odd {
+	background-color: #fff;
+}
+
+.ui-datatable-header {
+	background: #dfe5e8;	
+}
 
 /* Panels */
 
