@@ -3,3 +3,21 @@
    - inte behandlar layouten för dashboarden
    
    Css som rör ovanstående ska läggas i respektive css fil. */
+   
+
+.bg-green {
+	color: #fff;
+    background-color: #5cb85c;
+}
+.bg-blue {
+	background-color: #337ab7;
+	color: #fff;
+}
+.bg-red {
+    color: #fff;
+    background-color: #d9534f;
+}
+.bg-yellow {
+    color: #fff;
+    background-color: #f0ad4e;
+}

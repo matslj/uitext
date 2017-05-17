@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:fu="http://uitext.se/ui"
+   template="/WEB-INF/templates/default.xhtml">
+   
+    <ui:define name="head">
+   		<title>UIText - #{msgs['page.sample.two']}</title>
+    </ui:define>
+    
+    <ui:define name="content">
+    	<p:menubar>
+	    	<p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+	    	<p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+    	</p:menubar>
+        <div class="ui-g">
+			<div class="ui-g-12">
+				<h1><fu:uitext textKey="page.sample.two" /></h1>
+				<p:breadCrumb>
+				    <p:menuitem value="Översikt" url="/index" />
+				    <p:menuitem value="#{msgs['page.sample.two']}" url="/exempel/sample2" />
+				</p:breadCrumb>
+			</div>
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic" header="Information om texter">
+				        <fu:uitext textKey="text.hello" />
+		            	<f:facet name="footer">
+							<h:link outcome="/texter/uitexter">
+								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
+							</h:link>
+						</f:facet>
+				    </p:panel>
+				</div>
+				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic2" header="Information om texter">
+				        <fu:uitext textKey="text.hello" />
+						<f:facet name="footer">
+							<h:link outcome="/texter/uitexter">
+								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
+							</h:link>
+						</f:facet>
+				    </p:panel>
+				</div>
+				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
+					<p:panel id="basic3" header="Information om texter">
+				        <fu:uitext textKey="text.hello" />
+						<f:facet name="footer">
+							<h:link outcome="/texter/uitexter">
+								<span>Till uitexter</span> <i class="fa fa-fw fa-sign-out"></i>
+							</h:link>
+						</f:facet>
+				    </p:panel>
+				</div>
+			</div>
+        </div>
+    </ui:define>
+</ui:composition>

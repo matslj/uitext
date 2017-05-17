@@ -41,6 +41,54 @@
 	
 	<tag>
 		<description>Lägger in en fa-info-circle icon och kopplar ett primefaces tooltip till denna ikon.</description>
+		<tag-name>infobox</tag-name>
+		<source>tags/infobox.xhtml</source>
+		<attribute>
+			<description>Anger om ett menyalternativ ska renderas eller ej. Funkar som rendered brukar funka.</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<description>Nyckeln för hämtning av text från resource bundle.</description>
+			<name>highlight</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Position för tooltiprutan. Välj på top, bottom, left, right. Default är top.</description>
+			<name>text</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra.</description>
+			<name>icon</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra.</description>
+			<name>outcome</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra.</description>
+			<name>styleClass</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Storlek på infosymbolen. Default är 1 em, dvs samma storlek som aktuell font. Du kan ange size i em px % etc, men em är att föredra.</description>
+			<name>style</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>Lägger in en fa-info-circle icon och kopplar ett primefaces tooltip till denna ikon.</description>
 		<tag-name>outputEntry</tag-name>
 		<source>tags/outputEntry.xhtml</source>
 		<attribute>

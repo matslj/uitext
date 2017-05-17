@@ -77,3 +77,6 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum'
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Exempelsida 1', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Example page 1', 'en');
+
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Detaljer', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Details', 'en');
