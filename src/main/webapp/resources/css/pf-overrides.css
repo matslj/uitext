@@ -91,6 +91,25 @@
 .ui-panel .ui-panel-title {
 	font-size: 1.3em;
 	font-family: "Open Sans", sans-serif;
+	display: block;
+	margin: 0.1em 0 0.2em 0;
+}
+
+.ui-panel .ui-panel-title .title {
+	float: left;
+	display: block;
+}
+
+.ui-panel .ui-panel-title .action {
+	float: right;
+	display: block;
+	font-size: 0.7em;
+}
+
+.ui-panel .ui-panel-title::after {
+    content:'';
+    display:block;
+    clear: both;
 }
 
 .ui-panel .ui-panel-footer {
