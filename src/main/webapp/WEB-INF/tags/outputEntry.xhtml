@@ -6,28 +6,33 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:fu="http://uitext.se/ui"
 	xmlns:o="http://omnifaces.org/ui"
 >
 
 	<o:tagAttribute name="rendered" default="#{true}" />
 	<o:tagAttribute name="label" />
-	<o:tagAttribute name="text" default="#{msgs['component.value.missing']}" />
+	<o:tagAttribute name="value" default="#{msgs['component.outputentry.valuemissing']}" />
 	
 	<o:tagAttribute name="ttTextKey" />
 	<o:tagAttribute name="ttPosition" />
     <o:tagAttribute name="ttSize" />
 
 	<h:panelGroup styleClass="outputEntry" layout="block" rendered="#{rendered}">
-		<span class="label">
-			<h:outputText value="#{label}" />
-			<c:if test="#{not empty ttTextKey}">
-				<c:if test="#{empty ttPosition and empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" /></c:if>
-				<c:if test="#{empty ttPosition and not empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" size="#{ttSize}"/></c:if>
-				<c:if test="#{not empty ttPosition and empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" position="#{ttPosition}"/></c:if>
-				<c:if test="#{not empty ttPosition and not empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" size="#{ttSize}" position="#{ttPosition}"/></c:if>
-			</c:if>
-		</span>
-		<h:outputText styleClass="text" value="#{text}" />
+		<f:subview>
+			<span class="label">
+				<h:outputText value="#{label}" />
+				<c:if test="#{not empty ttTextKey}">
+					<c:if test="#{empty ttPosition and empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" /></c:if>
+					<c:if test="#{empty ttPosition and not empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" size="#{ttSize}"/></c:if>
+					<c:if test="#{not empty ttPosition and empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" position="#{ttPosition}"/></c:if>
+					<c:if test="#{not empty ttPosition and not empty ttSize}"><fu:tooltip textKey="#{ttTextKey}" size="#{ttSize}" position="#{ttPosition}"/></c:if>
+				</c:if>
+			</span>
+			<h:outputText styleClass="text" value="#{value}" />
+			<h:inputHidden id="entry" value="#{flash.temp}" />
+			<h:message for="entry" styleClass="outputentry-error"></h:message>
+		</f:subview>
 	</h:panelGroup>
 </ui:composition>

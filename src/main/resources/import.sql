@@ -80,3 +80,5 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', '
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Detaljer', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Details', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.outputentry.valuemissing', '-- värde saknas --', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.outputentry.valuemissing', '-- value missing --', 'en');
