@@ -21,3 +21,24 @@
     color: #fff;
     background-color: #f0ad4e;
 }
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+/* Header for plans */
+.wrapper .main .content-title {
+	padding-top: 40px;
+}
+
+.wrapper .main .content-title h1:FIRST-CHILD {
+	margin-top: 0;
+	margin-bottom: 0;
+	float: left;
+	padding-bottom: 0;
+}
+
+.wrapper .main .content-title .ui-steps {
+	float: right;
+}

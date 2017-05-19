@@ -1,0 +1,38 @@
+<!-- 
+	This tag file renders a button which is to be placed inside k:buttons.
+-->
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:fu="http://uitext.se/ui"
+	xmlns:p="http://primefaces.org/ui"
+>
+
+	<o:tagAttribute name="textKey" />
+	<o:tagAttribute name="renderStatus" default="#{false}" />
+	<o:tagAttribute name="activeStatusIndex" default="0" />
+
+	<div class="ui-g-12">
+		<div class="content-title">
+			<h1><fu:uitext textKey="#{textKey}" /></h1>
+			<p:steps rendered="#{renderStatus}" activeIndex="#{activeStatusIndex}">
+				<p:menuitem value="Skiss" />
+				<p:menuitem value="Preliminär" />
+				<p:menuitem value="Granska" />
+				<p:menuitem value="Översättning" />
+				<p:menuitem value="Fastställd" />
+			</p:steps>
+			<div class="clear"></div>
+		</div>
+		<hr style="border: 0; height: 0; border-top: 1px solid #cccccc; padding-bottom: 15px; margin-top: 5px;"/>
+		<p:breadCrumb>
+		    <p:menuitem value="Översikt" url="/index" />
+		    <ui:insert name="crumbs">
+			</ui:insert>
+		</p:breadCrumb>
+	</div>
+</ui:composition>

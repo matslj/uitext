@@ -20,7 +20,18 @@
     	</p:menubar>
         <div class="ui-g">
 			<div class="ui-g-12">
-				<h1><fu:uitext textKey="page.sample.one" /></h1>
+				<div class="content-title">
+					<h1><fu:uitext textKey="page.sample.one" /></h1>
+					<p:steps activeIndex="0">
+						<p:menuitem value="Skiss" />
+						<p:menuitem value="Preliminär" />
+						<p:menuitem value="Granska" />
+						<p:menuitem value="Översättning" />
+						<p:menuitem value="Fastställd" />
+					</p:steps>
+					<div class="clear"></div>
+				</div>
+				<hr style="border: 0; height: 0; border-top: 1px solid #cccccc; padding-bottom: 15px; margin-top: 5px;"/>
 				<p:breadCrumb>
 				    <p:menuitem value="Översikt" url="/index" />
 				    <p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
@@ -29,44 +40,42 @@
 			</div>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-lg-4 ui-xl-3">
-					<p:panel id="basic">
+					<p:panel>
 						<f:facet name="header">
 							<span class="title">Grunddata</span>
 							<span class="action"><p:button outcome="/planer/plan" value="Ändra" /></span>
 				        </f:facet>
-
-						<fu:outputEntry label="Kurskod" value="ooooooo" ttTextKey="page.sample.one" />
-						<fu:outputEntry label="Högskolepoäng" value="ooooooo" />
-						<fu:outputEntry label="Utbildningsnivå" value="ooooooo" />
-						<fu:outputEntry label="Svensk benämning" value="ooooooo" ttTextKey="page.sample.one" />
-						<fu:outputEntry label="Engelsk benämning" value="ooooooo sdfsdlj lsjf ljsd flksdj lj sldjkfljsf lsdjkf slfjsdl flsdjf flsjf sdlfj dk" ttTextKey="page.sample.one" />
-
+						<p:panelGrid columns="1" layout="grid">
+							<fu:outputEntry label="Kurskod" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Högskolepoäng" value="ooooooo" />
+							<fu:outputEntry label="Utbildningsnivå" value="ooooooo" />
+							<fu:outputEntry label="Svensk benämning" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Engelsk benämning" value="ooooooo sdfsdlj lsjf ljsd flksdj lj sldjkfljsf lsdjkf slfjsdl flsdjf flsjf sdlfj dk" ttTextKey="page.sample.one" />
+						</p:panelGrid>
 				    </p:panel>
 				</div>
 				<div class="ui-g-12 ui-lg-6">
-					<p:panel id="basic2" header="Annan data">
-						<div class="ui-g">
-							<div class="ui-g-12 ui-g-nopad">
-								<div class="ui-g-12 ui-md-6 ui-lg-12 ui-xl-6 ui-g-nopad">
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-								</div>
-								<div class="ui-g-12 ui-md-6 ui-lg-12 ui-xl-6 ui-g-nopad">
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-									<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
-								</div>
-							</div>
-						</div>
+					<p:panel>
+						<f:facet name="header">
+							<span class="title">Annan data</span>
+							<span class="action"><p:button outcome="/planer/plan" value="Ändra" /></span>
+				        </f:facet>
+						<p:panelGrid columns="2" layout="grid">
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="dfl lsjfd lsdfj sljfl sdfjsdl fjsdl fsdlöfj sdlfjsdl fj sdlfj sdlfjsdl fjsdlkfj sdjlfsdjklfjsd flj" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+							<fu:outputEntry label="Helloooo" value="ooooooo" ttTextKey="page.sample.one" />
+						</p:panelGrid>
 					</p:panel>
 				</div>
 			</div>

@@ -54,6 +54,26 @@
 .ui-menu.ui-menubar.ui-widget.ui-widget-content .ui-menu-list .ui-menuitem-link {
 }
 
+/* Steps */
+
+.ui-steps {
+	font-size: 16px;
+}
+
+.ui-steps .ui-steps-item .ui-menuitem-link {
+	padding: 0.5em;
+}
+
+.ui-steps .ui-steps-item .ui-steps-number {
+	display: none;
+}
+
+/* Panelgrid */
+
+.ui-panelgrid .ui-widget-content {
+	border: 0;
+}
+
 /* Datatable */
 
 .ui-datatable-odd {
