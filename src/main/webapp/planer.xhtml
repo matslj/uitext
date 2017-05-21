@@ -16,13 +16,11 @@
 	    	<p:menuitem value="#{msgs['page.planer.nyplan']}" outcome="/planer/plan" icon="fa fa-plus" />
     	</p:menubar>
         <div class="ui-g">
-			<div class="ui-g-12">
-				<h1><fu:uitext textKey="page.sample.one" /></h1>
-				<p:breadCrumb>
-				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="#{msgs['page.planer.title']}" url="/planer" />
-				</p:breadCrumb>
-			</div>
+			<fu:contentHeader textKey="page.planer.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
+        		</ui:define>
+        	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-xl-6">
 					<p:dataTable var="car" value="#{dtBasicView.cars}">

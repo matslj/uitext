@@ -8,7 +8,7 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>UIText - #{msgs['page.planer.plan.title']}</title>
+   		<title>UIText - #{msgs['page.sample.three.title']}</title>
     </ui:define>
     
     <ui:define name="content">
@@ -19,20 +19,11 @@
 	    	<p:menuitem value="#{msgs['page.planer.plan.pdf']}" url="http://www.primefaces.org" icon="fa fa-plus" />
     	</p:menubar>
         <div class="ui-g">
-			<div class="ui-g-12">
-				<h1><fu:uitext textKey="page.sample.one" /></h1>
-				<p:breadCrumb>
-				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
-				    <p:menuitem value="#{msgs['page.planer.plan.title']}" outcome="/planer/plan" />
-				</p:breadCrumb>
-				<p:steps activeIndex="1">
-<p:menuitem value="Personal" />
-<p:menuitem value="Seat Selection" />
-<p:menuitem value="Payment" />
-<p:menuitem value="Confirmation" />
-</p:steps>
-			</div>
+			<fu:contentHeader textKey="page.sample.three.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.sample.three.title']}" outcome="/exempel/sample3" />
+        		</ui:define>
+        	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-lg-4 ui-xl-3">
 					<p:panel id="basic">

@@ -13,24 +13,26 @@
 >
 
 	<o:tagAttribute name="textKey" />
-	<o:tagAttribute name="renderStatus" default="#{false}" />
-	<o:tagAttribute name="activeStatusIndex" default="0" />
+	<o:tagAttribute name="activeStatusIndex" default="-1" />
+	<o:tagAttribute name="ttTextKey" />
 
 	<div class="ui-g-12">
 		<div class="content-title">
-			<h1><fu:uitext textKey="#{textKey}" /></h1>
-			<p:steps rendered="#{renderStatus}" activeIndex="#{activeStatusIndex}">
-				<p:menuitem value="Skiss" />
-				<p:menuitem value="Preliminär" />
-				<p:menuitem value="Granska" />
-				<p:menuitem value="Översättning" />
-				<p:menuitem value="Fastställd" />
+			<h1><fu:uitext textKey="#{textKey}" /> <c:if test="#{not empty ttTextKey}"><fu:tooltip textKey="#{ttTextKey}" /></c:if></h1>
+			<p:steps rendered="#{activeStatusIndex gt -1}" activeIndex="#{activeStatusIndex}">
+				<ui:insert name="status">
+					<p:menuitem value="Skiss" />
+					<p:menuitem value="Preliminär" />
+					<p:menuitem value="Granska" />
+					<p:menuitem value="Översättning" />
+					<p:menuitem value="Fastställd" />
+				</ui:insert>
 			</p:steps>
 			<div class="clear"></div>
 		</div>
 		<hr style="border: 0; height: 0; border-top: 1px solid #cccccc; padding-bottom: 15px; margin-top: 5px;"/>
 		<p:breadCrumb>
-		    <p:menuitem value="Översikt" url="/index" />
+		    <p:menuitem value="#{msgs['component.contentheader.crumb.home']}" url="/index" />
 		    <ui:insert name="crumbs">
 			</ui:insert>
 		</p:breadCrumb>

@@ -17,13 +17,11 @@
 	    	<p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
     	</p:menubar>
         <div class="ui-g">
-			<div class="ui-g-12">
-				<h1><fu:uitext textKey="page.sample.one" /></h1>
-				<p:breadCrumb>
-				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="#{msgs['page.sample.one']}" url="/exempel/sample" />
-				</p:breadCrumb>
-			</div>
+			<fu:contentHeader textKey="page.sample.one">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.sample.one']}" outcome="/exempel/sample" />
+        		</ui:define>
+        	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-xl-4">
 					<p:panel id="basic" header="Exempelpanel 1">

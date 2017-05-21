@@ -13,13 +13,11 @@
 
 	<ui:define name="content">
 		<div class="ui-g">
-			<div class="ui-g-12">
-				<h1><fu:uitext textKey="page.standardtexter.title" /></h1>
-				<p:breadCrumb>
-					<p:menuitem value="Översikt" outcome="/index" />
-					<p:menuitem value="#{msgs['page.standardtexter.title']}" outcome="/texter/standardtexter" />
-				</p:breadCrumb>
-			</div>
+			<fu:contentHeader textKey="page.standardtexter.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.standardtexter.title']}" outcome="/texter/standardtexter" />
+        		</ui:define>
+        	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				
 			</div>

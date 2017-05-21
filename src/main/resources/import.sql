@@ -82,3 +82,6 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.d
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Details', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.outputentry.valuemissing', '-- värde saknas --', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.outputentry.valuemissing', '-- value missing --', 'en');
+
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.contentheader.crumb.home', 'Hem', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.contentheader.crumb.home', 'Home', 'en');

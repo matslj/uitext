@@ -13,18 +13,13 @@
     
     <ui:define name="content">
 		<div class="ui-g">
-			<div class="ui-g-12 ui-sm-12">
-				<h1><fu:uitext textKey="home.title" /> <fu:tooltip textKey="home.title.tooltip" /></h1>
-				<p:breadCrumb>
-				    <p:menuitem value="Översikt" url="/index" />
-				</p:breadCrumb>
-			</div>
+			<fu:contentHeader textKey="home.title" ttTextKey="home.title.tooltip" />
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
-					<fu:infobox highlight="32" icon="fa fa-fw fa-sign-out" text="Obehandlade kurser" outcome="/texter/uitexter" styleClass="bg-red"></fu:infobox>
+					<fu:infobox highlight="2" icon="fa fa-fw fa-sign-out" text="Väntar på granskning" outcome="/texter/uitexter" styleClass="bg-red"></fu:infobox>
 				</div>
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
-					<fu:infobox highlight="32" icon="fa fa-fw fa-sign-out" text="Obehandlade kurser" outcome="/texter/uitexter" styleClass="bg-blue"></fu:infobox>
+					<fu:infobox highlight="0" icon="fa fa-fw fa-sign-out" text="Väntar på fastställande" outcome="/texter/uitexter" styleClass="bg-blue"></fu:infobox>
 				</div>
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
 					<fu:infobox highlight="32" icon="fa fa-fw fa-sign-out" text="Obehandlade kurser" outcome="/texter/uitexter" styleClass="bg-green"></fu:infobox>

@@ -8,6 +8,18 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>UIText - #{msgs['page.sample.one']}</title>
+   		<title>UIText - #{msgs['page.search.information.title']}</title>
     </ui:define>
+    
+    <ui:define name="content">
+        <div class="ui-g">
+			<fu:contentHeader textKey="page.search.information.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.search.information.title']}" outcome="/search/informationSok" />
+        		</ui:define>
+        	</fu:contentHeader>
+			<div class="ui-g-12 ui-g-nopad">
+			</div>
+		</div>
+	</ui:define>
 </ui:composition>

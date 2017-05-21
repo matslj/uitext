@@ -8,7 +8,7 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>UIText - #{msgs['page.planer.plan.title']}</title>
+   		<title>UIText - #{msgs['page.plan.title']}</title>
     </ui:define>
     
     <ui:define name="content">
@@ -19,25 +19,12 @@
 	    	<p:menuitem value="#{msgs['page.planer.plan.pdf']}" url="http://www.primefaces.org" icon="fa fa-plus" />
     	</p:menubar>
         <div class="ui-g">
-			<div class="ui-g-12">
-				<div class="content-title">
-					<h1><fu:uitext textKey="page.sample.one" /></h1>
-					<p:steps activeIndex="0">
-						<p:menuitem value="Skiss" />
-						<p:menuitem value="Preliminär" />
-						<p:menuitem value="Granska" />
-						<p:menuitem value="Översättning" />
-						<p:menuitem value="Fastställd" />
-					</p:steps>
-					<div class="clear"></div>
-				</div>
-				<hr style="border: 0; height: 0; border-top: 1px solid #cccccc; padding-bottom: 15px; margin-top: 5px;"/>
-				<p:breadCrumb>
-				    <p:menuitem value="Översikt" url="/index" />
-				    <p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
-				    <p:menuitem value="#{msgs['page.planer.plan.title']}" outcome="/planer/plan" />
-				</p:breadCrumb>
-			</div>
+        	<fu:contentHeader textKey="page.plan.title" activeStatusIndex="0">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
+				    <p:menuitem value="#{msgs['page.plan.title']}" outcome="/planer/plan" />
+        		</ui:define>
+        	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-md-6 ui-lg-4 ui-xl-3">
 					<p:panel>

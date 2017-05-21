@@ -41,6 +41,30 @@
 	
 	<tag>
 		<description>Lägger in en fa-info-circle icon och kopplar ett primefaces tooltip till denna ikon.</description>
+		<tag-name>contentHeader</tag-name>
+		<source>tags/contentHeader.xhtml</source>
+		<attribute>
+			<description>Nyckeln för hämtning av text från resource bundle.</description>
+			<name>textKey</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Position för tooltiprutan. Välj på top, bottom, left, right. Default är top.</description>
+			<name>activeStatusIndex</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Nyckeln för hämtning av text från resource bundle.</description>
+			<name>ttTextKey</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>Lägger in en fa-info-circle icon och kopplar ett primefaces tooltip till denna ikon.</description>
 		<tag-name>infobox</tag-name>
 		<source>tags/infobox.xhtml</source>
 		<attribute>
