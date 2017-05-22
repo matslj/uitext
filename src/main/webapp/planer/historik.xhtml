@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:fu="http://uitext.se/ui"
+   template="/WEB-INF/templates/default.xhtml">
+   
+    <ui:define name="head">
+   		<title>UIText - #{msgs['page.planer.historik.title']}</title>
+    </ui:define>
+    
+    <ui:define name="content">
+        <div class="ui-g">
+			<fu:contentHeader textKey="page.planer.historik.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
+        			<p:menuitem value="#{msgs['page.plan.title']}" outcome="/planer/plan" />
+        			<p:menuitem value="#{msgs['page.planer.historik.title']}" outcome="/planer/historik" />
+        		</ui:define>
+        	</fu:contentHeader>
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-12 ui-xl-6">
+					<p:dataTable var="car" value="#{dtBasicView.cars}">
+					    <p:column headerText="Datum">
+					        <h:outputText value="#{car.id}" />
+					    </p:column>
+					 
+					    <p:column headerText="Användare">
+					        <h:outputText value="#{car.year}" />
+					    </p:column>
+					 
+					    <p:column headerText="Åtgärd">
+					        <h:outputText value="#{car.brand}" />
+					    </p:column>
+					 
+					    <p:column headerText="Meddelande">
+					        <h:outputText value="#{car.color}" />
+					    </p:column>
+					</p:dataTable>
+				</div>
+			</div>
+        </div>
+    </ui:define>
+</ui:composition>
