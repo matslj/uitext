@@ -8,10 +8,11 @@
 
 	<h:panelGroup layout="block" styleClass="overlay" rendered="#{not sessionScope.splashShown}">
 		<div class="splash">
-			<h:panelGrid columns="2">
-			<h:graphicImage value="/resources/gfx/logo_gu.png" width="75" height="75" />
+			<h:panelGrid columns="2" cellspacing="30">
+			<h:graphicImage value="/resources/gfx/logo_gu.png" width="150" height="150" />
 			<h:outputText value="#{msgs['splash.text']}" escape="false" />
 			</h:panelGrid>
+			<h:outputText value="#{msgs['splash.subtext']}" styleClass="splash-subtext" />
 		</div>
 	</h:panelGroup>
 </ui:composition>

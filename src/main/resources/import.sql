@@ -88,6 +88,11 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum'
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Exempelsida 1', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.sample.one', 'Example page 1', 'en');
 
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'splash.text', '<h2>Ohoj</h2><p>blablablabla blabl blabla</p>', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'splash.text', '<h2>Ohoj</h2><p>blablablabla blabl blabla</p>', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'splash.subtext', 'Klicka någonstans för att komma vidare', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'splash.subtext', 'Click anywhere to proceed', 'en');
+
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Detaljer', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.infobox.detail', 'Details', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'component.outputentry.valuemissing', '-- värde saknas --', 'sv');

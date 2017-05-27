@@ -17,6 +17,7 @@ uitext.topbar = (function($) {
     $topbarIcons = null,
     $topbarIconsToggleButton = null,
     $wrapper = null,
+    $splash = null,
     menuClick = false,
     expandedMenuClick = false;
     
@@ -82,6 +83,7 @@ uitext.topbar = (function($) {
    			$menuButton = $(MENU_BUTTON);
    			$topbarIconsToggleButton = $(TOPBAR_ICON_TOGGLE_BUTTON);
    			$wrapper = $('#wrapperId');
+   			$splash = $('.overlay');
    			
 
    			// Register topbar-icons eventhandling
@@ -99,6 +101,10 @@ uitext.topbar = (function($) {
    					$topbarIcons.removeClass(TOPBAR_ICONS_VISIBLE);
    				}
    				expandedMenuClick = false;
+   				
+   				// Tillägg som egentligen inte hör hemma i den här filen då den rör splashvisningen och inte
+   				// specifikt topbaren.
+   				$splash.css('display', 'none');
    			});
    		}
 	};
