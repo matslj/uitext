@@ -7,6 +7,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<div class="sidebar">
+		<h:form>
 		<div class="profile">
 			<div class="logo">
 				<h:graphicImage value="/resources/gfx/logo_gu.png" width="75"
@@ -17,9 +18,10 @@
 			</a>
 			<fu:menu>
 				<fu:menuitem icon="fa fa-sliders fa-fw" text="#{msgs['sidebar.profile.account']}" />
-				<fu:menuitem icon="fa fa-sign-out fa-fw" text="#{msgs['sidebar.profile.logout']}" />
+				<fu:menuitem action="#{sessionState.logout}" icon="fa fa-sign-out fa-fw" text="#{msgs['sidebar.profile.logout']}" />
 		    </fu:menu>
 		</div>
+		</h:form>
 
 		<div class="menu">
 			<fu:menu styleClass="menu-container">

@@ -1,10 +1,16 @@
 package se.mlj.uitext.model.user;
 
+import static org.omnifaces.util.Faces.invalidateSession;
+import static org.omnifaces.util.Faces.redirect;
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.slf4j.Logger;
 
 /**
  * Används för att hålla reda på sessionsinställningar (utom locale, som hanteras av
@@ -24,6 +30,14 @@ public class SessionState implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private boolean textEditMode = false;
+	
+	@Inject
+	Logger logger;
+
+	@PostConstruct
+	public void init() {
+		textEditMode = false;
+	}
 
 	public boolean isTextEditMode() {
 		return textEditMode;
@@ -48,5 +62,10 @@ public class SessionState implements Serializable {
 		String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
 		return viewId + "?faces-redirect=true";
 	}
+	
+	public String logout() {
+		invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
+    }
 
 }

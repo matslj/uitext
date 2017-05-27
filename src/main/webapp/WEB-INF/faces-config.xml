@@ -25,4 +25,9 @@
 		<converter-class>javax.faces.convert.EnumConverter</converter-class>
 	</converter>
 
+	<lifecycle>
+		<phase-listener>
+			se.mlj.uitext.model.SplashPhaseListener
+		</phase-listener>
+	</lifecycle>
 </faces-config>

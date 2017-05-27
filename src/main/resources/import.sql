@@ -71,6 +71,16 @@ INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.title',
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.title', 'Plans', 'en');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.nyplan', 'Ny plan', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.nyplan', 'New plan', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.historik', 'Historik', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.historik', 'History', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.protokoll', 'Protokoll', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.protokoll', 'Protocol', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.litteraturlista', 'Litteraturlista', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.litteraturlista', 'Lit. List', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.pdf', 'Pdf', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.pdf', 'Pdf', 'en');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.deltagare', 'Deltagare', 'sv');
+INSERT INTO UIText (version, key, value, locale) VALUES (0, 'page.planer.plan.deltagare', 'Participant', 'en');
 
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum', 'Suspendisse potenti. Nunc at maximus justo. Praesent faucibus, lacus at tempor efficitur, lectus lacus placerat augue, quis vestibulum dolor ligula at arcu. Nulla sed ante ex. Aenean sollicitudin placerat cursus. Nunc ultricies massa eget mattis vestibulum. Nam lorem sem, cursus vel finibus a, varius nec dui.', 'sv');
 INSERT INTO UIText (version, key, value, locale) VALUES (0, 'global.lorem.ipsum', 'Suspendisse potenti. Nunc at maximus justo. Praesent faucibus, lacus at tempor efficitur, lectus lacus placerat augue, quis vestibulum dolor ligula at arcu. Nulla sed ante ex. Aenean sollicitudin placerat cursus. Nunc ultricies massa eget mattis vestibulum. Nam lorem sem, cursus vel finibus a, varius nec dui.', 'en');

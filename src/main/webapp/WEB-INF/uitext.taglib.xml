@@ -213,6 +213,12 @@
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
+			<description>The POST action method of the button. This is ignored when 'path' attribute is specified.</description>
+			<name>action</name>
+			<required>false</required>
+			<type>javax.el.MethodExpression</type>
+		</attribute>
+		<attribute>
 			<description>fa-ikonen som ska användas framför menytexten.</description>
 			<name>icon</name>
 			<required>false</required>

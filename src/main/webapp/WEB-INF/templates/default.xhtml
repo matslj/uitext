@@ -19,7 +19,7 @@
 		   <meta name="apple-mobile-web-app-capable" content="yes" />
 		   <ui:include src="/WEB-INF/includes/layout/head-resources.xhtml" />
 		</h:head>
-		<h:body>
+		<h:body id="bodyId">
 			<f:facet name="last">
 				<h:outputStylesheet name="css/dashboard.css" />
 				<h:outputStylesheet name="css/pf-overrides.css" />		
@@ -37,6 +37,8 @@
 			    </h:panelGroup>
 			    <ui:include src="/WEB-INF/includes/layout/footer.xhtml" />
 		    </h:panelGroup>
+		    
+		    <ui:include src="/WEB-INF/includes/layout/splash.xhtml" />
 		    
 		    <ui:include src="/WEB-INF/includes/layout/uitextDialog.xhtml" />
 		</h:body>

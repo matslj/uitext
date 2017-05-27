@@ -14,6 +14,7 @@
 	<o:tagAttribute name="rendered" default="#{true}" />
 	<o:tagAttribute name="outcome" default="" />
 	<o:tagAttribute name="text" />
+	<o:methodParam name="actionParam" value="#{action}" />
     <o:tagAttribute name="icon" default="" />
 
 	<c:if test="#{rendered ne false}">
@@ -34,7 +35,12 @@
 				</c:when>
 				<c:otherwise>
 				    <!-- Dummylänk. Dvs en länk som inte är en submeny och som inte leder någonstans. Tänkt att användas i testsyfte/i en uppbyggnadsfas. -->
-					<a href="#"><i class="#{icon}"></i><span>#{text}</span></a>
+					<!--  <a href="#"><i class="#{icon}"></i><span>#{text}</span></a> -->
+					<!-- Ersatt ovanstående med en commandlink. Ovanstående kan fortfarande uppnås (fast med submit) genom att inte ange någon action.
+					     Observera att nedanstående förändring gör att komponenten behöver omslutas av en h:form. -->
+					<h:commandLink action="#{actionParam}">
+		    			<i class="#{icon}"></i><span>#{text}</span>
+		    		</h:commandLink>
 				</c:otherwise>
 			</c:choose>
 	    </li>

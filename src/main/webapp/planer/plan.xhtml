@@ -13,10 +13,11 @@
     
     <ui:define name="content">
     	<p:menubar>
-	    	<p:menuitem value="#{msgs['page.planer.plan.historik']}" outcome="/planer/historik" icon="fa fa-plus" />
-	    	<p:menuitem value="#{msgs['page.planer.plan.protokoll']}" url="http://www.primefaces.org" icon="fa fa-plus" />
-	    	<p:menuitem value="#{msgs['page.planer.plan.litteraturlista']}" url="http://www.primefaces.org" icon="fa fa-plus" />
-	    	<p:menuitem value="#{msgs['page.planer.plan.pdf']}" url="http://www.primefaces.org" icon="fa fa-plus" />
+    		<p:menuitem value="#{msgs['page.planer.plan.deltagare']}" outcome="/planer/historik" icon="fa fa-users" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.historik']}" outcome="/planer/historik" icon="fa fa-history" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.protokoll']}" url="http://www.primefaces.org" icon="fa fa-list-alt" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.litteraturlista']}" url="http://www.primefaces.org" icon="fa fa-list" />
+	    	<p:menuitem value="#{msgs['page.planer.plan.pdf']}" url="http://www.primefaces.org" icon="fa fa-file-pdf-o" />
     	</p:menubar>
         <div class="ui-g">
         	<fu:contentHeader textKey="page.plan.title" activeStatusIndex="0">

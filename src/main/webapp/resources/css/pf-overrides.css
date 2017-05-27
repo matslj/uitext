@@ -23,6 +23,7 @@
 	padding-top: 0;
 	padding-bottom: 0;
 	border-top: 0;
+	z-index: 99;
 }
 
 .ui-menu.ui-menubar.ui-widget.ui-widget-content.ui-corner-all, .ui-menu.ui-menubar.ui-widget.ui-widget-content ul.ui-menu-list li.ui-menuitem.ui-widget.ui-corner-all, .ui-menu.ui-menubar.ui-widget.ui-widget-content ul.ui-menu-list li.ui-menuitem.ui-widget.ui-corner-all a.ui-menuitem-link.ui-corner-all {
@@ -49,6 +50,10 @@
 
 .ui-menu .ui-menuitem {
   	margin: 0;
+}
+
+.ui-menu.ui-menubar.ui-widget.ui-widget-content .ui-menuitem .ui-menuitem-text {
+	padding-left: 3px;
 }
 
 .ui-menu.ui-menubar.ui-widget.ui-widget-content .ui-menu-list .ui-menuitem-link {
