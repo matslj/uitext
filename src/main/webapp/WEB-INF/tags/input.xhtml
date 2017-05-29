@@ -29,7 +29,7 @@
 	<o:tagAttribute name="messagesStyleClass" />
 
 	<!-- Label -->
-	<o:tagAttribute name="label" default="#{i18n['general.' += id]}" />
+	<o:tagAttribute name="label" default="#{msgs['general.' += id]}" />
 	<o:tagAttribute name="tooltip" />
 
 	<!-- Input -->
@@ -80,7 +80,7 @@
 						>
 							<c:if test="#{required}">
 								<f:validator validatorId="omnifaces.RequiredCheckboxValidator" />
-								<f:attribute name="requiredMessage" value="#{i18n['tags.input.checkbox.requiredMessage']}" />
+								<f:attribute name="requiredMessage" value="#{msgs['tags.input.checkbox.requiredMessage']}" />
 							</c:if>
 							<ui:insert />
 						</p:selectBooleanCheckbox>

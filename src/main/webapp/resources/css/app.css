@@ -80,3 +80,39 @@
 .hello {
     color: green;
 }
+
+.ui-panel .field {
+	position: relative;
+	margin: 1em 0;
+}
+
+.ui-panel .field label > span {
+	float: right;
+	padding-left: .5em;
+}
+
+.ui-panel .field.checkbox label {
+	padding-left: .5em;
+}
+
+.ui-panel .field ul.messages {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.ui-panel .field.buttons ul.messages {
+	margin: .5em 0;
+}
+
+.ui-panel .field ul.messages .info {
+	color: #{green};
+}
+
+.ui-panel .field ul.messages .warn {
+	color: #{blue};
+}
+
+.ui-panel .field ul.messages .error {
+	color: #{red};
+}

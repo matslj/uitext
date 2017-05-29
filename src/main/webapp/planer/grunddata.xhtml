@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:fu="http://uitext.se/ui"
+   template="/WEB-INF/templates/default.xhtml">
+   
+    <ui:define name="head">
+   		<title>UIText - #{msgs['page.plan.grunddata.title']}</title>
+    </ui:define>
+    
+    <ui:define name="content">
+        <div class="ui-g">
+			<fu:contentHeader textKey="page.plan.grunddata.title">
+        		<ui:define name="crumbs">
+        			<p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
+        			<p:menuitem value="#{msgs['page.plan.title']}" outcome="/planer/plan" />
+        			<p:menuitem value="#{msgs['page.plan.grunddata.title']}" outcome="/planer/grunddata" />
+        		</ui:define>
+        	</fu:contentHeader>
+			<div class="ui-g-12 ui-g-nopad">
+				<div class="ui-g-12 ui-md-6">
+					<fu:form id="grunddataForm" fieldset="Hello">
+					<p:panel>
+						<f:facet name="header">
+							<span class="title">Grunddata</span>
+				        </f:facet>
+				        
+			        	<fu:input id="kurskod" label="Kurskod" tooltip="#{msgs['page.sample.one']}" required="true" value="#{flash.kurskod}" />
+			        	<fu:input id="hogskolepoang" label="Högskolepoäng" tooltip="#{msgs['page.sample.one']}" required="true" value="#{flash.hogskolepoang}" />
+			        	<fu:input id="utbniva" label="Utbildningsnivå" tooltip="#{msgs['page.sample.one']}" required="true" value="#{flash.utbniva}" />
+			        	<fu:input id="sv-ben" label="Svensk benämning" tooltip="#{msgs['page.sample.one']}" required="true" value="#{flash.svben}" />
+			        	<fu:input id="en-ben" label="Engelsk benämning" tooltip="#{msgs['page.sample.one']}" required="true" value="#{flash.enben}" />
+			        	
+			        	<f:facet name="footer">
+			        	    <p:commandButton process="@this" style="margin-left: 10px;"
+								immediate="true" ajax="false"
+								value="Spara">
+							</p:commandButton>
+			        		<p:commandButton process="@this"
+								immediate="true"
+								value="Avbryt">
+							</p:commandButton>
+						</f:facet>
+						
+				    </p:panel>
+				    </fu:form>
+				</div>
+			</div>
+        </div>
+    </ui:define>
+</ui:composition>

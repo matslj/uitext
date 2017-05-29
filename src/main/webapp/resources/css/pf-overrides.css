@@ -215,6 +215,106 @@
 	top: 5px;
 }
 
+/* Inputs ----------------------------------------------------------------------------------------------------------- */
+
+.ui-inputfield {
+	position: relative;
+	font-size: 1em;
+	color: #{black};
+}
+
+.ui-inputfield,
+.ui-spinner,
+.ui-selectonemenu,
+.ui-autocomplete {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	padding: .5em;
+	background: white;
+}
+
+.ui-autocomplete-panel,
+.ui-selectonemenu-panel {
+	z-index: 9997 !important;	
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-item.ui-state-disabled,
+.ui-autocomplete-panel .ui-autocomplete-item.ui-state-disabled {
+	display: none;
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-item.ui-state-hover,
+.ui-selectonemenu-panel .ui-selectonemenu-item.ui-state-highlight,
+.ui-autocomplete-panel .ui-autocomplete-item.ui-state-hover,
+.ui-autocomplete-panel .ui-autocomplete-item.ui-state-highlight {
+	background: #{brightGray};
+}
+
+.ui-spinner-button.ui-state-default {
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	line-height: 20px;
+	padding: 0;
+	background: white;
+	border: 2px solid #{gray};
+	color: #{gray};
+}
+
+.ui-spinner-button.ui-state-focus,
+.ui-spinner-button.ui-state-hover {
+	border-color: #{black};
+	color: #{black};
+}
+
+.ui-spinner-button.ui-state-default .ui-button-text {
+	display: inline;
+	padding: 0;
+}
+
+.ui-spinner-up.ui-state-default {
+	top: 16px;
+	right: 16px;
+}
+
+.ui-spinner-down.ui-state-default {
+	top: 16px;
+	right: 54px;
+}
+
+.ui-spinner .ui-icon {
+	position: static;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.ui-spinner-up .ui-icon:after {
+	content: "\f067"; /* fa-plus */
+}
+
+.ui-spinner-down .ui-icon:after {
+	content: "\f068"; /* fa-minus */
+}
+
+.ui-chkbox {
+	float: left;
+}
+
+.ui-chkbox .ui-chkbox-box {
+	box-sizing: border-box;
+	width: 25px;
+	height: 25px;
+	padding: 2px;
+	line-height: 25px;
+	text-align: center;
+}
+
+.ui-chkbox .ui-icon-check:after {
+	content: "\f00c"; /* fa-check */
+	color: #{red};
+}
+
 /* Grid */
 .ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12 {
 	padding: 1em;
