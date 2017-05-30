@@ -21,7 +21,6 @@
 				<fu:menuitem action="#{sessionState.logout}" icon="fa fa-sign-out fa-fw" text="#{msgs['sidebar.profile.logout']}" />
 		    </fu:menu>
 		</div>
-		</h:form>
 
 		<div class="menu">
 			<fu:menu styleClass="menu-container">
@@ -41,7 +40,7 @@
 					<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.organization']}" />
 					<fu:menuitem icon="fa fa-sign-in fa-fw" text="#{msgs['sidebar.link.users']}" />
 				</fu:menuitem>
-				<fu:menuitem outcome="#" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}">
+				<fu:menuitem outcome="#" icon="fa fa-sitemap fa-fw" text="#{msgs['sidebar.link.examples']}" rendered="#{false}">
 				    <fu:menuitem outcome="/exempel/sample" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example1']}" />
 				    <fu:menuitem outcome="/exempel/sample2" icon="fa fa-columns fa-fw" text="#{msgs['sidebar.link.example2']}" />
 					<fu:menuitem outcome="/errorpages/expired" icon="fa fa-minus-circle fa-fw" text="View expired" />
@@ -49,5 +48,6 @@
 				</fu:menuitem>
 			</fu:menu>
 		</div>
+		</h:form>
 	</div>
 </ui:composition>

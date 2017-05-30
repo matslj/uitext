@@ -11,7 +11,7 @@
 >
 	<o:tagAttribute name="id" />
 	<o:tagAttribute name="fieldset" default="#{true}" />
-	<o:tagAttribute name="stateless" default="#{not activeUser.present}" />
+	<o:tagAttribute name="stateless" default="#{false}" />
 
 	<f:view transient="#{stateless}">
 		<o:form id="#{id}" useRequestURI="true" styleClass="#{stateless ? 'stateless' : ''}">

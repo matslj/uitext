@@ -8,12 +8,12 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>dgfdgfdgfdf</title>
+   		<title>UIText - #{msgs['page.home.title']}</title>
     </ui:define>
     
     <ui:define name="content">
 		<div class="ui-g">
-			<fu:contentHeader textKey="home.title" ttTextKey="home.title.tooltip" />
+			<fu:contentHeader textKey="page.home.title" ttTextKey="home.title.tooltip" />
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-sm-12 ui-md-6 ui-xl-4">
 					<fu:infobox highlight="2" icon="fa fa-fw fa-sign-out" text="Väntar på granskning" outcome="/texter/uitexter" styleClass="bg-red"></fu:infobox>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="ui-g-12">
 				<p:panel header="Information från systemansvarig">
-					<fu:uitext textKey="global.lorem.ipsum" />
+					<fu:uitext textKey="page.home.systemansvarig.text" />
 				</p:panel>
 			</div>
         </div>

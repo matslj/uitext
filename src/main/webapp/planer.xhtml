@@ -23,32 +23,41 @@
         	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
 				<div class="ui-g-12 ui-xl-6">
-					<p:dataTable var="car" value="#{dtBasicView.cars}">
-					<f:facet name="header">
-						List of Cars
-					</f:facet>
-				    <p:column headerText="Id">
-				        <h:outputText value="#{car.id}" />
-				    </p:column>
-				 
-				    <p:column headerText="Year">
-				        <h:outputText value="#{car.year}" />
-				    </p:column>
-				 
-				    <p:column headerText="Brand">
-				        <h:outputText value="#{car.brand}" />
-				    </p:column>
-				 
-				    <p:column headerText="Color">
-				        <h:outputText value="#{car.color}" />
-				    </p:column>
-				</p:dataTable>
+					<p:dataTable var="car" value="#{dtBasicView.cars}" selectionMode="single" selection="#{dtBasicView.selectedCar}" rowKey="#{car.id}">
+						<f:facet name="header">
+							List of Cars
+						</f:facet>
+					    <p:column headerText="Id">
+					    	<h:link style="display: block; text-decoration: none;" outcome="/planer/plan">
+					        <h:outputText value="#{car.id}" />
+					        </h:link>
+					    </p:column>
+					 
+					    <p:column headerText="Year">
+					    <h:link style="display: block; text-decoration: none;" outcome="/planer/plan">
+					        <h:outputText value="#{car.year}" />
+					        </h:link>
+					    </p:column>
+					 
+					    <p:column headerText="Brand">
+					    <h:link style="display: block; text-decoration: none;" outcome="/planer/plan">
+					        <h:outputText value="#{car.brand}" />
+					        </h:link>
+					    </p:column>
+					 
+					    <p:column headerText="Color">
+					    <h:link style="display: block; text-decoration: none;" outcome="/planer/plan">
+					        <h:outputText value="#{car.color}" />
+					        </h:link>
+					    </p:column>
+					</p:dataTable>
 				</div>
 				<div class="ui-g-12 ui-xl-6">
-					<p:dataTable var="car" value="#{dtBasicView.cars}">
+					<p:dataTable var="car" value="#{dtBasicView.cars}" selectionMode="single" selection="#{dtBasicView.selectedCar}" rowKey="#{car.id}">
 					<f:facet name="header">
 						List of Cars
 					</f:facet>
+					<p:ajax event="rowSelect" listener="#{dtBasicView.onRowSelect}" />
 				    <p:column headerText="Id">
 				        <h:outputText value="#{car.id}" />
 				    </p:column>

@@ -6,3 +6,4 @@ target/
 .metadata/
 .tern-project
 *.jsfdia
+src/main/resources/import_fu.sql

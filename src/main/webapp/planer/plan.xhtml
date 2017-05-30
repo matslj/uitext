@@ -8,7 +8,7 @@
    template="/WEB-INF/templates/default.xhtml">
    
     <ui:define name="head">
-   		<title>UIText - #{msgs['page.plan.title']}</title>
+   		<title>UIText - #{msgs['page.plan.title']} XXXYYY</title>
     </ui:define>
     
     <ui:define name="content">
@@ -23,11 +23,11 @@
         	<fu:contentHeader textKey="page.plan.title" activeStatusIndex="0">
         		<ui:define name="crumbs">
         			<p:menuitem value="#{msgs['page.planer.title']}" outcome="/planer" />
-				    <p:menuitem value="#{msgs['page.plan.title']}" outcome="/planer/plan" />
+				    <p:menuitem value="#{msgs['page.plan.title']} XXXYYY" outcome="/planer/plan" />
         		</ui:define>
         	</fu:contentHeader>
 			<div class="ui-g-12 ui-g-nopad">
-				<div class="ui-g-12 ui-md-6 ui-lg-4 ui-xl-3">
+				<div class="ui-g-12 ui-md-6 ui-lg-6 ui-xl-6">
 					<p:panel>
 						<f:facet name="header">
 							<span class="title">Grunddata</span>
@@ -66,6 +66,10 @@
 						</p:panelGrid>
 					</p:panel>
 				</div>
+			</div>
+			<div class="ui-g-12">
+				<div style="float: right;"><p:button style="font-size: 1.4em;" outcome="/planer/plan" value="Till status preliminär" /></div>
+				<div class="clear"></div>
 			</div>
         </div>
     </ui:define>
