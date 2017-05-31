@@ -27,7 +27,7 @@
 
 	<lifecycle>
 		<phase-listener>
-			se.mlj.uitext.model.SplashPhaseListener
+			se.mlj.uitext.model.RenderPhaseListener
 		</phase-listener>
 	</lifecycle>
 </faces-config>

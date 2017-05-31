@@ -88,7 +88,7 @@
 	<error-page>
 		<!-- Forbidden directory listing -->
 		<error-code>403</error-code>
-		<location>/errorpages/404.xhtml</location>
+		<location>/errorpages/404.xhtml</location> <!-- Medvetet val av 404 eftersom vi inte vill visa att resursen finns om otillåten access. -->
 	</error-page>
 	<error-page>
 	    <!-- Missing resource -->

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="#{localeManager.language}"
+   xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.org/ui"
+   xmlns:ui="http://java.sun.com/jsf/facelets">
+   
+<ui:insert name="metadata" />
+<h:head>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta charset="utf-8" />
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+<!--    <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" /> -->
+<!--    <link rel="icon" type="image/x-icon" href="#{request.contextPath}/resources/gfx/G_favicon.ico" sizes="16x16" /> -->
+   <h:outputScript library="primefaces" name="jquery/jquery.js" />
+   <ui:insert name="head" />
+</h:head>
+<h:body>
+	<f:view locale="#{localeManager.locale}">
+	<f:facet name="last">
+	    <ui:insert name="stylesheets">
+			<h:outputStylesheet name="css/errors.css" />
+		</ui:insert>	
+	</f:facet>
+    <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+	<p:dialog widgetVar="status" modal="true" resizable="false" closable="false" showHeader="false">
+	   <h:graphicImage value="/resources/gfx/712.GIF"></h:graphicImage>
+    </p:dialog>
+    <h:panelGroup id="wrapperId" layout="block" styleClass="wrapper">
+	    <h:panelGroup id="mainId" layout="block" styleClass="main">
+	         <ui:insert name="content">
+	             [Template content will be inserted here]
+	         </ui:insert>
+	    </h:panelGroup>
+    </h:panelGroup>
+	</f:view>
+</h:body>
+</html>

@@ -62,10 +62,5 @@ public class SessionState implements Serializable {
 		String viewId = FacesContext.getCurrentInstance().getViewRoot().getViewId();
 		return viewId + "?faces-redirect=true";
 	}
-	
-	public String logout() {
-		invalidateSession();
-        return "/index.xhtml?faces-redirect=true";
-    }
 
 }
